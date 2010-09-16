@@ -3,6 +3,8 @@
 = Peticiones =
 
 Sistema de gestión de peticiones del software de Puerto Argentino
+[https://code.google.com/p/puerto-argentino/issues/list Nueva petición]
+
 
 = ¿Qué es y cómo funciona? =
 
