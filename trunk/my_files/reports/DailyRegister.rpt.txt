@@ -1,0 +1,47 @@
+/* Report Builder Export Tool */
+version:1.0
+/* Report Name: Daily Register */
+/* Export File Generated: : 2009-12-04 04:12:12 */
+
+
+/* Language Fields. */
+/* Only modify the language portion between the single quotes after the colon. */
+
+/* Report Name */
+ReportName:'Daily Register'
+ReportNarr:'Lists cash receipts and deposits by date range. Format: Landscape, Size: Letter'
+EmailMsg:''
+
+/* Report Field Description Information */
+FieldDesc0:'Account'
+FieldDesc1:'Customer'
+FieldDesc2:'Telephone'
+FieldDesc3:'Post Date'
+FieldDesc4:'PO Number'
+FieldDesc5:'Reference'
+FieldDesc6:'Balance'
+FieldDesc7:'Deposit'
+FieldDesc8:'Withdrawal'
+
+/* End of language fields. */
+
+/* DO NOT EDIT BELOW THIS LINE! */
+
+
+/* SQL report data. */
+ReportData:description='Daily Register', reporttype='rpt', groupname='ar', standard_report='1', special_report='1:day_book', table1='journal_main', table2='journal_item', table2criteria='[table1]. id = [table2].ref_id', table3='', table3criteria='', table4='', table4criteria='', table5='', table5criteria='', table6='', table6criteria='';
+
+/* SQL field data. */
+FieldData0:entrytype='critlist', seqnum='1', fieldname='[table2].gl_account', displaydesc='Account', visible='1', columnbreak='0', params='a:4:{s:5:\"value\";s:1:\"6\";s:7:\"default\";s:0:\"\";s:7:\"min_val\";s:0:\"\";s:7:\"max_val\";s:0:\"\";}';
+FieldData1:entrytype='fieldlist', seqnum='1', fieldname='[table1].bill_primary_name', displaydesc='Customer', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"60\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData2:entrytype='fieldlist', seqnum='2', fieldname='[table1].bill_telephone1', displaydesc='Telephone', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"20\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData3:entrytype='fieldlist', seqnum='3', fieldname='[table1].post_date', displaydesc='Post Date', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"25\";s:10:\"processing\";s:4:\"date\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData4:entrytype='fieldlist', seqnum='4', fieldname='[table1].purch_order_id', displaydesc='PO Number', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"35\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData5:entrytype='fieldlist', seqnum='5', fieldname='[table1].purchase_invoice_id', displaydesc='Reference', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"35\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData6:entrytype='fieldlist', seqnum='6', fieldname='beg_balance', displaydesc='Balance', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"25\";s:10:\"processing\";s:9:\"null_pcur\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"R\";}';
+FieldData7:entrytype='fieldlist', seqnum='7', fieldname='[table2].debit_amount', displaydesc='Deposit', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"25\";s:10:\"processing\";s:9:\"null_pcur\";s:5:\"index\";s:1:\"1\";s:5:\"align\";s:1:\"R\";}';
+FieldData8:entrytype='fieldlist', seqnum='8', fieldname='[table2].credit_amount', displaydesc='Withdrawal', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"25\";s:10:\"processing\";s:9:\"null_pcur\";s:5:\"index\";s:1:\"1\";s:5:\"align\";s:1:\"R\";}';
+FieldData9:entrytype='pagelist', seqnum='0', fieldname='', displaydesc='', visible='1', columnbreak='1', params='a:43:{s:9:\"narrative\";s:79:\"Lists cash receipts and deposits by date range. Format: Landscape, Size: Letter\";s:9:\"papersize\";s:14:\"Letter:216:282\";s:16:\"paperorientation\";s:1:\"L\";s:9:\"margintop\";s:1:\"8\";s:12:\"marginbottom\";s:1:\"8\";s:10:\"marginleft\";s:1:\"8\";s:11:\"marginright\";s:1:\"8\";s:11:\"coynameshow\";s:1:\"1\";s:10:\"title1show\";s:1:\"1\";s:10:\"title2show\";s:1:\"1\";s:11:\"coynamefont\";s:9:\"helvetica\";s:15:\"coynamefontsize\";s:2:\"12\";s:16:\"coynamefontcolor\";s:5:\"0:0:0\";s:12:\"coynamealign\";s:1:\"C\";s:10:\"title1desc\";s:12:\"%reportname%\";s:10:\"title1font\";s:9:\"helvetica\";s:14:\"title1fontsize\";s:2:\"10\";s:15:\"title1fontcolor\";s:5:\"0:0:0\";s:15:\"title1fontalign\";s:1:\"C\";s:10:\"title2desc\";s:23:\"Report Generated %date%\";s:11:\"title2font \";s:9:\"helvetica\";s:14:\"title2fontsize\";s:2:\"10\";s:15:\"title2fontcolor\";s:5:\"0:0:0\";s:15:\"title2fontalign\";s:1:\"C\";s:10:\"filterfont\";s:9:\"helvetica\";s:14:\"filterfontsize\";s:1:\"8\";s:15:\"filterfontcolor\";s:5:\"0:0:0\";s:15:\"filterfontalign\";s:1:\"L\";s:8:\"datafont\";s:9:\"helvetica\";s:12:\"datafontsize\";s:2:\"10\";s:13:\"datafontcolor\";s:5:\"0:0:0\";s:13:\"datafontalign\";s:1:\"L\";s:10:\"totalsfont\";s:9:\"helvetica\";s:14:\"totalsfontsize\";s:2:\"10\";s:15:\"totalsfontcolor\";s:5:\"0:0:0\";s:15:\"totalsfontalign\";s:1:\"L\";s:14:\"filenameprefix\";s:5:\"cash_\";s:14:\"filenamesource\";s:18:\"[table1].post_date\";s:9:\"email_msg\";s:0:\"\";s:9:\"trunclong\";s:1:\"0\";s:11:\"datedefault\";s:1:\"c\";s:9:\"datefield\";s:18:\"[table1].post_date\";s:10:\"dateselect\";s:8:\"abcdfhjl\";}';
+FieldData10:entrytype='security', seqnum='0', fieldname='', displaydesc='', visible='1', columnbreak='1', params='u:0;e:0;d:0';
+
+/* End of Export File */

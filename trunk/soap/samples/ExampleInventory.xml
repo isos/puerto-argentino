@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <AccessRequest>
+	<AccessUserID>pb_user</AccessUserID>
+	<AccessPassword>pb_user_pw</AccessPassword>
+	<AccessFunction>InventoryItemEntry</AccessFunction>
+	<AccessAction>INSERT</AccessAction>
+	<InventoryItemEntry>
+	  <ItemDetails>
+		<ItemID>11aaTest</ItemID>
+		<ItemType>StockItem</ItemType>
+		<ShortDescription>Battery packs for Drill</ShortDescription>
+		<PurchaseDescription>Sears 1234-4567</PurchaseDescription>
+		<MinimumStock>5</MinimumStock>
+		<ListPrice>17.80</ListPrice>
+		<ItemCost>8.50</ItemCost>
+		<ItemWeight>0.82</ItemWeight>
+		<ReorderQuantity>2</ReorderQuantity>
+		<PreferredVendor>Sears</PreferredVendor>
+		<PurchaseLeadTime>14</PurchaseLeadTime>
+	  </ItemDetails>
+	</InventoryItemEntry>
+  </AccessRequest>

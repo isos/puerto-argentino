@@ -1,0 +1,7 @@
+/* /themes/default/css/stylesheet.css */
+
+a 							{ color:#0000ff; text-decoration:none; }
+a, body, html, table		{ font:normal normal 11px Verdana,sans-serif; }
+th                          { background-color:#cccccc; text-align:center; }
+
+a:hover						{ color:#0000ff; text-decoration:underline; }

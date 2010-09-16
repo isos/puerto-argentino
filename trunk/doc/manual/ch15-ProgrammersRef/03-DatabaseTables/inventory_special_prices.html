@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.125">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table inventory_special_prices">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table inventory_special_prices">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>Table inventory_special_prices</title>
+
+</head>
+<body>
+<h1 align="center">Table inventory_special_prices</h1>
+Table inventory_special_prices is used to override the price sheets on a sku by sku, proce sheet by price sheet level. Price sheets are defined to help create multi-level pricing accross the entire inventory dtabase. If certain sku-s require a different fomula, special price are used. For example, you may have defined two price sheets, retail and dealer, that set your default price levels. However, one of your sku's requires a different pricinf formula. Special prices allows an individual sku to have it's own formula for the sku and for ach price sheet. <br />
+<br />
+Table Type: InnoDB<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>id</td>
+<td>int (11)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Auto increment field to hold unique ID </td>
+</tr>
+<tr>
+  <td>inventory_id</td>
+  <td>int(11)</td>
+  <td>0</td>
+  <td>This is the record number in the inventory table that this special price applies to. Basically the sku. </td>
+</tr>
+<tr>
+  <td>price_sheet_id</td>
+  <td>int(11)</td>
+  <td>0</td>
+  <td>This is the record id of the price sheet that this special price applies to. </td>
+</tr>
+<tr>
+  <td>price_levels</td>
+  <td>varchar(255)</td>
+  <td>NULL</td>
+  <td>This is the encoded price level/value applied to the sku.</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+</body></html>

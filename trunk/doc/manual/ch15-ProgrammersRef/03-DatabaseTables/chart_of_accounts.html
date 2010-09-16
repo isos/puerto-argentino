@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+
+<meta name="doc_pos" content="15.03.30"><!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+
+<meta name="doc_index_1" content="Table chart_of_accounts"><!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+
+<meta name="doc_title" content="Table chart_of_accounts"><!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css"><title>Table chart_of_accounts</title></head>
+<body>
+<h1 align="center">Table chart_of_accounts</h1>
+Table chart_of_accounts holds the general ledger cost accounts used for
+every transaction in PhreeBooks. The&nbsp;table is created and
+loaded during install and can be altered in the General Ledger
+-&gt; Chart of Accounts menu. <br />
+<br />
+NOTE: A general ledger account cannot be deleted if there is a journal
+entry posted against the account.<br />
+<br />
+Table Type: InnoDB<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>id</td>
+<td>char (15)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Identifies the chart of account number
+(or value).</td>
+</tr>
+<tr><td>description</td><td>varchar (64)</td><td>NOT NULL</td><td>Provides a texual description of the account. Set by the user and used for reports.</td></tr><tr><td>subaccount</td><td>enum (0, 1)</td><td>0</td><td>Flag to indicate if this account is a subaccount of another account</td></tr><tr><td>primary_acct_id</td><td>char(15)</td><td>NULL</td><td>If the subaccount is set, this field holds the account that is the master account.</td></tr><tr><td>account_type</td><td>int (4)</td><td>0</td><td>INDEX - Specifies the type of account. See chart of accoutn types for a description of allowed account types.</td></tr><tr><td>next_ref</td><td>char (15)</td><td>NOT NULL</td><td>This field is not used at this time.</td></tr><tr><td>account_inactive</td><td>enum (0, 1)</td><td>0</td><td>Specifies if the account is active or inactive.</td></tr></tbody>
+</table>
+<br /><br />
+</body></html>

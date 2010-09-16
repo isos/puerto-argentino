@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.50">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table configuration_group">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table configuration_group">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css"><title>Table configuration_group</title>
+
+</head>
+<body>
+<h1 align="center">Table configuration_group</h1>
+Table configuration_group holds the groupings for the configuration
+values. These groupings appear in the Company -&gt; {group} menus. The
+values 0 and 99 are reserved. The value 6 is reserved for the user
+loaded modules such as shipping, payment, etc.<br />
+<br />
+Table Type: MyISAM<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>configuration_group_id</td>
+<td>int (11)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Auto-increment number for record id.</td>
+</tr>
+<tr><td>configuration_group_title</td><td>varchar (64)</td><td>NOT NULL</td><td>Textual title of the group used in generating the pull down menu.</td></tr><tr><td>configuration_group_description</td><td>varchar (255)</td><td>NOT NULL</td><td>Textual description of the group.</td></tr><tr><td>sort_order</td><td>int (5)</td><td>NULL</td><td>Sort order of the group</td></tr><tr><td>visible</td><td>int (1)</td><td>1</td><td>INDEX - Specifies whether the group is visible in the Company -&gt; {module} menu</td></tr></tbody>
+</table>
+<br />
+<br />
+</body></html>

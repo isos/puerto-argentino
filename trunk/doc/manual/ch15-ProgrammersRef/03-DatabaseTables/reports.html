@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.155">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table reports">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table reports">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>Table reports</title>
+
+</head>
+<body>
+<h1 align="center">Table reports</h1>
+Table reports holds the  table, page and display details for the reports/forms displayed in PhreeBooks.  A single report will contain one field in table reports and several in report_fields. <br />
+<br />
+Table Type: InnoDB<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td height="45">id</td>
+<td>int (11)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Auto increment field to hold unique ID </td>
+</tr>
+<tr>
+  <td>description</td>
+  <td>varchar(30)</td>
+  <td>&nbsp;</td>
+  <td>This is a brief description of the report. It is used as the report title for reports and is the default filename if the report is exported or imported. </td>
+</tr>
+<tr>
+  <td>narrative</td>
+  <td>varchar(255)</td>
+  <td>&nbsp;</td>
+  <td>This is a textual description used to provide details of the report or form. Information such as language, page setup, paper size, report purpose may be part of this field. </td>
+</tr>
+<tr>
+  <td>reporttype</td>
+  <td>char(3)</td>
+  <td>&nbsp;</td>
+  <td>Two possible types are frm (form) and rpt (report). </td>
+</tr>
+<tr>
+  <td>groupname</td>
+  <td>varchar(9)</td>
+  <td>&nbsp;</td>
+  <td>Indicates the group the report or form is a part of. Group names are defined in the reportwriter language file. Reports contain a single code to indicate the type whereas forms contain a two string code to indicate the type and usage. For reports and forms, the first value determines which tab the report appears in and for forms, the second code determines which folder in the tab the form appears in.</td>
+</tr>
+<tr>
+  <td>standard_report</td>
+  <td>0, 1 </td>
+  <td>&nbsp;</td>
+  <td>Indicates if the report is a standard report or has been customized by a user. Standard reports can only be customized through the report builder tool whereas custom reports can be saved by users after special cusotmization to meet his or her needs through the report display script.</td>
+</tr>
+<tr>
+  <td height="104">special_report</td>
+  <td>varchar(32)</td>
+  <td>&nbsp;</td>
+  <td>REPORTS ONLY. When a report can not be generated with the standard reportwriter structure, a special report may be used to generated the fields displayed in the reports. A special class must be declared here (field contains the class name) to be included and executed to help reportwriter pull the correct information. The Balance Sheet and Income Statement report are examples of reports that require the special_report field. </td>
+</tr>
+<tr>
+  <td>table1</td>
+  <td>varchar(25)</td>
+  <td>&nbsp;</td>
+  <td>The first database table used to pull information. REQUIRED</td>
+</tr>
+<tr>
+  <td>table2</td>
+  <td>varchar(25)</td>
+  <td>&nbsp;</td>
+  <td>The second database table used to pull infomraiton. OPTIONAL but if present, must be accompanied with a criteria linking the tow tables.</td>
+</tr>
+<tr>
+  <td>table2criteria</td>
+  <td>varchar(75)</td>
+  <td>&nbsp;</td>
+  <td>Criteria used to link table1 to table2. OPTIONAL</td>
+</tr>
+<tr>
+  <td>table3</td>
+  <td>varchar(25)</td>
+  <td>&nbsp;</td>
+  <td>The third database table. OPTIONAL</td>
+</tr>
+<tr>
+  <td>table3criteria</td>
+  <td>varchar(75)</td>
+  <td>&nbsp;</td>
+  <td>Link to either the first or   second  database table. OPTIONAL</td>
+</tr>
+<tr>
+  <td>table4</td>
+  <td>varchar(25)</td>
+  <td>&nbsp;</td>
+  <td>The fourth database table. OPTIONAL</td>
+</tr>
+<tr>
+  <td>table4criteria</td>
+  <td>varchar(75)</td>
+  <td>&nbsp;</td>
+  <td>Link to either the first, second or  third  database table. OPTIONAL</td>
+</tr>
+<tr>
+  <td>table5</td>
+  <td>varchar(25)</td>
+  <td>&nbsp;</td>
+  <td>The fifth database table. OPTIONAL</td>
+</tr>
+<tr>
+  <td>table5criteria</td>
+  <td>varchar(75)</td>
+  <td>&nbsp;</td>
+  <td>Link to either the first, second, third or fourth database table. OPTIONAL</td>
+</tr>
+<tr>
+  <td>table6</td>
+  <td>varchar(25)</td>
+  <td>&nbsp;</td>
+  <td>The sixth database table. OPTIONAL</td>
+</tr>
+<tr>
+  <td>table6criteria</td>
+  <td>varchar(75)</td>
+  <td>&nbsp;</td>
+  <td>Link to either the first, second, third, fourth or  fifth database table. OPTIONAL</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+</body></html>

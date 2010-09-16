@@ -1,0 +1,61 @@
+/* Report Builder Export Tool */
+version:1.0
+/* Report Name: Antigüedad de CxC */
+/* Export File Generated: : 2010-02-21 06:02:41 */
+
+
+/* Language Fields. */
+/* Only modify the language portion between the single quotes after the colon. */
+
+/* Report Name */
+ReportName:'Antigüedad de CxC'
+ReportNarr:'Antiguedad de Cuentas por Cobrar. Formato: Carta, Horizontal'
+EmailMsg:''
+
+/* Report Field Description Information */
+FieldDesc0:'Nombre'
+FieldDesc1:'Cerrada'
+FieldDesc2:'Diario'
+FieldDesc3:'Cliente'
+FieldDesc4:'Teléfono'
+FieldDesc5:'Contacto'
+FieldDesc6:'Cliente'
+FieldDesc7:'Fecha'
+FieldDesc8:'No. OC'
+FieldDesc9:'No. Factura'
+FieldDesc10:'Al día'
+FieldDesc11:'31-60'
+FieldDesc12:'61-90'
+FieldDesc13:'Sobre 90'
+FieldDesc16:'Post Fechado'
+FieldDesc17:'Nombre'
+
+/* End of language fields. */
+
+/* DO NOT EDIT BELOW THIS LINE! */
+
+
+/* SQL report data. */
+ReportData:description='Antigüedad de CxC', narrative='', reporttype='rpt', groupname='ar', standard_report='1', special_report='1:aged_receivables', table1='journal_main', table2='contacts', table2criteria='[table1].bill_acct_id = [table2].id', table3='', table3criteria='', table4='', table4criteria='', table5='', table5criteria='', table6='', table6criteria='';
+
+/* SQL field data. */
+FieldData0:entrytype='critlist', seqnum='1', fieldname='[table1].bill_primary_name', displaydesc='Nombre', visible='1', columnbreak='0', params='a:4:{s:5:\"value\";s:1:\"0\";s:7:\"default\";s:0:\"\";s:7:\"min_val\";s:0:\"\";s:7:\"max_val\";s:0:\"\";}';
+FieldData1:entrytype='critlist', seqnum='2', fieldname='[table1].closed', displaydesc='Cerrada', visible='0', columnbreak='0', params='a:4:{s:5:\"value\";s:1:\"6\";s:7:\"default\";s:0:\"\";s:7:\"min_val\";s:1:\"0\";s:7:\"max_val\";s:0:\"\";}';
+FieldData2:entrytype='critlist', seqnum='3', fieldname='[table1].journal_id', displaydesc='Diario', visible='0', columnbreak='0', params='a:4:{s:5:\"value\";s:1:\"6\";s:7:\"default\";s:0:\"\";s:7:\"min_val\";s:2:\"12\";s:7:\"max_val\";s:0:\"\";}';
+FieldData3:entrytype='fieldlist', seqnum='1', fieldname='bill_primary_name', displaydesc='Cliente', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"60\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData4:entrytype='fieldlist', seqnum='2', fieldname='bill_telephone1', displaydesc='Teléfono', visible='1', columnbreak='0', params='a:4:{s:11:\"columnwidth\";s:2:\"20\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData5:entrytype='fieldlist', seqnum='3', fieldname='bill_contact', displaydesc='Contacto', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"50\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData6:entrytype='fieldlist', seqnum='4', fieldname='short_name', displaydesc='Cliente', visible='1', columnbreak='1', params='a:3:{s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData7:entrytype='fieldlist', seqnum='5', fieldname='post_date', displaydesc='Fecha', visible='1', columnbreak='1', params='a:3:{s:10:\"processing\";s:4:\"date\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData8:entrytype='fieldlist', seqnum='6', fieldname='purch_order_id', displaydesc='No. OC', visible='1', columnbreak='0', params='a:3:{s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData9:entrytype='fieldlist', seqnum='7', fieldname='purchase_invoice_id', displaydesc='No. Factura', visible='1', columnbreak='1', params='a:3:{s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData10:entrytype='fieldlist', seqnum='8', fieldname='balance_0', displaydesc='Al día', visible='0', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"25\";s:10:\"processing\";s:9:\"null_dcur\";s:5:\"index\";s:1:\"1\";s:5:\"align\";s:1:\"R\";}';
+FieldData11:entrytype='fieldlist', seqnum='9', fieldname='balance_30', displaydesc='31-60', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"25\";s:10:\"processing\";s:9:\"null_dcur\";s:5:\"index\";s:1:\"1\";s:5:\"align\";s:1:\"R\";}';
+FieldData12:entrytype='fieldlist', seqnum='10', fieldname='balance_60', displaydesc='61-90', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"25\";s:10:\"processing\";s:9:\"null_dcur\";s:5:\"index\";s:1:\"1\";s:5:\"align\";s:1:\"R\";}';
+FieldData13:entrytype='fieldlist', seqnum='11', fieldname='balance_90', displaydesc='Sobre 90', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"25\";s:10:\"processing\";s:9:\"null_dcur\";s:5:\"index\";s:1:\"1\";s:5:\"align\";s:1:\"R\";}';
+FieldData14:entrytype='pagelist', seqnum='0', fieldname='', displaydesc='', visible='1', columnbreak='1', params='a:46:{s:9:\"narrative\";s:60:\"Antiguedad de Cuentas por Cobrar. Formato: Carta, Horizontal\";s:9:\"papersize\";s:14:\"Letter:216:282\";s:16:\"paperorientation\";s:1:\"L\";s:9:\"margintop\";s:1:\"8\";s:12:\"marginbottom\";s:1:\"8\";s:10:\"marginleft\";s:1:\"8\";s:11:\"marginright\";s:1:\"8\";s:11:\"coynameshow\";s:1:\"1\";s:10:\"title1show\";s:1:\"1\";s:10:\"title2show\";s:1:\"1\";s:11:\"coynamefont\";s:9:\"freeserif\";s:15:\"coynamefontsize\";s:2:\"12\";s:16:\"coynamefontcolor\";s:5:\"0:0:0\";s:12:\"coynamealign\";s:1:\"C\";s:10:\"title1desc\";s:12:\"%reportname%\";s:10:\"title1font\";s:9:\"freeserif\";s:14:\"title1fontsize\";s:2:\"10\";s:15:\"title1fontcolor\";s:5:\"0:0:0\";s:15:\"title1fontalign\";s:1:\"C\";s:10:\"title2desc\";s:23:\"Reporte Generado %date%\";s:11:\"title2font \";s:9:\"freeserif\";s:14:\"title2fontsize\";s:2:\"10\";s:15:\"title2fontcolor\";s:5:\"0:0:0\";s:15:\"title2fontalign\";s:1:\"C\";s:10:\"filterfont\";s:9:\"freeserif\";s:14:\"filterfontsize\";s:1:\"8\";s:15:\"filterfontcolor\";s:5:\"0:0:0\";s:15:\"filterfontalign\";s:1:\"L\";s:8:\"datafont\";s:9:\"freeserif\";s:12:\"datafontsize\";s:2:\"10\";s:13:\"datafontcolor\";s:5:\"0:0:0\";s:13:\"datafontalign\";s:1:\"L\";s:10:\"totalsfont\";s:9:\"freeserif\";s:14:\"totalsfontsize\";s:2:\"10\";s:15:\"totalsfontcolor\";s:5:\"0:0:0\";s:15:\"totalsfontalign\";s:1:\"L\";s:14:\"filenameprefix\";s:0:\"\";s:14:\"filenamesource\";s:0:\"\";s:9:\"trunclong\";s:1:\"0\";s:11:\"datedefault\";s:1:\"a\";s:9:\"datefield\";s:18:\"[table1].post_date\";s:10:\"dateselect\";s:2:\"ab\";s:9:\"email_msg\";s:0:\"\";s:9:\"totalonly\";s:1:\"0\";s:14:\"setprintedflag\";N;s:14:\"formbreakfield\";N;}';
+FieldData15:entrytype='security', seqnum='0', fieldname='', displaydesc='', visible='1', columnbreak='1', params='u:0;e:0;d:0';
+FieldData16:entrytype='sortlist', seqnum='1', fieldname='[table1].post_date', displaydesc='Post Fechado', visible='0', columnbreak='0', params='a:1:{s:7:\"default\";s:1:\"1\";}';
+FieldData17:entrytype='sortlist', seqnum='2', fieldname='[table1].bill_primary_name', displaydesc='Nombre', visible='0', columnbreak='0', params='a:1:{s:7:\"default\";s:1:\"0\";}';
+
+/* End of Export File */

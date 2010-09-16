@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.150">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table reconciliation">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table reconciliation">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>Table reconciliation</title>
+
+</head>
+<body>
+<h1 align="center">Table reconciliation</h1>
+Table reconciliation hold the list of cleared receipts/payments with the bank or other institution. One or more cash accounts can be reconciled with the bank statement. The table will contain one record for each period/GL account combination. <br />
+<br />
+Table Type: InnoDB<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>id</td>
+<td>int (11)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Auto increment field to hold unique ID </td>
+</tr>
+<tr>
+  <td>period</td>
+  <td>int(11)</td>
+  <td>0</td>
+  <td>Accountig period </td>
+</tr>
+<tr>
+  <td>gl_account</td>
+  <td>varchar(16)</td>
+  <td>NULL</td>
+  <td>General Ledger account</td>
+</tr>
+<tr>
+  <td>statement_balance</td>
+  <td>float</td>
+  <td>0</td>
+  <td>Balance in the account after the period/gl_account has been reconciled. This amount will usually be zero after reconciliation but may not be zero if reconciliation is in process. This allows for partial reconciliations, saving the intermediate results.</td>
+</tr>
+<tr>
+  <td>cleared_items</td>
+  <td>text</td>
+  <td>''</td>
+  <td>Encoded list of items selected to be cleared in a given period/gl_account. </td>
+</tr>
+</tbody>
+</table>
+<p><br />
+<br />
+</p>
+</body></html>

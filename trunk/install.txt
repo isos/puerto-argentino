@@ -1,0 +1,38 @@
+PhreeBooks(tm) - Web based accounting and small business management 
+Welcome to PhreeBooks Accounting
+
+THE FOLLOWING IS A VERY SIMPLIFIED INSTALLATION DOCUMENT. 
+
+ALL OF OUR HELP DOCUMENTS ARE IN THE /doc FOLDER OF THIS DISTRIBUTION.
+
+
+You can find online documentation at: http://www.phreebooks.com/demo/includes/addons/PhreeHelp/index.php
+This link contains the latest help file. The installation section contains helpful information regarding pre-requisites and installation hints.
+
+
+PhreeBooks has a built-in automatic installation system. However to use this you must first unpack
+the code to a web server.
+
+The web server can either be on your local computer or on an internet host.
+
+To start off, you should have to extract the PhreeBooks(tm) ZIP file. How you do this depends on the operating system you use.
+
+Once extracted, you will have a directory containing the PhreeBooks(tm) scripts.
+
+The contents of this directory needs to be moved to your webserver, either by copying the directory or by using an FTP progam.
+
+You will then need to run the install script.
+
+To do this you need to open a browser and type in the URL.
+
+If you are running on a your own computer, this will be
+
+   http://localhost/{phreebooks-directory}/index.php
+
+or if on a live server:
+
+   http://{www.mydomain.com}/index.php
+
+You will be notified that the configure.php file does not exist and a link will be provided to start the installation script.
+
+Follow the prompts to install PhreeBooks(tm).

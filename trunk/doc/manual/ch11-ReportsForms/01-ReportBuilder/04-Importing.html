@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="11.01.04">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Reports.Importing">
+<meta name="doc_index_2" content="Forms.Importing">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Importing Reports & Forms">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+<title>ReportBuilder - Importing Reports and Forms</title>
+</head>
+
+<body>
+<h1 align="center">ReportBuilder<br />
+Importing Reports and Forms</h1>
+
+<h3>Table of Contents</h3>
+
+<p>
+<a href="#RB_RevHist">Revision History</a><br />
+<a href="#RB_Intro">Introduction</a><br />
+
+<a href="#RB_ImpExp">Importing and Exporting</a></p>
+<h2><a name="RB_RevHist">Revision History</a></h2>
+Revision History<br />
+  Rev 1.0 - 2006-11-03 - Original release<br />
+  <h2><a name="RB_Intro">Introduction</a></h2>
+<p> The report builder tool provides administrators with the ability to create, 
+    copy, edit, delete, import and export database driven reports and forms. Pre-defined 
+    reports are stored in the language directory labeled specified for the given 
+    language. After installing the plug-in, there may be several standard reports and forms    
+	installed. More reports or forms can be added by importing them from either the 
+    host servers reports directory or uploading them directly from the browser. 
+    Standard reports can be viewed and customized through the Report Viewer. Forms may only be edited through Report builder. The Report Viewer manual covers the output procedures 
+    necessary for exporting or viewing reports created with the report builder.</p>
+<p><strong>NOTE</strong>: DETAILED UNDERSTANDING OF THE DATABASES AND FIELDS IS REQUIRED TO USE REPORT BUILDER! FAILURE TO DO SO WILL RESULT IN ERRORS OR NON-FUNCTIONAL REPORTS AND FORMS.</p>
+<h2><a name="RB_ImpExp">Importing and Exporting</a></h2>
+<p> An important feature of the Report Builder is it's ability to import and export 
+      report and form parameters. This feature allows one user to generate a report on their webERP 
+      system and export it to his local file system where it can then be e-mailed, 
+      transferred or imported into another webERP system. There is also a provision to 
+      alter the naming within the report to allow for language translations for the 
+      field descriptions.</p>
+<p>There are two types of importing types supported. First, packaged standard 
+      reports shipped with PhreeBooks are stored in the /language/en_us/ directory (or 
+      the language directory specified in the appropriate translation) where they can 
+      be selected for import. Entering a report name and selecting 'Import' will 
+      install the report into the group defined in the report file with the report 
+      file name specified. If the report filename is left blank, the default report 
+      name specified in the import file will be used. Second, a report file can be 
+      uploaded through the browser and imported into the group specified in the report 
+      file. If a report name is specified, the report will be saved under the 
+      specified name, but if left blank, the default report name contained in the 
+      uploaded file will be used.</p>
+<p><strong>NOTE</strong>: Standard reports will be imported into the Standard Reports listing and 
+      custom reports will be imported into the Custom Reports listing. The report type 
+      is specified in the uploaded report file.</p>
+<p>Exporting downloads the report file to the uses browser and can either be viewed 
+      or saved. The file format is type 'text' and must be saved as a text file. 
+      Report Builder uses the extension .rpt.txt for files contained in the 
+      distribution package.      </p>
+<h3>Editing an exported report file</h3>
+<p>Report and form files can be edited to support multi-language users. The text file my 
+      be edited with any text editor. Only modify the descriptions between the single 
+      quotes and leave the remaining portions of the file untouched. A translation 
+section example is shown below:</p>
+<p> /* Language Fields. */<br /> /* Only modify the language portion between the single quotes after the colon. 
+*/<br />
+<br /> 
+/* Report Name and Title Information: */<br /> ReportName:'Invoice' <br />Title1Desc:'%reportname%'<br />Title2Desc:'report generated %date%'<br />
+<br />/* Report Field Description Information: */<br /> FieldDesc0:'Branch ID' <br />FieldDesc1:'Order Number' <br />FieldDesc2:'Quotation' <br />
+FieldDesc4:'Order Number'
+        <br />
+  FieldDesc5:'Order Date'
+  <br />
+  FieldDesc6:'Branch ID'
+  <br />
+  FieldDesc7:'Customer Reference'
+  <br />
+  FieldDesc8:'Deliver To Name'
+  <br />
+  FieldDesc9:'Quantity'<br />
+  FieldDesc10:'Part Number'
+  <br />
+  FieldDesc11:'Unit Price'
+  <br />
+  FieldDesc12:'Customer Name'
+  <br />
+  FieldDesc13:'Address 1'
+  <br />
+  FieldDesc14:'Address 2'
+  <br />
+  FieldDesc15:'City'<br />
+  FieldDesc16:'State'<br />
+  FieldDesc17:'Postal Code'<br />
+  FieldDesc18:'Country'<br />
+  FieldDesc19:'Delivery Date
+  <br />
+  FieldDesc20:'Customer Branch ID'
+  <br />
+  FieldDesc21:'Order Date'
+  <br />
+  FieldDesc22:'Order Number'<br />
+  FieldDesc23:'Customer Name'<br />
+  FieldDesc24:'Order Number'<br />
+/* End of language fields. */</p>
+<p> In this example, the report name is 'Invoice'. To change the report name to 
+        Invoice Register, simply change the word 'Invoice' with 'Invoice Register'. 
+        Language changes can also be made here for translation and the report saved in 
+        the languages directory appropriate for the language used.</p>
+
+</body>
+</html>

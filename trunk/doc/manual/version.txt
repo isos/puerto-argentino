@@ -1,0 +1,2 @@
+/* Version.php */
+version = 2.1;	// Version number of the current help manual.

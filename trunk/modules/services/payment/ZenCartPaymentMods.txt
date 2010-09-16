@@ -1,0 +1,70 @@
+changes to zencart payment modules
+
+1. Required Functions
+
+TBD class constructor
+
+check
+install
+remove
+keys
+
+2. Function changes
+  function javascript_validation - 
+    change payment_value to payment_method
+    change field names to the generic $module_field_#
+    use GetElementById to find field
+  
+  function selection
+    change field to no passed params (except size of cvv)
+	don't need tag field
+	cvv is required ??
+
+  function pre_confirmation_check
+    add verification of already processed card
+	change path to includes cc_validation
+    change field names to the generic $module_field_#
+	add $this->cc_cvv2
+	add return false at end of function to indicate success
+
+  function confirmation - REMOVE NOT NEEDED
+  function process_button - REMOVE NOT NEEDED
+  
+  function before_process
+    add verification of already processed card
+
+  function before_process
+    Most changes are in here
+
+  function 
+
+3. Misc
+a. remove 'extends base' on class declaration.
+b. variable renames:
+   module_cc_owner =>            module_field_0
+   paymentech_cc_number =>       module_field_1
+   module_cc_expires_month =>    module_field_2
+   paymentech_cc_expires_year => module_field_3
+   paymentech_cc_cvv =>          module_field_4
+   
+c. variable not needed:
+   $payment_error_return
+
+d. change functions:
+   zen_href_link => html_href_link
+   zen_redirect => gen_redirect
+   zen_draw_input_field => html_draw_input_field
+   zen_pull_down_menu => html_pull_down_menu
+
+e. change gen_redirect.. to return true (indicating an error)
+   messageStack should be add not add_session  since just returning
+   
+f. messageStack only passes two variables, essage and error level
+
+4. configuration
+
+a. PhreeBooks doesn't use zones
+b. PhreeBooks doesn't change the order status id
+c. delete $this->form_action_url
+d. generate $this->payment_fields
+e. 

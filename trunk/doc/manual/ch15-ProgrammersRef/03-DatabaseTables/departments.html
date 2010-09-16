@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.70">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table departments">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table departments">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css"><title>Table departments</title>
+
+</head>
+<body>
+<h1 align="center">Table departments</h1>
+Table departments holds a list of departments used to help organize the employee list. They can be grouped by fields derived in the departments_type table.<br />
+<br />
+Table Type: MyISAM<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>id</td>
+<td>char (15)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Holds unique department ID. </td>
+</tr>
+<tr>
+  <td>description</td>
+  <td>varchar(30)</td>
+  <td>NOT NULL</td>
+  <td>Textual description of the department. </td>
+</tr>
+<tr>
+  <td>subdepartment</td>
+  <td>enum (0,1) </td>
+  <td>0</td>
+  <td>Flag indicating if this is a sub-department of another department. Nesting is unlimited. </td>
+</tr>
+<tr>
+  <td>primary_dept_id</td>
+  <td>char(15)</td>
+  <td>NULL</td>
+  <td>If sub-department flase set, this hold the id of the parent department </td>
+</tr>
+<tr>
+  <td>department_type</td>
+  <td>tinyint</td>
+  <td>0</td>
+  <td>Holds the department tye as defined in table department_types </td>
+</tr>
+<tr>
+  <td>department_inactive</td>
+  <td>enum (0,1) </td>
+  <td>0</td>
+  <td>Flag indicating if the department is inactive. </td>
+</tr>
+</tbody>
+</table>
+<br />
+<br />
+<br />
+</body></html>

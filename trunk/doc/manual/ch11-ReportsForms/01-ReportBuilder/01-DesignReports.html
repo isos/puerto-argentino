@@ -1,0 +1,478 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="11.01.01">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Reports.Designing">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Designing Reports">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+<title>ReportBuilder - Designing Reports</title>
+</head>
+
+<body>
+<h1 align="center">ReportBuilder - Designing Reports</h1>
+
+<h2>Table of Contents</h2>
+
+<p>
+<a href="#RB_RevHist">Revision History</a><br />
+<a href="#RB_Intro">Introduction</a><br />
+
+<a href="#RB_NewRpt">How Do I Create a New Report?</a></p>
+<h2><a name="RB_RevHist">Revision History</a></h2>
+Revision History<br />
+  Rev 1.0 - 2006-11-03 - Original release<br />
+  <h2><a name="RB_Intro">Introduction</a></h2>
+<p> The report builder tool provides administrators with the ability to create, 
+    copy, edit, delete, import and export database driven reports and forms. Pre-defined 
+    reports are stored in the language directory labeled specified for the given 
+    language. After installing the plug-in, there may be several standard reports and forms    
+	installed. More reports or forms can be added by importing them from either the 
+    host servers reports directory or uploading them directly from the browser. 
+    Standard reports can be viewed and customized through the Report Viewer. Forms may only be edited through Report builder. The Report Viewer manual covers the output procedures 
+    necessary for exporting or viewing reports created with the report builder.</p>
+<p><strong>NOTE</strong>: DETAILED UNDERSTANDING OF THE DATABASES AND FIELDS IS REQUIRED TO USE REPORT BUILDER! FAILURE TO DO SO WILL RESULT IN ERRORS OR NON-FUNCTIONAL REPORTS AND FORMS.</p>
+<h2><a name="RB_NewRpt">How Do I Create a New Report?</a></h2>
+<p> There are five steps to building a report. They are:</p>
+<ol>
+  <li> Entering the report name and category. </li>
+  <li>Setting up the page layout.</li>
+  <li> Specifying the database tables and link equations. </li>
+  <li>Entering and arranging a list of possible fields to display. </li>
+  <li>Entering and arranging date, grouping, sorting, and filter criteria.</li>
+</ol>
+<p> The best way to demonstrate how to build a report would be to show an example. 
+            We'll build a report called: Invoice Report. First we'll need to access the 
+            report builder. It is found under the Setup menu under the General 
+            category titled Report Builder Tool. Once there press the Add New button.</p>
+<h3>Step 1: Report name and group category</h3>
+<p>For our report, enter Invoice Report into the Enter a name text box. Also, we 
+              need to specify that it is a report by selecting the Report radio button. We now need to place this report under the proper category so select Receivables 
+              from the drop down menu for the group this report is a part of.      </p>
+<p align="center"><img src="images/RBRptName.jpg"></p>
+<p>Press Continue when all information has been entered.</p>
+<p><strong>IMPORTANT</strong>: At this time a record will be added to the reports table and will 
+                  appear in the list of available reports. Users can choose this report to 
+                  generate but the result will be a 'No data in this report' warning. The report 
+                  should be deleted if the report builder process is not completed for a given 
+                  report.          </p>
+<h3>Step 2. Setting up the page layout</h3>
+<p>The next screen allows us to alter some of the default settings for the layout 
+                    of the report. Most fields are self explanatory but there are a few notes to 
+                    remember.</p>
+<p><strong>Page layout</strong>: You should set the default paper size to what you really want it to 
+                    be. It cannot be changed when viewing standard reports. You may return here to make further changes by 
+                    editing the report after you finish building the report testing the output.</p>
+<p><strong>Column Width</strong>: If you have a pretty good idea of how many columns you want your 
+                    report to be and the width, you can enter them here. If you leave the defaults 
+                    for now and finish your report you may go back and change the column widths 
+            after you test you finished product at a later time.</p>
+<p> <strong>Titles</strong>: Data will appear as it is typed but there are system generated tags to 
+                    automate the report. This list is current as of this writing but may change as 
+            more tags are added.</p>
+<table align="center" border="2" cellspacing="1" cellpadding="1">
+  <tr>
+    <td><div align="center">Tag</div></td>
+    <td><div align="center">Description</div></td>
+  </tr>
+  <tr>
+    <td>%date%</td>
+    <td>Inserts the current date into the title in the place the tag appears within the title string.</td>
+  </tr>
+  <tr>
+    <td>%reportname%</td>
+    <td>Inserts the report name stored in the database.</td>
+  </tr>
+</table>
+<p><strong>NOTE</strong>: Margin and column widths are in millimeters, font sizes are in points.</p>
+<p align="center"><img src="images/RBPageSetup.jpg" width="721" height="456"></p>
+<p>After all information has been entered, press Continue to enter the database 
+                    information.</p>
+<h3>Step 3. Specifying the database tables and link equations</h3>
+<p>This form allows us to specify the tables and linked tables that are used to 
+                      build the query. These fields generate what will become the second part of the 
+                      query, "FROM  table1 INNER JOIN table2 ON table2linkequation INNER JOIN table3 
+                      ON etc".</p>
+<p><strong>NOTE</strong>: IMPORTANT: KNOWLEDGE OF THE DATABASE TABLES AND STRUCTURE IS REQUIRED.</p>
+<p>Enter the data in the boxes as shown below. Only one row of data may be entered at a time in sequence. After each table/Link Equation row has been entered, press the Update button to validate the table and commit the link equation. The form will reload with data just entered and will then allow the next Table/Link Equation to be entered. The fields are case sensitive.    </p>
+<table align="center" border="2" cellspacing="1" cellpadding="1">
+  <tr>
+    <td><div align="center">Text Box Name</div></td>
+    <td><div align="center">Data to Enter</div></td>
+  </tr>
+  <tr>
+    <td>Table Name - Primary</td>
+    <td>salesorders</td>
+  </tr>
+  <tr>
+    <td>Table Name - Second</td>
+    <td>salesorderdetails</td>
+  </tr>
+  <tr>
+    <td>Link Equation - Second</td>
+    <td>salesorders.orderno = salesorderdetails.orderno</td>
+  </tr>
+  <tr>
+    <td>Table Name - Third</td>
+    <td>debtorsmaster</td>
+  </tr>
+  <tr>
+    <td>Link Equation - Third</td>
+    <td>salesorders.debtorno = debtorsmaster.debtorno</td>
+  </tr>
+  <tr>
+    <td>Table Name - Fourth</td>
+    <td>custbranch</td>
+  </tr>
+  <tr>
+    <td>Link Equation - Fourth</td>
+    <td>salesorders.branchcode = custbranch.branchcode</td>
+  </tr>
+</table>
+<p><strong>NOTE</strong>: After the data has been entered, the tool will validate the data by 
+attempting to retrieve a single row from the query. If a single row cannot be 
+  accessed from the database, you cannot progress past this point.</p>
+<p> <strong>NOTE</strong>: If you get stuck here, remember that the report exists in the standard 
+  reports list and should be deleted to prevent users from running the report.  </p>
+<p align="center"><img src="images/RBDbSetup.jpg" width="647" height="336"></p>
+<p>After all information has been entered, press Continue to enter the possible 
+  fields to query.</p>
+<h3>Step 4. Specifying the possible fields to retrieve</h3>
+<p>This form will add the allowed fields to a query build list. These fields 
+    generate will become the first part of the query, "SELECT field list here". At 
+                            least one field needs to be entered to make a valid report. Up to the total 
+                            number of fields in the linked databases provided in step 3 are allowed. In 
+                            practice, however, a smaller list usually works the best. Each field has it's 
+                            own attributes. They can be re-sequenced, force a column break, set to show and 
+                            marked to track a running total. Only the fields added here will appear in the 
+                            report viewer list for selection.</p>
+<p><strong>PRACTICAL NOTE</strong>: It's a good idea to pre-order the fields in a logical order in 
+                            the way you want to the data to appear. Also, selecting the fields to show 
+                            combined with the column breaks should result in a default report of eight 
+                            columns or less so they can be displayed directly from the standard report 
+                            without modifications.</p>
+<p><strong>Order</strong>: The order determines the sequence of the generation of the field list. If an order number is entered that already exists, it will be inserted into the list in the order specified and the remaining fields will be bumped down one position. If the order number is left out, it will append the new field to the end of the list. Order numbers begin with 1.</p>
+<p> <strong>Fieldname</strong>: This text field needs to match the exact table and fieldname in the 
+                            database. The fieldname is entered in the form 'table.fieldname' to provide 
+                            absolute identification of the field to be retrieved. A test to retrieve a 
+                            single line form the database with the fieldname and display description will be 
+                            performed to validate the input. If the fieldname is incorrect or the display 
+                            description is blank, an error will result.</p>
+<p><strong>Name to Display</strong>: The description can be any English (or other language) 
+                            description. This is the ID assigned to the fieldname. It will appear on the 
+                            report heading and links directly to the table.fieldname entry. Special 
+                            characters are allowed but not recommended.</p>
+<p><strong>Break</strong>: This field specifies whether there should be a column break after this 
+                            entry is displayed. The field can only be altered in the Report Viewer for 
+                            custom reports so it's best to get it right in the standard report to generate 
+                            the desired output. It is a good idea to group certain fields in the same 
+                            column. For example, addresses typically read better if they appear in a block 
+                            versus spread out over several columns. Also, the report is limited to eight 
+                            columns to display. Most standard reports will list more than eight fields and 
+                            using column breaks will help organize the output.</p>
+<p><strong>Show</strong>: Identifies the fields to display. Only fields that are checked to show 
+                            will appear in the report. It is a good practice to show the fields that you 
+                            want to appear in the standard report but not necessarily all fields. The user 
+                            can decide what pieces of data they want and alter this field only in custom 
+                            reports. If no fields are identified to show, the report viewer will generate a 
+                            warning message 'No data to display'.</p>
+<p><strong>Total</strong>: Specifies if a running total should be kept. Can be set for any numeric 
+                            field. If grouping is set, the report viewer will also track subtotals by the 
+                            group selected as well as the total for all field retrieved in the report.</p>
+<p>Let's add some fields to our report. We'll use an abbreviated list to show the 
+                            general idea. If more fields are needed or need to be edited, the report may be 
+                            edited and fields added or deleted as necessary. Enter the fields as shown in 
+                            the table below.      </p>
+<table align="center"  border="2" cellspacing="1" cellpadding="1">
+  <tr>
+    <td><div align="center">Sequence</div></td>
+    <td><div align="center">Fieldname</div></td>
+    <td><div align="center">Name to Display</div></td>
+    <td><div align="center">Break</div></td>
+    <td><div align="center">Show</div></td>
+    <td><div align="center">Total</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">1</div></td>
+    <td>salesorders.orderno</td>
+    <td>Order Number</td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">Yes</div></td>
+    <td><div align="center">No</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">2</div></td>
+    <td>salesorders.orddate</td>
+    <td>Order Date</td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">Yes</div></td>
+    <td><div align="center">No</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">3</div></td>
+    <td>salesorders.branchcode</td>
+    <td>Branch ID</td>
+    <td><div align="center">Yes</div></td>
+    <td><div align="center">Yes</div></td>
+    <td><div align="center">No</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">4</div></td>
+    <td>salesorders.customerref</td>
+    <td>Customer Reference</td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">Yes</div></td>
+    <td><div align="center">No</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">5</div></td>
+    <td>salesorders.deliverto</td>
+    <td>Deliver To Name</td>
+    <td><div align="center">Yes</div></td>
+    <td><div align="center">Yes</div></td>
+    <td><div align="center">No</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">6</div></td>
+    <td>salesorderdetails.quantity</td>
+    <td>Quantity</td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">Yes</div></td>
+    <td><div align="center">Yes</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">7</div></td>
+    <td>salesorderdetails.stkcode</td>
+    <td>Part Number</td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">Yes</div></td>
+    <td><div align="center">No</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">8</div></td>
+    <td>salesorderdetails.unitprice</td>
+    <td>Unit Price</td>
+    <td><div align="center">Yes</div></td>
+    <td><div align="center">Yes</div></td>
+    <td><div align="center">Yes</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">9</div></td>
+    <td>debtorsmaster.name</td>
+    <td>Customer Name</td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">Yes</div></td>
+    <td><div align="center">No</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">10</div></td>
+    <td>debtorsmaster.address1</td>
+    <td>Customer Address 1</td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">No</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">11</div></td>
+    <td>debtorsmaster.address2</td>
+    <td>Customer Address 2</td>
+    <td><div align="center">Yes</div></td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">No</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">12</div></td>
+    <td>debtorsmaster.address3</td>
+    <td>City</td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">No</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">13</div></td>
+    <td>debtorsmaster.address4</td>
+    <td>State</td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">No</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">14</div></td>
+    <td>debtorsmaster.address5</td>
+    <td>Postal Code</td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">No</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">15</div></td>
+    <td>debtorsmaster.address6</td>
+    <td>Country</td>
+    <td><div align="center">Yes</div></td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">No</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">16</div></td>
+    <td>custbranch.deliverydate</td>
+    <td>Delivery Date</td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">Yes</div></td>
+    <td><div align="center">No</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">17</div></td>
+    <td>custbranch.custbranchcode</td>
+    <td>Branch ID</td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">No</div></td>
+    <td><div align="center">No</div></td>
+  </tr>
+</table>
+<p>  If you make an error, the buttons on the right of each row entered allow you to 
+edit, re-sequence, or delete a row. Your form should like something like this:</p>
+<p align="center"><img src="images/RBFldSetup.jpg" width="762" height="405"></p>
+<p>After all information has been entered, press Continue to enter the filter 
+  criteria.  </p>
+<h3>Step 5. Entering and arranging criteria</h3>
+<p>This form builds the options for date selection, grouping, sorting, and 
+    filtering for the standard report. These fields generate what will become the where of 
+    the query, "WHERE criteria1 AND criteria 2 AND etc ORDER BY grouping, sorting". 
+                                Here's how each field works:</p>
+<p><strong>Date</strong>: If your report has a date field that is displaying, this is where you will 
+                                specify the type of data choices available. Many are just quick selections to 
+                                standard periods of time. The two most generic, ALL and RANGE allow the user to 
+                                quickly view every entry in the database or specify the particular date range 
+                                they are interested in. For all date selections (except ALL), the table name and 
+                                fieldname 'table.fieldname' must be entered into the Date Fieldname text box or 
+                                an sql error will result. The fieldname will be tested with the selected tables 
+                                to validate the input. A default date can be chosen hare as well. For example, If 
+                                a standard report named Today's Sales is being generated, you may still want to 
+                                allow the user to select a date range but you want the date to first come up 
+                                with Today as the default. In this case, you would select as many date choices 
+                                as you wish but upon entry to the report, Today will be the default.</p>
+<p><strong>NOTE</strong>: If your report doesn't have any date fields, or doesn't depend on date 
+                                information, either de-select all the check boxes in which case the date options 
+                                will not be displayed in the report viewer or just check the ALL box to show the 
+                                date option with only a single choice available.</p>
+<p><strong>Truncate Long Descriptions</strong>: This is handy for summary reports or when a field is 
+                                long and you want to avoid column wraps of the text. Checking this box truncates 
+                                any field that will exceed the column width to keep it to one line. This feature 
+                                also truncates the column headings.</p>
+<p><strong>Grouping Fields</strong>:<br /> 
+  <strong>Sorting Fields</strong>: Grouping Fields and Sorting Fields are similar. The main 
+                                difference being the grouping is specified earlier in the ORDER BY portion of 
+                                the sql string and subtotaling is calculated and displayed on the report. If no 
+                                groupings are specified, the option will not show in the Report Viewer criteria 
+selection form.</p>
+<p><strong>Default</strong>: Checking the default box will pre-select a particular group and/or sort 
+                                field. These choices may be altered in both the standard reports and the custom 
+                                reports but saves time if your target report is designed to have a specific 
+            grouping or sorting.</p>
+<p> <strong>Filter Criteria</strong>: The filter criteria allows for user options to further refine 
+                                their search. There are no limit to the number of options but usually 3-4 work 
+                                the best. The type of criteria must make sense relative to the field. If the 
+                                field is a text field, the all:range criteria work best. For yes/no fields, the 
+                                all:yes:no, printed:unprinted, etc work the best.</p>
+<p><strong>NOTE</strong>: The Grouping Display Fieldname must match exactly the Fieldname in the 
+                                Field List for the Group Subtotal to function properly. The report fields will 
+                                still be grouped properly but the subtotals and group breaks will not be 
+                                displayed.</p>
+<p>Let's fill in our report with the following data:</p>
+<p>1. Check all the date boxes except the 'to-date' boxes. This will give the user 
+more than enough choices. <br />2. Enter salesorders.orddate in the Date Fieldname text box. <br />3. Check No in Truncate Long Descriptions. We can change it later if necessary.<br /> 4. Enter the Grouping as follows:      </p>
+<table align="center"  border="2" cellspacing="1" cellpadding="1">
+  <tr>
+    <td><div align="center">Sequence</div></td>
+    <td><div align="center">Fieldname</div></td>
+    <td><div align="center">Display Description</div></td>
+    <td><div align="center">Default </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">1</div></td>
+    <td>salesorders.orddate</td>
+    <td>Order Date</td>
+    <td><div align="center">No</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">2</div></td>
+    <td>salesorders.orderno</td>
+    <td>Order Number</td>
+    <td><div align="center">No</div></td>
+  </tr>
+</table>
+<p>5. Enter the Sorting as follows:      </p>
+<table align="center"  border="2" cellspacing="1" cellpadding="1">
+  <tr>
+    <td><div align="center">Sequence</div></td>
+    <td><div align="center">Fieldname</div></td>
+    <td><div align="center">Display Description</div></td>
+    <td><div align="center">Default</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">1</div></td>
+    <td>debtorsmaster.name</td>
+    <td>Customer Name</td>
+    <td><div align="center">Yes</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">2</div></td>
+    <td>salesorders.orderno</td>
+    <td>Order Number</td>
+    <td><div align="center">No</div></td>
+  </tr>
+</table>
+<p>6. Enter the Field Criteria as follows: </p>
+<table align="center"  border="2" cellspacing="1" cellpadding="1">
+  <tr>
+    <td><div align="center">Sequence</div></td>
+    <td><div align="center">Fieldname</div></td>
+    <td><div align="center">Display Description</div></td>
+    <td><div align="center">Type of Criteria</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">1</div></td>
+    <td>salesorders.branchcode</td>
+    <td>Branch ID</td>
+    <td><div align="center">All:Range</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">2</div></td>
+    <td>salesorders.orderno</td>
+    <td>Order Number</td>
+    <td><div align="center">All:Range</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">3</div></td>
+    <td>salesorders.quotation</td>
+    <td>Quotation</td>
+    <td><div align="center">All:Yes:No </div></td>
+  </tr>
+</table>
+<p><strong>NOTE</strong>: Notice that we allow the user to filter based on salesorders.quotation 
+                                  even though the field is not listed in the Field List. The Report viewer will 
+                                  still use the field to filter the data even though you may not want the field to 
+                                  display. This is usually not a good idea in practice. The output report header 
+                                  will indicate that the filter criteria included quotation if Quotation: Yes or 
+                                  Quotation: No is selected to show that the report only contains filtered data.</p>
+<p>The form should look something like this:</p>
+<p align="center"><img src="images/RBCritSetup.jpg" width="812" height="813"></p>
+<h3>Step 6. Entering security settings </h3>
+<p>This form builds the allowed list for security. Here&rsquo;s how each field works:</p>
+<p><strong>Users</strong>: Check the box to allow all user to access this report, or, select from your current user list. Zero or more selections are possible.</p>
+<p><strong>Employees</strong>: Check the box to allow all employees to access this report, or, select from your current employee list. Zero or more selections are possible.</p>
+<p><strong>Departments</strong>: Check the box to allow all departments to access this report, or, select from your current department list. Zero or more selections are possible.</p>
+<p><strong>NOTE</strong>: If any user, employee, or department is excluded, the report will not appear in the Tools-&gt;Reports listings.</p>
+<p align="center"><img src="images/RBSecurity.jpg" width="592" height="445"></p>
+<p>That's it, click on Finish to exit the report builder and we're ready to see our result.</p>
+
+</body>
+</html>

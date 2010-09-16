@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.175">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table tax_rates">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table tax_rates">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>Table tax_rates</title>
+
+</head>
+<body>
+<h1 align="center">Table tax_rates</h1>
+Table tax_rates holds regulative tax rates for sales and purchase transactions. They are used in association with table tax_authorities to determine the tax rate applied to sales/purchases. This table determines the tax to apply to the transaction  and tax_authorities determines how the tax is distributed to the authorities. <br />
+<br />
+Table Type: InnoDB<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>tax_rate_id</td>
+<td>int (11)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Auto increment field to hold unique ID </td>
+</tr>
+<tr>
+  <td>description_short</td>
+  <td>varchar(15)</td>
+  <td>NULL</td>
+  <td>Short name used in reports and where description space is limited. </td>
+</tr>
+<tr>
+  <td>description_long</td>
+  <td>varchar(64)</td>
+  <td>NULL</td>
+  <td>Longer mre detailed description of the tax rate, may include what taxz authorities are involved. </td>
+</tr>
+<tr>
+  <td>rate_accounts</td>
+  <td>varchar(64)</td>
+  <td>NULL</td>
+  <td>encoded string containing the GL accounts and rate values. </td>
+</tr>
+<tr>
+  <td>freight_taxable</td>
+  <td>0, 1 </td>
+  <td>0</td>
+  <td>Determines whether freight is taxable or not </td>
+</tr>
+</tbody>
+</table>
+<p><br />
+<br />
+</p>
+</body></html>

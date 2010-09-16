@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.165">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table shipping_log">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table shipping_log">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>Table shipping_log</title>
+
+</head>
+<body>
+<h1 align="center">Table shipping_log</h1>
+Table shipping_log holds the information regarding item shipped. Most of this information is used by shipping manager to track, and monitor shipments. <br />
+<br />
+Table Type: InnoDB<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th nowrap>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>id</td>
+<td>int (11)</td>
+<td nowrap>NOT NULL</td>
+<td>PRIMARY KEY - Auto increment field to hold unique ID </td>
+</tr>
+<tr>
+  <td>shipment_id</td>
+  <td>int(11)</td>
+  <td nowrap>0</td>
+  <td>Holds the id assigned to a given shipment. </td>
+</tr>
+<tr>
+  <td>ref_id</td>
+  <td>int(11)</td>
+  <td nowrap>0</td>
+  <td>Holds the reference for this shipment. Links to purchase_invoice_id field in table journal_main. </td>
+</tr>
+<tr>
+  <td>reconciled</td>
+  <td>0, 1 </td>
+  <td nowrap>0</td>
+  <td>Indicates whether the shipment has been reconciled with the freight bill from the shipping company.</td>
+</tr>
+<tr>
+  <td>carrier</td>
+  <td>varchar(16)</td>
+  <td nowrap>NULL</td>
+  <td>This is the carrier code as setup in the services/shipping/modules/ directory. </td>
+</tr>
+<tr>
+  <td>method</td>
+  <td>varchar(8)</td>
+  <td nowrap>NULL</td>
+  <td>This is the coded method. All modules use the same coding scheme to indicate the method the item was shipped. </td>
+</tr>
+<tr>
+  <td>ship_date</td>
+  <td>date</td>
+  <td nowrap>0000-00-00</td>
+  <td>The date the item was shipped. </td>
+</tr>
+<tr>
+  <td>deliver_date</td>
+  <td>date</td>
+  <td nowrap>0000-00-00</td>
+  <td>The date the item is expected to arrive. </td>
+</tr>
+<tr>
+  <td>actual_date</td>
+  <td>date</td>
+  <td nowrap>0000-00-00</td>
+  <td>The date the item actually arrived. </td>
+</tr>
+<tr>
+  <td>tracking_id</td>
+  <td>varchar(32)</td>
+  <td nowrap>NULL</td>
+  <td>The carreir tracking/bill of lading number. </td>
+</tr>
+<tr>
+  <td>cost</td>
+  <td>float</td>
+  <td nowrap>0</td>
+  <td>The actual cost of the shipment. </td>
+</tr>
+<tr>
+  <td>notes</td>
+  <td>varchar(255)</td>
+  <td nowrap>NULL</td>
+  <td>Any notes associated with the shipment. </td>
+</tr>
+</tbody>
+</table>
+<p><br />
+<br />
+</p>
+</body></html>

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.60">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table currencies">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table currencies">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css"><title>Table currencies</title>
+
+</head>
+<body>
+<h1 align="center">Table currencies</h1>
+Table currencies hold the display format for numbers in PhreeBooks. Currency exchange rate values are also saved in this table relative to the default currency. <br />
+<br />
+Table Type: MyISAM<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>currencies_id</td>
+<td>int (11)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Auto-increment number for record id.</td>
+</tr>
+<tr>
+  <td>title</td>
+  <td>varchar</td>
+  <td>&nbsp;</td>
+  <td>Textual description of the currency </td>
+</tr>
+<tr>
+  <td>code</td>
+  <td>char</td>
+  <td>&nbsp;</td>
+  <td>ISO currency code </td>
+</tr>
+<tr>
+  <td>symbol_left</td>
+  <td>varchar</td>
+  <td>&nbsp;</td>
+  <td>A single character that is appended to a value left of the number</td>
+</tr>
+<tr>
+  <td>symbol_right</td>
+  <td>varchar</td>
+  <td>&nbsp;</td>
+  <td>A single character that is appended to a value right of the number</td>
+</tr>
+<tr>
+  <td>decimal_point</td>
+  <td>char</td>
+  <td>&nbsp;</td>
+  <td>Character to use to separate whole numbers from the fractional part </td>
+</tr>
+<tr>
+  <td>thousands_point</td>
+  <td>char</td>
+  <td>&nbsp;</td>
+  <td>Character to use to separate three digit groups </td>
+</tr>
+<tr>
+  <td>decimal_places</td>
+  <td>char</td>
+  <td>&nbsp;</td>
+  <td>Number of number characters to round following the decimal point character </td>
+</tr>
+<tr>
+  <td>value</td>
+  <td>float</td>
+  <td>&nbsp;</td>
+  <td>Stores the conversion value from the default currency. This value needs to be manually updated through the Setup -&gt; Currencies screen</td>
+</tr>
+<tr>
+  <td>last_updated</td>
+  <td>datetime</td>
+  <td>&nbsp;</td>
+  <td>Time stamp of the last time the record was updated</td>
+</tr>
+</tbody>
+</table>
+<br />
+<br />
+<br />
+</body></html>

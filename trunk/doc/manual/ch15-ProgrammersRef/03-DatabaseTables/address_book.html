@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.20">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table address_book">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table address_book">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css"><title>Table address_book</title>
+
+</head>
+<body>
+<h1 align="center">Table address_book</h1>
+Table&nbsp;<br />
+<br />
+Table Type: InnoDB<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>id</td>
+<td>auto_increment</td>
+<td>N/A</td>
+<td>PRIMARY KEY - unique id assigned to each account entry</td>
+</tr>
+</tbody>
+</table>
+<br />
+CREATE TABLE address_book (<br />&nbsp; address_id int(11) NOT NULL auto_increment,<br />&nbsp; ref_id int(11) NOT NULL default '0',<br />&nbsp; type char(2) NOT NULL default '',<br />&nbsp; primary_name varchar(32) NOT NULL default '',<br />&nbsp; contact varchar(32) NOT NULL default '',<br />&nbsp; address1 varchar(32) NOT NULL default '',<br />&nbsp; address2 varchar(32) NOT NULL default '',<br />&nbsp; city_town varchar(24) NOT NULL default '',<br />&nbsp; state_province varchar(24) NOT NULL default '',<br />&nbsp; postal_code varchar(10) NOT NULL default '',<br />&nbsp; country_code char(3) NOT NULL default '',<br />&nbsp; notes varchar(64) NOT NULL default '',<br />&nbsp; PRIMARY KEY&nbsp; (address_id),<br />&nbsp; KEY customer_id (ref_id,type)<br />) ENGINE=InnoDB DEFAULT CHARSET=latin1 ;<br /><br />
+</body></html>

@@ -1,0 +1,348 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="01.04.03">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Revision.PhreeBooks.Rev 1p2">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="PhreeBooks Release 1.1">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>PhreeBooks Release 1.2</title>
+<style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-size: large;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<h1 align="center">PhreeBooks Release 1.2</h1>
+<p>// 2007-09-13 Change log, release 1.1 to Release 1.2<br>
+  /doc/manual/ch01-Introduction/04-02-Rev1p2.html (this file) <br>
+  /doc/manual/ch01-Introduction/04-RevHistory.html<br>
+/includes/version.php</p>
+<p>// *************************** sql statements ***************************//<br>
+// sql statements are rolled into the base release and incorporated into the updater script for automatic db update<br>
+/modules/install/sql/current/tables.sql<br>
+DELETE - /modules/install/sql/current/install_data.sql<br>
+/modules/install/updater.php</p>
+<p>// 2007-09-21<br>
+<SPAN class=syntax><SPAN 
+class="syntax_alpha syntax_alpha_reservedWord">ALTER</SPAN> <SPAN 
+class="syntax_alpha syntax_alpha_reservedWord">TABLE</SPAN> <SPAN class="syntax_quote syntax_quote_backtick">shipping_log</SPAN> <SPAN 
+class="syntax_alpha syntax_alpha_reservedWord">ADD</SPAN> <SPAN class="syntax_quote syntax_quote_backtick">actual_date</SPAN> <SPAN 
+class="syntax_alpha syntax_alpha_columnType">DATE</SPAN> <SPAN 
+class="syntax_alpha syntax_alpha_reservedWord">NOT</SPAN> <SPAN 
+class="syntax_alpha syntax_alpha_reservedWord">NULL</SPAN> <SPAN 
+class="syntax_alpha syntax_alpha_columnAttrib">DEFAULT</SPAN> <SPAN class="syntax_quote syntax_quote_single">'0000-00-00'</SPAN> <SPAN 
+class="syntax_alpha syntax_alpha_reservedWord">AFTER</SPAN> <SPAN class="syntax_quote syntax_quote_backtick">deliver_date</SPAN><SPAN 
+class="syntax_punct syntax_punct_queryend">;</SPAN></SPAN></p>
+<p>// 2007-10-04 - add configuration values for telephone1 and email address fields <br>
+  <SPAN 
+class="syntax_alpha syntax_alpha_reservedWord"><span class="syntax">INSERT INTO configuration (configuration_title, configuration_key, configuration_value, configuration_description, configuration_group_id, sort_order, last_modified, date_added, use_function, set_function) 
+VALUES ( </span></SPAN><span class="syntax"> 'Account Telephone 1 Field Required', 'ADDRESS_BOOK_TELEPHONE1_REQUIRED', '0', 'Whether or not to require telephone 1 field to be entered in accounts setup (vendors, customers, employees)', '7', '7', NULL , '2007-10-04 00:00:00', NULL , 'cfg_keyed_select_option(array(0 =&gt; ''false'', 1=&gt; ''true''),' </span><SPAN 
+class="syntax_punct syntax_punct_bracket_close_round"><span class="syntax">), ( </span></SPAN><span class="syntax"> 'Account Email Address Field Required', 'ADDRESS_BOOK_EMAIL_REQUIRED', '0', 'Whether or not to require the email address field to be entered in accounts setup (vendors, customers, employees)', '7', '8', NULL , '2006-10-04 00:00:00', NULL , 'cfg_keyed_select_option(array(0 =&gt; ''false'', 1=&gt; ''true''),' </span><SPAN 
+class="syntax_punct syntax_punct_bracket_close_round"><span class="syntax">);</span></SPAN></p>
+<p>// change inventory_assy_list table type to innoDB<br>
+ALTER TABLE inventory_assy_list ENGINE = innodb<br>
+ALTER TABLE journal_main DROP recur_times;<br>
+ALTER TABLE journal_main CHANGE recur_remain recur_id INT( 11 ) NULL DEFAULT NULL;</p>
+<p> $db-&gt;Execute(&quot;ALTER TABLE &quot; . TABLE_INVENTORY_HISTORY . &quot; DROP usage_id&quot;);<br>
+CREATE TABLE inventory_cogs_usage (<br>
+id INT(11) NOT NULL auto_increment,<br>
+journal_main_id INT(11) NOT NULL,<br>
+qty FLOAT NOT NULL,<br>
+inventory_history_id INT(11) NOT NULL,<br>
+PRIMARY KEY (id),<br>
+INDEX (journal_main_id, inventory_history_id) <br>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT = 'Relates inventory usage with inventory purchase history';</p>
+<p> CREATE TABLE inventory_ms_list (<br>
+id int(11) NOT NULL auto_increment,<br>
+sku varchar(15) NOT NULL,<br>
+attr_name_0 varchar(16) NULL,<br>
+attr_name_1 varchar(16) NULL,<br>
+attr_0 varchar(255) NULL,<br>
+attr_1 varchar(255) NULL, <br>
+PRIMARY KEY (id)<br>
+) ENGINE=InnoDB CHARSET=latin1 COMMENT = 'Holds inventory master stock attribute information';</p>
+<p> DROP TABLE address_format;<br>
+ALTER TABLE zones DROP countries_iso_code_2, DROP zone_country_id;<br>
+ALTER TABLE zones DROP INDEX countries_iso_code_2;<br>
+</p>
+<p>// *************************** code changes ***************************//</p>
+<p>// 2007-09-17 Improve storage/recall of payment methods <br>
+// 2007-09-18 Added default value to banking deposits and payments ID field, fixed language field hard coded english<br>
+/modules/services/payment/language/en_us/modules/moneyorder.php<br>
+/modules/services/payment/modules/moneyorder.php<br>
+/modules/banking/forms/bills_detail.php<br>
+/modules/banking/classes/banking.php<br>
+/modules/banking/functions/banking.php<br>
+/modules/banking/bills.php<br>
+/modules/banking/popup_bills.php<br>
+/modules/banking/popup.php<br>
+/modules/banking/javascript/banking.js<br>
+/modules/banking/language/en_us/language.php<br>
+/modules/gen_ledger/language/en_us/language.php<br>
+/modules/orders/invoice_mgr.php</p>
+<p>// 2007-09-17 Fix Nova merchant to use new Virtual Merchant Service (Drop ViaKLIX)<br>
+  DELETE - /modules/services/payment/modules/cc.php - not used (needed to be tied to a merchant) <br>
+  DELETE - /modules/services/payment/language/en_us/modules/cc.php - not used<br>
+  DELETE - /modules/services/payment/modules/nova.php - obsolete (nova has updated to Virtual Merchant)<br>
+  DELETE - /modules/services/payment/language/en_us/modules/nova.php - not used<br>
+  /modules/services/payment/modules/nova_xml.php<br>
+/modules/services/payment/language/en_us/modules/nova_xml.php</p>
+<p>// 2007-09-18 Added short name to entry builder for forms to save space, USPS include bug <br>
+/modules/reportwriter/classes/entry_builder.php<br>
+/modules/services/shipping/modules/usps.php<br>
+/modules/services/shipping/language/en_us/modules/usps.php<br>
+/modules/services/shipping/modules/fedex.php<br>
+/modules/services/shipping/language/en_us/modules/fedex.php</p>
+<p>// 2007-09-19 Fixed bug where ship address id is not set when direct entry orders are made with the ship address update box not checked.<br>
+/modules/orders/classes/orders.php</p>
+<p>// 2007-09-20 bug in FedEx label request when a contact name is present <br>
+  /modules/services/shipping/modules/fedex.php<br>
+/modules/services/shipping/ship_mgr/fedex.php</p>
+<p>// 2007-09-20 Added UPS ship manger functionality<br>
+/modules/services/label_mgr_ups.php<br>
+/modules/services/shipping/language/en_us/language.php<br>
+/modules/services/shipping/language/en_us/modules/ups.php<br>
+/modules/services/shipping/ship_mgr/ups.php<br>
+/modules/services/shipping/modules/ups.php<br>
+/modules/services/popup_tracking.php<br>
+/modules/services/label_viewer.php<br>
+/modules/services/label_viewer_image.php</p>
+<p>// 2007-09-25 Bug in chart of accounts for non-numeric account numbers<br>
+// 2007-09-26 - Fix bug in loading security for setup choices<br>
+/modules/setup/classes/chart_of_accounts.php<br>
+/modules/setup/popup_setup.php<br>
+/modules/setup/classes/countries.php<br>
+/modules/setup/classes/currency.php<br>
+/modules/setup/classes/departments.php<br>
+/modules/setup/classes/dept_types.php<br>
+/modules/setup/classes/inv_tabs.php<br>
+/modules/setup/classes/tax_auths.php<br>
+/modules/setup/classes/tax_rates.php<br>
+/modules/setup/classes/zones.php</p>
+<p>// 2007-10-01 - Fix bug in unchecking paid field if an invoice is re-posted. Added notification for paid invoices.<br>
+  // 2007-10-04 - Added condition for secondary sort on purchase_invoice_id if sorting by post date. <br>
+/modules/orders/orders.php<br>
+/modules/orders/forms/orders_detail.php<br>
+/modules/orders/functions/orders.php<br>
+/modules/orders/popup.php<br>
+/modules/orders/language/en_us/language.php<br>
+/themes/default/css/stylesheet.css<br>
+/modules/orders/javascript/orders.js</p>
+<p>// 2007-10-01 - bug in import beginning balances not handling thousands separator properly<br>
+/modules/gen_ledger/classes/beg_balances_imp.php</p>
+<p>// 2007-10-01 - bug in security settings not allowing entry due to no privileges <br>
+/modules/setup/setup.php<br>
+/modules/setup/popup_setup.php</p>
+<p>// 2007-10-02 - fixed bug where non-stock SKU types were passing through COGS with no action except adding to cogs_owed table<br>
+// 2007-10-03 - Added auto-increment to payment reference number payments in all cases (i.e. consecutive checks)<br>
+// 2007-10-04 - Added update to unit_cost for inventory item during assembly<br>
+// 2007-10-10 - fixed bug recalculating assembly when purchase/receive was reposted. <br>
+/modules/gen_ledger/classes/gen_ledger.php</p>
+<p>//2007-10-02 - Added column in Sales and purchases when opening posted orders toshow SO/PO number<br>
+/modules/orders/popup.php</p>
+<p>// 2007-10-03 - Moved bank deposit slips to banking tab from general ledger<br>
+/modules/reportwriter/language/en_us/language.php</p>
+<p>// 2007-10-03 - Fixed form builder when no date field is needed<br>
+/modules/reportwriter/form_generator.php</p>
+<p>// 2007-10-04 - Added user configuration setting for email required and telephone1 required<br>
+  // 2007-10-04 - Pre-loaded gl account on line item based on vendor selected from their default information <br>
+/modules/orders/forms/orders_detail.php<br>
+/modules/accounts/forms/accounts_detail.php<br>
+/modules/accounts/functions/accounts.php<br>
+/modules/accounts/accounts.php<br>
+/modules/accounts/popup.php<br>
+/modules/install/updater.php<br>
+/modules/setup/configuration.php</p>
+<p>// 2007-10-04 - added check for stock and inactive flag when posting orders<br>
+/modules/orders/orders.php<br>
+/modules/inventory/popup.php</p>
+<p>// 2007-10-05 - fixed bug in inventory assemblies erasing BOM during save when items have been sold<br>
+  // 2007-10-08 - Added capability to change SKU (rolls change throughout db and history)<br>
+  // 2007-10-08
+  - Added click to edit anywhere in inventory row <br>
+  // 2007-10-10	- Fixed sorting order on assembly open window
+  <br>
+/modules/inventory/inventory.php<br>
+/modules/inventory/popup_assy.php<br>
+/modules/inventory/forms/inventory_detail.php<br>
+/modules/inventory/forms/inventory_main.php<br>
+/modules/inventory/language/en_us/language.php</p>
+<p>// 2007-10-09 - increased number of so and po open list length<br>
+/modules/general/boxes/so_status.php<br>
+/modules/general/boxes/po_status.php</p>
+<p>// 2007-10-09 - fixed bug restricting deleting shipping and billing addresses<br>
+/modules/accounts/accounts.php<br>
+/modules/accounts/forms/accounts_detail.php<br>
+/modules/accounts/functions/accounts.php</p>
+<p>// 2007-10-09 - change link to help file non-ssl for all cases. <br>
+/includes/header.php</p>
+<p>// 2007-10-10 - Added site search (needs more work) <br>
+/modules/general/language/en_us/language.php<br>
+/includes/menu_navigation.php<br>
+/includes/security_tokens.php<br>
+/includes/filenames.php<br>
+/modules/general/search.php<br>
+/modules/general/forms/search_detail.php</p>
+<p>// 2007-10-10 - fix bug in inventory adjustments and assemblies when editing causes main id to re-set and messes up inventory history and re-posts.<br>
+/modules/inventory/assemblies.php<br>
+/modules/inventory/adjustments.php</p>
+<p>// 2007-10-11 - fixed defines for control panael modules to allow for languages other than english<br>
+  /index.php  <br>
+/modules/general/boxes/personal_links.php<br>
+/modules/general/language/en_us/boxes/personal_links.php<br>
+/modules/general/boxes/po_status.php<br>
+/modules/general/language/en_us/boxes/po_status.php<br>
+/modules/general/boxes/so_status.php<br>
+/modules/general/language/en_us/boxes/so_status.php<br>
+/modules/general/boxes/todays_sales.php<br>
+/modules/general/language/en_us/boxes/todays_sales.php</p>
+<p>/********************************** SVN UPDATE 10/12/2007 **************************************************/ </p>
+<p>// 2007-10-12 - fixed language for sort headings<br>
+/modules/general/functions/html_functions.php<br>
+/modules/general/language/en_us/language.php</p>
+<p>// 2007-10-12 - Added ability to make direct payments (Point of Purchase) by Purchae/Receive with payment icon direct to bills payment<br>
+  // 2007-10-12 - Fix reload of orders is an error due to no customer/vendor ID <br>
+  /modules/orders/orders.php<br>
+  /modules/orders/javascript/orders.js  <br>
+  /modules/orders/forms/orders_detail.php<br>
+/modules/banking/bills.php</p>
+<p>// 2007-10-12 - Added ability to copy users information to a new user account.<br>
+/modules/general/users.php<br>
+/modules/general/forms/users_main.php<br>
+/modules/general/language/en_us/language.php</p>
+<p>// 2007-10-12 - changed listing on control panel to primary name from SO/PO number <br>
+/modules/general/boxes/po_status.php<br>
+/modules/general/boxes/so_status.php</p>
+<p>// 2007-10-15 - Replaced (real) with $currencies-&gt;clean_value for various number formating compatibility.<br>
+  // 2007-10-26 - Fixed bug adding shipping addresses to existing accounts
+  <br>
+  /modules/banking/classes/banking.php<br>
+  /modules/banking/bills.php<br>
+  /modules/gen_ledger/beg_balances.php<br>
+  /modules/gen_ledger/classes/gen_ledger.php<br>
+  /modules/inventory/fields.php<br>
+  /modules/inventory/inventory.php<br>
+/modules/orders/orders.php</p>
+<p>// added a few tables when purging journal entries<br>
+/modules/gen_ledger/utilities.php</p>
+<p>// fixed import inventory beginning balance bug rolling inventory history<br>
+/modules/gen_ledger/classes/beg_balances_imp.php</p>
+<p>// 2007-10-15 - Added functionality for Customer Payments (Returns) and Vendor Receipts (Refunds) <br>
+/includes/security_tokens.php<br>
+/includes/menu_navigation.php<br>
+/modules/general/language/en_us/language.php<br>
+/modules/banking/bills.php<br>
+/modules/banking/language/en_us/language.php<br>
+/modules/banking/forms/bills_detail.php<br>
+/modules/banking/popup.php<br>
+/modules/banking/javascript/banking.js<br>
+/modules/banking/functions/banking.php<br>
+/modules/orders/orders.php<br>
+/modules/orders/classes/orders.php</p>
+<p>// 2007-10-15 - re write inventory adjust (not handling re-post properly) <br>
+  DELETE - /modules/inventory/classes/inventory.php<br>
+/modules/inventory/adjustments.php</p>
+<p>// 2007-10-15 - fixed price sheet manager direct entry not holding selection chioce<br>
+/modules/inventory/popup_price_mgr.php<br>
+/modules/services/pricesheets/forms/forms_edit.php<br>
+/modules/services/price_sheets.php</p>
+<p>// 2007-10-15 - Added ability to remove image from inventory sku <br>
+/modules/inventory/inventory.php<br>
+/modules/inventory/forms/inventory_detail.php</p>
+<p>// 2007-10-16 - Add recur operation to orders functions <br>
+  /includes/filenames.php<br>
+  /modules/orders/recur.php  <br>
+  /modules/orders/orders.php<br>
+  /modules/orders/popup.php  <br>
+/modules/orders/classes/orders.php<br>
+/modules/orders/functions/orders.php<br>
+/modules/orders/forms/orders_detail.php<br>
+/modules/orders/javascript/orders.js<br>
+/modules/orders/language/en_us/language.php<br>
+/modules/general/classes/toolbar.php<br>
+/modules/gen_ledger/classes/gen_ledger.php<br>
+/modules/general/language/en_us/language.php</p>
+<p>// 2007-10-17 - Add master stock capability<br>
+/modules/inventory/inventory.php<br>
+/modules/inventory/language/en_us/language.php<br>
+/modules/inventory/forms/inventory_id.php<br>
+/modules/inventory/forms/inventory_main.php<br>
+/modules/inventory/forms/inventory_detail.php<br>
+/modules/inventory/functions/inventory.php<br>
+/includes/database_tables.php<br>
+/modules/install/updater.php<br>
+/modules/install/sql/current/tables.sql</p>
+<p>// 2007-10-19 - fixed inventory adjustment popup to display number of adjustments <br>
+/modules/inventory/popup_adj.php</p>
+<p>// 2007-10-19 - fixed bug when assembling a positive number when qty in stock is negative and total will still be less than zero<br>
+  /modules/inventory/assemblies.php</p>
+<p>// 2007-10-22 - fixed bug in cost of good sold calculation not calculated correct (restructured operation) - NOT BACKWARD COMPATIBLE<br>
+/modules/install/updater.php<br>
+/modules/gen_ledger/classes/gen_ledger.php<br>
+/modules/install/sql/current/tables.sql
+<br>
+/includes/database_tables.php<br>
+/modules/gen_ledger/classes/beg_balances_imp.php<br>
+/modules/inventory/assemblies.php<br>
+/modules/gen_ledger/utilities.php</p>
+<p>// 2007-10-24 - fixed error in search when entering sript<br>
+/modules/general/forms/search_detail.php</p>
+<p>// 2007-10-25 - RE-wrote database tables installation script to use php modifyable setting (for language translation)<br>
+/modules/install/updater.php<br>
+/modules/install/sql/current/tables.sql
+<br>
+/modules/install/includes/modules/pages/database_setup/header_php.php<br>
+/modules/install/includes/languages/en_us/chart_of_accounts_types_list.php<br>
+/modules/install/includes/languages/en_us/config_data.php<br>
+/modules/install/includes/languages/en_us/countries_list.php<br>
+/modules/install/includes/languages/en_us/currencies_list.php<br>
+/modules/install/includes/languages/en_us/import_export_list.php<br>
+
+/modules/install/report_list.php<br>
+/includes/database_tables.php</p>
+<p>// 2007-10-26 - Code cleanup<br>
+/modules/services/payment/modules/cod.php<br>
+/modules/services/payment/modules/freecharger.php<br>
+/modules/services/payment/modules/moneyorder.php<br>
+/modules/setup/classes/zones.php</p>
+<p>/********************************** SVN UPDATE 10/26/2007 **************************************************/ </p>
+<p>// 2007-10-29 - Restructured installation to allow for language translations of pre-configured settings<br>
+  DELETE - 
+  /modules/install/sql/current/install_data.sql<br>
+  /modules/install/includes/modules/pages/database_setup/header_php.php<br>
+  /modules/install/includes/modules/pages/admin_setup/header_php.php<br>
+  /modules/install/includes/templates/template_default/templates/admin_setup_default.php  <br>
+  /modules/install/sql/current/tables.sql<br>
+/modules/install/includes/languages/en_us/chart_of_accounts_types_list.php<br>
+/modules/install/includes/languages/en_us/config_data.php<br>
+/modules/install/includes/languages/en_us/countries_list.php<br>
+/modules/install/includes/languages/en_us/currencies_list.php<br>
+/modules/install/includes/languages/en_us/import_export_list.php<br>
+/modules/install/includes/languages/en_us/state_province_list.php<br>
+/modules/install/report_list.php<br>
+/includes/application_top.php<br>
+/my_files/reports/GeneralLedgerTrialBalance.rpt.txt
+</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

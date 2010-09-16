@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.15">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table accounts_history">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table accounts_history">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css"><title>Table accounts_history</title>
+
+</head>
+<body>
+<h1 align="center">Table accounts_history</h1>
+Table accounts_history contains the&nbsp; historical transactions for
+customers and vendors. Data from this table is useful for reports
+showing accout history, totals, and frequency.<br />
+<br />
+Table Type: InnoDB<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>id</td>
+<td>auto_increment</td>
+<td>N/A</td>
+<td>PRIMARY KEY - unique id assigned to each account entry</td>
+</tr>
+<tr>
+<td>ref_id</td>
+<td>int(11)</td>
+<td>0</td>
+<td>Referenced the record id of the journal entry, table journal_main.</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr><td>acct_id</td><td>int(11)</td><td>0</td><td>INDEX - Referenced to the account id in the accounts table, table accounts. </td></tr><tr><td>amount</td><td>real double</td><td>0</td><td>Total amount of the transaction.</td></tr><tr><td>journal_id</td><td>int(11)</td><td>0</td><td>Lists the journal ID of the transaction. Refer to the section on the type of journals formore information.</td></tr><tr><td>purchase_invoice_id</td><td>char(16)</td><td>NULL</td><td>List
+the PhreeBooks transaction reference. Will be the field Invoice Number
+for sales and purchases, PO Number/SO Number for purchase and sales
+orders.</td></tr><tr><td>so_po_ref_id</td><td>int(11)</td><td>NULL</td><td>For sales and purchases, this field wil contain the reference SO/PO record number from the journal_main table.</td></tr><tr><td>post_date</td><td>date</td><td>NULL</td><td>Lists
+the date and time of the Post Date of the transaction. Not the actual
+date and time of when the record was posted but the Post Date field in
+the orders screen.&nbsp;</td></tr></tbody>
+</table>
+<br />
+<br />
+</body></html>

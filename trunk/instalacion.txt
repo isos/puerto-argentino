@@ -1,0 +1,37 @@
+PhreeBooks(TM) - Programa de contabilidad en línea para la administración de pequeñas empresas.
+
+Bienvenido a PhreeBooks
+
+
+LO QUE SIGUE SON INSTRUCCIONES SIMPLIFICADAS PARA LA INSTALACIÓ DEL PROGRAMA.
+
+TODOS LOS DOCUMENTOS DE AYUDA ESTÁN EN LA CARPETA /doc DE ESTA DISTRIBUCIÓN.
+
+
+Puede encontrar la documentación en línea en: http://www.phreebooks.com/demo/includes/addons/PhreeHelp/index.php
+
+Este enlace contiene la última versión de los archivos de ayuda. La sección de instalación contiene información sobre los prerrequisitos y volados para la instalación.
+
+PhreeBooks viene con un sistema de instalación automático.  Sin embargo, para usarlo, debe primero desempacar el archivo comprimido a un servidor de páginas.
+
+El servidor de páginas debe estar en un computador local o en un servidor conectado a internet.
+
+Para empezar, extraiga los archivos de PhreeBooks(TM) del archivo comprimido ZIP.  Como hacer esto depende del sistema operativo que está utilizando.
+
+Una vez que haya extraído los archivos, tendrá una carpeta conteniendo los guiones de PhreeBooks(TM).
+
+El contenido de esta carpeta debe colocarse a su servidor de páginas, ya sea copiando la carpeta o usando un programa FTP.
+
+Luego, necesitará correr el guión de instalación.
+
+Para hacer esto, debe abrir su navegador y escribir el URL para accesar al servidor.
+
+Si lo va a correr en su computador local, esto será:
+
+   http://localhost/{directorio-de-phreebooks}/index.php
+
+o si lo va a correr en otro servidor:
+
+   http://{www.mydomain.com}/index.php
+
+Siga las instrucciones del guión de instalación de PhreeBooks(TM).

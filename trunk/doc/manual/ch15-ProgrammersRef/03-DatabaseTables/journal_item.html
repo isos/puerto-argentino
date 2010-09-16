@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.130">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table journal_item">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table journal_item">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+<title>Table journal_item</title>
+</head>
+
+<body>
+<!-- The main body of text goes here -->
+<h1 align="center">Table journal_item</h1>
+<p>The general journal table holds the journal entries for every transaction in PhreeBooks. The general journal is broken into two tables, main and item. The main table contains the overview settings that are common for every transaction. The item table contains each individual journal entry and is a many to one relationship with journal_main. </p>
+<p>The table field definitions for the journal_main table are as follows: </p>
+<h2>TABLE: journal_item</h2>
+<table width="100%"  border="1" cellspacing="1" cellpadding="1">
+  <tr>
+    <td><div align="center">Field Name </div></td>
+    <td><div align="center">Type</div></td>
+    <td><div align="center">Size (value) </div></td>
+    <td><div align="center">Comment</div></td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td><div align="center">integer</div></td>
+    <td><div align="center">11</div></td>
+    <td><p>auto-increment field used to uniquely identify each journal entry.<br />
+        Primary Key: YES<br />
+        Indexed: YES<br />
+        Unique: YES </p></td>
+  </tr>
+  <tr>
+    <td>ref_id</td>
+    <td><div align="center">integer</div></td>
+    <td><div align="center">11</div></td>
+    <td>Links to the table journal_main id field. this field will be the same for every entry associated with a journal entry, i.e. purchase order, invoice.</td>
+  </tr>
+  <tr>
+    <td>gl_type</td>
+    <td><div align="center">char</div></td>
+    <td><div align="center">3</div></td>
+    <td><p>Specifies the journal item entry type. Entries are coded with the gl_type to track the journal entry. gl_type definitions are as follows:</p>
+      <p>General:<br />
+        ttl - Total entry amount<br />
+        frt - Shipping/Freight charges<br />
+        tax - Sales/VAT Tax entries
+      </p>
+      <p>Payables:<br />
+      poo - purchase order line item ordered<br />
+      por - purchase order line item received<br />
+      pod - purchase order line item expected delivery date<br />
+      pop - purchase/receive item paid</p>
+    <p>Receivables:<br />
+      soo - sales order line item ordered<br />
+      sor - sales order line item shipped<br />
+      sod - sales order line item delivered date<br />
+      sos - sales/invoice item payment received </p>
+    <p>Inventory:<br />
+      -</p>
+    </td>
+  </tr>
+  <tr>
+    <td>sku</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">15</div></td>
+    <td>Inventory SKU number.</td>
+  </tr>
+  <tr>
+    <td>qty</td>
+    <td><div align="center">float</div></td>
+    <td><div align="center"></div></td>
+    <td>Quantity of items asociated with this journal entry </td>
+  </tr>
+  <tr>
+    <td>description</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">255</div></td>
+    <td>Item description </td>
+  </tr>
+  <tr>
+    <td>debit_amount</td>
+    <td><div align="center">float</div></td>
+    <td><div align="center"></div></td>
+    <td>The monetary amount for debit transactions.</td>
+  </tr>
+  <tr>
+    <td>credit_amount</td>
+    <td><div align="center">float</div></td>
+    <td><div align="center"></div></td>
+    <td>The monetary amount for credit transactions.</td>
+  </tr>
+  <tr>
+    <td>gl_account</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">15</div></td>
+    <td>The general leder account associated with this transaction. </td>
+  </tr>
+  <tr>
+    <td>serialize</td>
+    <td><div align="center">boolean</div></td>
+    <td><div align="center">0,1</div></td>
+    <td>Flag used for serialized items. </td>
+  </tr>
+  <tr>
+    <td>serialize_number</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">24</div></td>
+    <td>Item serial number (valid if serialize is set to 1) </td>
+  </tr>
+  <tr>
+    <td>post_date</td>
+    <td><div align="center">datetime</div></td>
+    <td><div align="center"></div></td>
+    <td>Date and time the journal item was posted.</td>
+  </tr>
+</table>
+<p>Notes:</p>
+<p>&nbsp;</p>
+</body>
+</html>

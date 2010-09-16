@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.160">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table report_fields">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table report_fields">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>Table report_fields</title>
+
+</head>
+<body>
+<h1 align="center">Table report_fields</h1>
+Table report_fields holds the field details for the reports/forms displayed in PhreeBooks. The fields are coded by entrytype to inidicate the type of entry it is. A single report will contain one field in table reports and several in report_fields. <br />
+<br />
+Table Type: InnoDB<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>id</td>
+<td>int (11)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Auto increment field to hold unique ID </td>
+</tr>
+<tr>
+  <td>reportid</td>
+  <td>int(5)</td>
+  <td>0</td>
+  <td>Link to the report ID this field is a part of.</td>
+</tr>
+<tr>
+  <td>entrytype</td>
+  <td>varchar(15)</td>
+  <td>NOT NULL</td>
+  <td><p>Defines the tpye of field. Types include:</p>
+    <p>datafield: Hold the data field information used in reports and forms. One or moer entries are required per report/form. <br />
+      critfield: Holds the critereia used to filter reports and forms. Zero or more entries are permitted. <br />
+      datefield: Holds the possible date portion of the criteria. Only one entry is permitted per report/form. <br />
+      sortfield: Associated with the sort portion of criteria. Zero or more are permitted. </p></td>
+</tr>
+<tr>
+  <td>seqnum</td>
+  <td>seqnum(3)</td>
+  <td>0</td>
+  <td>The sequence number of the field. Used for ordering the fields. This value determines the display order in preparation of the output for reports but is only used to display the order of the fields in Reportbuilder for forms since fields are placed individually on a form. </td>
+</tr>
+<tr>
+  <td>fieldname</td>
+  <td>fieldname(255)</td>
+  <td>NOT NULL</td>
+  <td>The name of the field as related to the databases used to generate the report/form. An equation can be entered here to generate more complicated report outputs.</td>
+</tr>
+<tr>
+  <td>displaydesc</td>
+  <td>varchar(25)</td>
+  <td>NOT NULL </td>
+  <td>This field hold the textual desxcription of the field. The value entered here will be displayed in the header of reports but is only used for field setup in Reportbuilder for forms.</td>
+</tr>
+<tr>
+  <td>visible</td>
+  <td>0, 1 </td>
+  <td>1</td>
+  <td>Indicates whether the field will be displayed on the report or form.</td>
+</tr>
+<tr>
+  <td>columnbreak</td>
+  <td>0, 1 </td>
+  <td>1</td>
+  <td>Indicates whether the field will cause a column break after being displayed. If not set, the next field to display will be shown below this field. Column widths will default to the largest column displayed of all fields in a given column </td>
+</tr>
+<tr>
+  <td>params</td>
+  <td>text</td>
+  <td>NULL</td>
+  <td>This is an encoded (serialized) string of parameters used to further identify the field. Form fields contain significant information related to the font, color, position, etc. The field is freeform in that there are no criteria regarding the contents.</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+<br />
+</p>
+</body></html>

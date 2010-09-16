@@ -1,0 +1,27 @@
+Tabtastic notes:
+
+A few random tips and limitations:
+
+1. The only bug present in NS6/Mozilla 1.2 (and earlier) is that the selected tab does not overlap the content, causing there to be a black line drawn between the selected tab and the content. 
+
+2. There should be no whitespace (other than in tab titles) within your <ul class="tabset_tabs">...</ul>, if you want your tabs to mash up against each other (as they do in this document). 
+
+3. The following CSS selectors will give you control over the styling of the content: 
+
+.tabset_tabs a             { /* A normal tab                             */ }
+.tabset_tabs a:hover       { /* A normal tab, when hovered over          */ }
+.tabset_tabs a.active      { /* The selected tab                         */ }
+.tabset_tabs a.preActive   { /* The tab to the left of the selected tab  */ }
+.tabset_tabs a.postActive  { /* The tab to the right of the selected tab */ }
+.tabset_content            { /* The selected tab's contents              */ }
+
+Note that you may need to use the ! important rule to force your styles to take effect. 
+
+4. Google's translation service does not seem to play nicely with the library; none of the content shows up, only the tabs themselves. For example, see this document translated. 
+
+5. It's easy to make the content areas of each tab have scrollbars. Simply add a CSS rule like this .tabset_content { height:20em; overflow:auto } and scrollbars will appear as needed! 
+
+6. This library uses JS to include the CSS file, so that the content is NOT hidden/inaccessible if the user has JS disabled.
+
+Unfortunately, this breaks IE5Mac and Opera7. If you need support for them (at the expense of users who have CSS supported but JS disabled), comment out AddStyleSheet('tabtastic.css',0) at the end of tabtastic.js, and link in the CSS file yourself.
+

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.05">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table accounting_periods">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table accouting_periods">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css"><title>Table accounting_periods</title>
+
+</head>
+
+<body>
+<h1 align="center">Table accouting_periods</h1>
+Phreebooks uses accounting periods to track costs. 12 or 13 accounting
+periods make up a fiscal year. This table holds the acccounting period
+and the dates assigned to the period. It also maps the period to the
+fiscal year. Accounting periods may be changed only from the date of
+the last joiurnal entry to the end of the generated fiscal years. <br />
+<br />
+NOTE: It is best no to generate fiscal years beyond what is actually
+needed. PhreeBooks is a real-time posting accounting application and
+the balance sheet is updated fromthe posting date to the end of the
+fiscal year in the system. This will add additional sql accesses as the
+information may flow through the fiscal years.<br /><br />This
+table is first populated during install with the first fiscal year.
+Additional fiscal years can be added through the General Ledger -&gt;
+Utilities menu.<br /><br />Table Type: InnoDB<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+  <tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>period</td>
+<td>int(11)</td>
+<td>0</td>
+<td>(Primary Key) Holds the accounting period. Starting at 1 for the first peeriod of the fiscal year.</td>
+</tr>
+<tr><td>fiscal_year</td><td>int(11)</td><td>0</td><td>Holds the fiscal year (2007, 2008, etc.)</td></tr><tr><td>start_date</td><td>date</td><td>0000-00-00</td><td>Holds the calendar date of the start of the period (format YYYY-MM-DD)</td></tr><tr><td>end_date</td><td>date</td><td>0000-00-00</td><td>Holds the calendar date of the end of the period (format YYY-MM-DD)</td></tr><tr><td>date_added</td><td>date</td><td>0000-00-00</td><td>Holds the date the period was first added (format YYYY-MM-DD)</td></tr><tr><td>last_update</td><td>timestamp</td><td>NOT NULL</td><td>Timestamps the record if any changes are made to the record.</td></tr></tbody>
+</table>
+<br />
+<br />
+</body></html>
