@@ -1,0 +1,347 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.135">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table journal_main">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table journal_main">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+<title>Table journal_main</title>
+</head>
+
+<body>
+
+<!-- The main body of text goes here -->
+<h1 align="center">Table journal_main</h1>
+<p>The general journal table holds the journal entries for every transaction in PhreeBooks. The general journal is broken into two tables, main and item. The main table contains the overview settings that are common for every transaction. The item table contains each individual journal entry and is a many to one relationship with journal_main. </p>
+<p>The table field definitions for the journal_main table are as follows: </p>
+<h2>TABLE: journal_main</h2>
+<table width="100%"  border="1" cellspacing="1" cellpadding="1">
+  <tr>
+    <td><div align="center">Field Name </div></td>
+    <td><div align="center">Type</div></td>
+    <td><div align="center">Size (value) </div></td>
+    <td><div align="center">Comment</div></td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td><div align="center">integer</div></td>
+    <td><div align="center">11</div></td>
+    <td><p>auto-increment field used to uniquely identify each journal entry.<br />
+        Primary Key: YES<br />
+        Indexed: YES<br />
+        Unique: YES </p></td>
+  </tr>
+  <tr>
+    <td>period</td>
+    <td><div align="center">integer</div></td>
+    <td><div align="center">2</div></td>
+    <td>Accounting period for this journal entry. </td>
+  </tr>
+  <tr>
+    <td>journal_id</td>
+    <td><div align="center">int</div></td>
+    <td><div align="center">2</div></td>
+    <td><p>Code to identify what journal the entry is posted against. Valid codes are:<br />
+        02 - General Journal <br />
+        04 - Purchase Order Journal <br />
+        06 - Purchase Journal <br />
+        07 - Vendor Credit Memo Journal <br />
+        08 - Payroll Journal <br />
+        10 - Sales Order Journal <br />
+        12 - Sales Journal <br />
+        13 - Custoerm Credit Memo Journal
+        <br />
+        14 - Inventory Assembly Journal <br />
+        16 - Inventory Adjustment Journal <br />
+        18 - Cash Receipts Journal <br />
+        19 - Point of Sale Journal <br />
+        20 - Cash Distribution Journal<br />
+        21 - Point of Purchase Journal <br />
+      22 - Shipping Journal</p>
+      </td>
+  </tr>
+  <tr>
+    <td>post_date</td>
+    <td><div align="center">date</div></td>
+    <td><div align="center"></div></td>
+    <td>Journal post date </td>
+  </tr>
+  <tr>
+    <td>store_id</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">15</div></td>
+    <td>Store id reference for this journal entry </td>
+  </tr>
+  <tr>
+    <td>description</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">32</div></td>
+    <td>System defined description for the journal entry (for readability purposes). The journal_id field is used by the system to track entry types.</td>
+  </tr>
+  <tr>
+    <td>closed</td>
+    <td><div align="center">boolean</div></td>
+    <td><div align="center">0,1</div></td>
+    <td><p>When set to 1, indicates that the journal entry has been closed. this flag will remain 0 throughout the transaction until all phases are complete. For example, with a purchase order, the transaction will remain open until all of the items have been received. Item entries for the transaction will occur over time to track actions associated with the journal entry. Once all activities have been completed, the journal entry will close.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>freight</td>
+    <td><div align="center">float</div></td>
+    <td><div align="center"></div></td>
+    <td>Holds the total freight cost of the journal entry. </td>
+  </tr>
+  <tr>
+    <td>shipper_code</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">16</div></td>
+    <td><p>Encoded shipping carrier and method. Values are separated by a colon (:). The first value represents the carrier as defined by the installed shipping modules. The second value is the service level. Service levels are defined as (US origin):</p>
+      <p> 1DEam =&gt; 1 Day Early a.m.<br />
+1Dam =&gt; 1 Day a.m.<br />
+1Dpm =&gt; 1 Day p.m.<br />
+2Dam =&gt; 2 Day a.m.<br />
+2Dpm =&gt; 2 Day p.m.<br />
+3Dpm =&gt; 3 Day<br />
+GND =&gt; Ground<br />
+I2DEam =&gt; Worldwide Early Express<br />
+I2Dam =&gt; Worldwide Express<br />
+I3D =&gt; Worldwide Expedited<br />
+IGND =&gt; Ground (Canada)</p>
+    <p>Shipping service levels definitions can be found in the language file under the shipping module directory (/modules/shipping/language/en_us/language.php).<br /> 
+    </p></td>
+  </tr>
+  <tr>
+    <td>terms</td>
+    <td><div align="center">varchar(32)</div></td>
+    <td><div align="center">NULL</div></td>
+    <td>This field holds the encoded terms used to post the transaction. </td>
+  </tr>
+  <tr>
+    <td>sales_tax</td>
+    <td><div align="center">float</div></td>
+    <td><div align="center"></div></td>
+    <td>The total sales tax for the transaction. </td>
+  </tr>
+  <tr>
+    <td>tax_auths</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">16</div></td>
+    <td>Contains the encoded tax authorities assigned to the journal entry. Values refer to the id of the tax authority or authorities in the tax_authorities table separated by colons (:).</td>
+  </tr>
+  <tr>
+    <td>total_amount</td>
+    <td><div align="center">float</div></td>
+    <td><div align="center"></div></td>
+    <td>The total amount of the transaction. </td>
+  </tr>
+  <tr>
+    <td>currencies_code</td>
+    <td><div align="center">char(3)</div></td>
+    <td><div align="center">USD*</div></td>
+    <td>Sets the currency code used to post the entry. Note that all amounts are in the default currency. This code is used to re-generate the order based on the posted value, currency code and currency value </td>
+  </tr>
+  <tr>
+    <td>currencies_value</td>
+    <td><div align="center">double</div></td>
+    <td><div align="center">1.0</div></td>
+    <td>This holds the exchange rate used when the record was posted. If the record was posted in the default currency, this value will be 1.0. If another currency was used to post the transaction, this record will hold the exchange rate used at the time of post.</td>
+  </tr>
+  <tr>
+    <td>so_po_ref_id</td>
+    <td><div align="center">int(11)</div></td>
+    <td><div align="center">0</div></td>
+    <td>This field holds the journal record id if the refering entry to this posted record. </td>
+  </tr>
+  <tr>
+    <td>purchase_invoice_id</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">16</div></td>
+    <td> Holds the purchase order number, sales order number, invoice number, etc. for applicable transactions. </td>
+  </tr>
+  <tr>
+    <td>purch_order_id</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">16</div></td>
+    <td>Holds the reference order number, Customer PO for invoices, for example. </td>
+  </tr>
+  <tr>
+    <td>recur_id</td>
+    <td><div align="center">int(11)</div></td>
+    <td><div align="center">0</div></td>
+    <td>For recurring transactions, this holds the id assigned to this and all recurring transactions. If changes are made to a recurring transaction, this id is used to retrieve all related transactions for re-posting. </td>
+  </tr>
+  <tr>
+    <td>admin_id</td>
+    <td><div align="center">int(11)</div></td>
+    <td><div align="center">0</div></td>
+    <td>Holds the user ID for the transaction </td>
+  </tr>
+  <tr>
+    <td>rep_id</td>
+    <td><div align="center">int(11)</div></td>
+    <td><div align="center">0</div></td>
+    <td> Holds the record number of the employee posting this entry. Settable in the order form. </td>
+  </tr>
+  <tr>
+    <td>waiting</td>
+    <td><div align="center">0, 1 </div></td>
+    <td><div align="center">0</div></td>
+    <td>Determines if the journal entry is waiting for more information. This is primarily used for receiving inventory when the invoice has not arrived yet. The inventory receipt can be posted without the invoice number and re-posted later when the invoice arrives.</td>
+  </tr>
+  <tr>
+    <td>gl_acct_id</td>
+    <td><div align="center">varchar(15)</div></td>
+    <td><div align="center"></div></td>
+    <td>The general ledger account id. This is ostly a reference as a single journal post will use serveral gl accounts stored in table journal_item with the broken down transaction information. </td>
+  </tr>
+  <tr>
+    <td>bill_acct_id</td>
+    <td><div align="center">int(11)</div></td>
+    <td><div align="center"></div></td>
+    <td>Holds the id account (contact) of the billing address used to post the entry.</td>
+  </tr>
+  <tr>
+    <td>bill_address_id</td>
+    <td><div align="center">int(11)</div></td>
+    <td><div align="center"></div></td>
+    <td>Holds the id of the address book record for the billing address. </td>
+  </tr>
+  <tr>
+    <td>bill_primary_name</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">32</div></td>
+    <td>Holds the remit to address information for payables, sold to information for receivables.</td>
+  </tr>
+  <tr>
+    <td>bill_contact</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">32</div></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>bill_address1</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">32</div></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>bill_address2</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">32</div></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>bill_city_town</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">24</div></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>bill_state_province</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">24</div></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>bill_postal_code</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">24</div></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>bill_country_code</td>
+    <td><div align="center">char</div></td>
+    <td><div align="center">3</div></td>
+    <td>Formatted with the ISO 3 character codes , i.e. USA, ESP, AUS, etc. </td>
+  </tr>
+  <tr>
+    <td>ship_acct_id</td>
+    <td><div align="center">int(11)</div></td>
+    <td><div align="center"></div></td>
+    <td>Holds the id account (contact) of the shipping address used to post the entry.</td>
+  </tr>
+  <tr>
+    <td>ship_address_id</td>
+    <td><div align="center">int(11)</div></td>
+    <td><div align="center"></div></td>
+    <td>Holds the id of the address book record for the shipping address. </td>
+  </tr>
+  <tr>
+    <td>ship_primary_name</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">32</div></td>
+    <td>Holds ship to information for all transactions. </td>
+  </tr>
+  <tr>
+    <td>ship_contact</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">32</div></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>ship_address1</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">32</div></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>ship_address2</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">32</div></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>ship_city_town</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">24</div></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>ship_state_province</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">24</div></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>ship_postal_code</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">24</div></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>ship_country_code</td>
+    <td><div align="center">char</div></td>
+    <td><div align="center">3</div></td>
+    <td>Formatted with the ISO 3 character codes , i.e. USA, ESP, AUS, etc. </td>
+  </tr>
+  <tr>
+    <td>terminal_date</td>
+    <td><div align="center">date</div></td>
+    <td><div align="center"></div></td>
+    <td><p>Date used as follows:<br />
+        Payables: <br />
+        Purchase Orders: Holds the expiration date.<br />
+        Receive Inventory: </p>
+        <p>Receivables:<br />
+        Sales Orders:<br />
+        Invoices: </p></td>
+  </tr>
+  <tr>
+    <td>drop_ship</td>
+    <td><div align="center">boolean</div></td>
+    <td><div align="center">0, 1</div></td>
+    <td>Drop ship flag indicator </td>
+  </tr>
+</table>
+<p>Notes:</p>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="01.04.06">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Revision.PhreeBooks.Rev 1p3p1">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="PhreeBooks Release 1.3.1">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>PhreeBooks Release 1.3.1</title>
+<style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-size: large;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<h1 align="center">PhreeBooks Release 1.3.1</h1>
+<p>// 2007-12-04 Change log, release 1.3 to Release 1.3.1<br>
+  /doc/manual/ch01-Introduction/04-02-Rev1p3p1.html (this file) <br>
+/doc/manual/ch01-Introduction/04-RevHistory.html<br>
+/doc/manual/version.txt<br>
+  /includes/version.php<br>
+/modules/install/updater.php</p>
+<p>// *************************** sql statements ***************************//<br>
+// sql statements are rolled into the base release and incorporated into the updater script for automatic db update</p>
+<p>// *************************** code changes ***************************//</p>
+<p>// 2007-12-05 - fixed indexing to show up in helpfile <br>
+  /doc/manual/ch01-Introduction/04-02-Rev1p2p1.html<br>  
+/doc/manual/ch01-Introduction/04-02-Rev1p3.html</p>
+<p>// 2007-12-05 - Fixed tables in PhreeHelp for MySQL 6 compatibility<br>
+/includes/addons/PhreeHelp/includes/functions.php</p>
+<p>// 2007-12-05 - Bug in loading special reports<br>
+/modules/reportwriter/functions/generator_functions.php (Line 537)</p>
+<p>// 2007-12-05 - fix bug to cvv popup window not showing up<br>
+/modules/banking/language/en_us/language.php<br>
+/modules/banking/javascript/banking.js<br>
+/modules/banking/pages/popup_cvv/pre_process.php<br>
+/modules/banking/pages/popup_cvv/js_include.php<br>
+/modules/banking/pages/popup_cvv/template_main.php<br>
+/themes/default/images/cvv2amex.gif<br>
+/themes/default/images/cvv2visa.gif<br>
+/modules/services/payment/language/en_us/modules/nova_xml.php<br>
+/modules/services/payment/modules/nova_xml.php</p>
+<p>  // 2007-12 - Housekeeping<br>
+  /modules/inventory/pages/main/template_detail.php<br>
+  /modules/general/language/en_us/language.php  <br>
+/includes/application_top.php (set error reporting earlier, moved to index bof)<br>
+index.php (added favicon.ico)<br>
+favicon.ico<br>
+/includes/addons/spiffyCal/spiffyCal.css (add z-index to appear on top of tabs)<br>
+/modules/banking/pages/bills/template_main.php</p>
+<p>// 2007-12-06 - Modified accounts to tabbed format. Added History tab. Added Notes tab. Added new notes table. <br>
+/modules/accounts/pages/main/pre_process.php<br>
+/modules/accounts/pages/main/js_include.php<br>
+/modules/accounts/pages/main/template_main.php<br>
+/modules/accounts/pages/main/template_detail.php<br>
+/modules/accounts/language/en_us/language.php<br>
+/modules/accounts/functions/accounts.php<br>
+/modules/install/sql/current/tables.sql<br>
+
+/includes/database_tables.php</p>
+<p>// 2007-12-07 - fixed bug in import beginning balance when creating new account not setting gl account properly<br>
+/modules/gen_ledger/pages/beg_bal_imp/pre_process.php<br>
+/modules/gen_ledger/classes/beg_balances_imp.php</p>
+<p>// 2007-12-07 - changed post operations on search fields and page jump pull down to get method to allow return on browser  back button pressed <br>
+/modules/general/classes/split_page_results.php<br>
+/includes/javascript/general.js<br>
+/modules/general/classes/toolbar.php<br>
+/modules/accounts/pages/main/pre_process.php<br>
+/modules/accounts/pages/popup_accts/pre_process.php<br>
+/modules/banking/pages/popup_bills/pre_process.php<br>
+/modules/banking/pages/popup_bills_accts/pre_process.php<br>
+/modules/gen_ledger/pages/popup_gl_acct/pre_process.php<br>
+/modules/gen_ledger/pages/popup_journal/pre_process.php<br>
+
+/modules/general/pages/search/pre_process.php<br>
+/modules/general/pages/users/pre_process.php<br>
+/modules/inventory/pages/bulk_prices/pre_process.php<br>
+/modules/inventory/pages/inv_fields/pre_process.php<br>
+/modules/inventory/pages/main/pre_process.php<br>
+/modules/inventory/pages/popup_adj/pre_process.php<br>
+/modules/inventory/pages/popup_assy/pre_process.php<br>
+/modules/inventory/pages/popup_inv/pre_process.php<br>
+/modules/orders/pages/inv_mgr/pre_process.php<br>
+/modules/orders/pages/popup_orders/pre_process.php<br>
+/modules/orders/pages/status/pre_process.php<br>
+/modules/services/pages/price_sheets/pre_process.php<br>
+/modules/setup/pages/main/pre_process.php</p>
+<p>// 2007-12-10 - fixed bug in general ledger re/unposting inventory assemblies  where inv history was not re-calculated correctly<br>
+/modules/gen_ledger/classes/gen_ledger.php</p>
+<p>// 2007-12-10 - fixed bug in shipping label generator popup <br>
+  DELETE - 
+  /modules/services/shipping/label_viewer.php<br>
+  DELETE - 
+  /modules/services/shipping/label_viewer_button.php<br>
+  DELETE - /modules/services/shipping/label_viewer_image.php  <br>
+/modules/orders/pages/inv_mgr/js_include.php<br>
+  /modules/services/pages/ship_mgr/template_main.php<br>
+  /index.php<br>
+  /modules/services/pages/popup_label_viewer/pre_process.php<br>
+  /modules/services/pages/popup_label_viewer/template_main.php<br>
+  /modules/services/pages/popup_label_button/pre_process.php<br>
+  /modules/services/pages/popup_label_button/template_main.php<br>
+  /modules/services/pages/popup_label_image/pre_process.php<br>
+/modules/services/pages/popup_label_image/template_main.php</p>
+<p>// 2007-12-11 - finished ship manager for modules freeshipper, storepickup, flat, item, table, usps (basic) <br>
+
+/modules/services/shipping/label_mgr/fedex/pre_process.php<br>
+/modules/services/shipping/label_mgr/fedex/template_main.php<br>
+/modules/services/shipping/label_mgr/ups/pre_process.php<br>
+/modules/services/shipping/label_mgr/ups/template_main.php<br>
+/modules/services/shipping/label_mgr/freeshipper/pre_process.php<br>
+/modules/services/shipping/label_mgr/freeshipper/js_include.php<br>
+/modules/services/shipping/label_mgr/freeshipper/template_main.php<br>
+/modules/services/shipping/label_mgr/storepickup/pre_process.php<br>
+/modules/services/shipping/label_mgr/storepickup/js_include.php<br>
+/modules/services/shipping/label_mgr/storepickup/template_main.php<br>
+/modules/services/shipping/label_mgr/flat/pre_process.php<br>
+/modules/services/shipping/label_mgr/flat/js_include.php<br>
+/modules/services/shipping/label_mgr/flat/template_main.php<br>
+/modules/services/shipping/label_mgr/item/pre_process.php<br>
+/modules/services/shipping/label_mgr/item/js_include.php<br>
+/modules/services/shipping/label_mgr/item/template_main.php<br>
+/modules/services/shipping/label_mgr/table/pre_process.php<br>
+/modules/services/shipping/label_mgr/table/js_include.php<br>
+/modules/services/shipping/label_mgr/table/template_main.php<br>
+/modules/services/shipping/label_mgr/usps/pre_process.php<br>
+/modules/services/shipping/label_mgr/usps/js_include.php<br>
+/modules/services/shipping/label_mgr/usps/template_main.php<br>
+<br>
+/modules/services/shipping/modules/fedex.php<br>
+/modules/services/shipping/modules/freeshipper.php<br>
+/modules/services/shipping/modules/storepickup.php<br>
+/modules/services/shipping/modules/flat.php<br>
+/modules/services/shipping/modules/item.php<br>
+/modules/services/shipping/modules/table.php<br>
+<br>
+/modules/services/shipping/language/en_us/modules/fedex.php<br>
+/modules/services/shipping/language/en_us/modules/freeshipper.php<br>
+/modules/services/shipping/language/en_us/modules/storepickup.php<br>
+/modules/services/shipping/language/en_us/modules/flat.php<br>
+/modules/services/shipping/language/en_us/modules/item.php<br>
+/modules/services/shipping/language/en_us/modules/table.php<br>
+<br>
+/modules/services/shipping/ship_mgr/fedex.php<br>
+/modules/services/shipping/ship_mgr/freeshipper.php<br>
+/modules/services/shipping/ship_mgr/storepickup.php<br>
+/modules/services/shipping/ship_mgr/flat.php<br>
+/modules/services/shipping/ship_mgr/item.php<br>
+/modules/services/shipping/ship_mgr/table.php<br>
+/modules/services/shipping/ship_mgr/ups.php<br>
+/modules/services/shipping/ship_mgr/usps.php</p>
+<p>// 2007-12-12 - Fixed bug in orders where invoice delete was allowed even though payment made against the invoice.<br>
+/modules/orders/classes/orders.php</p>
+<p>//2007-12-13 - Added context sensitive shipping dropdown on order screen to match carrier language<br>
+/modules/orders/pages/orders/pre_process.php<br>
+/modules/orders/pages/orders/js_include.php<br>
+/modules/orders/pages/orders/template_main.php<br>
+/modules/orders/pages/popup_orders/js_include.php<br>
+/modules/accounts/pages/popup_accts/js_include.php<br>
+/modules/orders/functions/orders.php<br>
+/modules/orders/javascript/orders.js<br>
+
+/modules/services/pages/popup_shipping/js_include.php<br>
+/modules/services/pages/popup_shipping/template_detail.php<br>
+/modules/services/pages/popup_shipping/template_main.php</p>
+<p>// *************************** svn update  2007-12-14 ***************************//</p>
+<p>// 2007-12-14 - Fixed bug losing period in popup searches<br>
+/includes/javascript/general.js<br>
+/modules/general/classes/toolbar.php</p>
+<p>// 2007-12-14 - bug deleting price sheets<br>
+/modules/services/pages/price_sheets/js_include.php</p>
+<p>// 2007-12-14 - Housekeeping on orders screen, added search text to sku lookup, cleaned up gl acct pull down<br>
+/modules/orders/pages/orders/template_main.php<br>
+/modules/orders/javascript/orders.js<br>
+/modules/orders/pages/orders/js_include.php</p>
+<p>// 2007-12-17 - Housekeeping fixed warning in opening screen to filter for language files only, duplicate sql, headings <br>
+/modules/general/functions/general.php<br>
+/modules/inventory/pages/main/pre_process.php<br>
+/modules/inventory/pages/adjustments/pre_process.php<br>
+/modules/inventory/pages/adjustments/template_main.php<br>
+/index.php</p>
+<p>// 2007-12-17 - changes to link for new phreebooks website<br>
+/includes/version.php<br>
+/modules/general/pages/login/pre_process.php<br>
+/modules/install/language/en_us/finished.php<br>
+/doc/manual/ch03-Installation/05-InstallationFAQ.html</p>
+<p>// 2007-12-18 - Misc. additions/clarifications <br>
+  /doc/manaul/ch08-HowTo/HowTo-SalesProcess.html<br>
+  /modules/general/language/en_us/language.php</p>
+<p>// 2001-12-18 - Added ability to convert customer quotes to sales orders or invoices<br>
+/modules/orders/pages/orders/template_main.php<br>
+/modules/orders/pages/popup_convert/pre_process.php<br>
+/modules/orders/pages/popup_convert/js_include.php<br>
+/modules/orders/pages/popup_convert/template_main.php<br>
+/modules/orders/language/en_us/language.php<br>
+/modules/orders/javascript/orders.js</p>
+<p>// 2007-12-19 - Added inventory revaluation for LCM inventory valuation<br>
+/modules/inventory/pages/main/template_main.php<br>
+/modules/inventory/language/en_us/language.php</p>
+<p>// 2007-12-20 - Language spelling/grammer fixes<br>
+/modules/install/language/en_us/database_setup.php<br>
+/modules/install/language/en_us/store_setup.php<br>
+/modules/install/language/en_us/chart_setup.php</p>
+<p>// 2007-12-20 - fixed calendar not working in ship manager<br>
+  /modules/services/pages/popup_tracking/pre_process.php<br>
+  /modules/services/pages/popup_tracking/js_include.php<br>
+  /modules/services/pages/popup_tracking/template_main.php  <br>
+/modules/services/pages/ship_mgr/pre_process.php<br>
+/modules/services/pages/ship_mgr/js_include.php<br>
+/modules/general/classes/toolbar.php<br>
+/includes/javascript/general.js</p>
+<p>// 2007-12-21 - Fixed bug rolling prices in price manager<br>
+/modules/inventory/pages/popup_price_mgr/js_include.php<br>
+/modules/inventory/pages/popup_price_mgr/template_main.php<br>
+/modules/services/pages/price_sheets/js_include.php<br>
+/modules/services/pages/price_sheets/template_detail.php</p>
+<p>// 2007-12-24 - fixed bug in deleting orders (refined search for prior paid invoices), bug in account reconciliation pulling open payments <br>
+/modules/orders/classes/orders.php<br>
+/modules/banking/pages/reconciliation/pre_process.php</p>
+<p>// 2007-12-26 - Fixes for language translations<br>
+/modules/install/templates/navigation.php<br>
+/modules/install/language/en_us/language.php</p>
+<p>// 2007-12-26 - Added backup script to menu tools<br>
+  /includes/menu_navigation.php<br>
+  /includes/security_tokens.php<br>
+  /modules/general/language/en_us/language.php<br>
+  /modules/general/pages/backup/pre_process.php<br>
+  /modules/general/pages/backup/js_include.php<br>
+/modules/general/pages/backup/template_main.php<br>
+/modules/install/functions/install.php</p>
+<p>  // 2007-12-28 - Fixed bug in special character handling in open orders popup<br>
+  /modules/orders/functions/orders.php<br>
+/modules/accounts/functions/accounts.php</p>
+<p>// 2007-12-28 - Added tooltip capability (first entry for the invoice number on order screen) <br>  
+  /index.php<br>
+  /modules/orders/pages/orders/template_main.php<br>
+  /modules/orders/language/en_us/language.php<br>
+/includes/addons/wz_tooltip directory and all files below (Thanks to <SMALL>Walter Zorn</SMALL> for his tooltip script) </p>
+<p>// *************************** svn update 2007-12-28 ***************************//</p>
+<p> // 2007-12-29 - bug in security token retrieval<br>
+/modules/banking/pages/bills/pre_process.php  </p>
+<p>// 2007-12-31 - Misc Bugs and error messages found during sync operation<br>
+/modules/gen_ledger/pages/beg_bal_imp/js_include.php<br>
+/modules/gen_ledger/pages/beg_bal_imp/pre_process.php<br>
+/modules/gen_ledger/pages/beg_bal_imp/template_main.php<br>
+/modules/gen_ledger/pages/beg_bal/template_main.php</p>
+<p>// 2008-01-02 - added bulk pay bills feature<br>
+/includes/menu_navigation.php <br>
+/modules/banking/classes/banking.php<br>
+/modules/banking/javascript/banking.js<br>
+/modules/banking/functions/banking.php<br>
+/modules/banking/language/en_us/language.php<br>
+/modules/banking/pages/bulk_bills/pre_process.php<br>
+/modules/banking/pages/bulk_bills/js_include.php<br>
+/modules/banking/pages/bulk_bills/template_main.php<br>
+/modules/reportwriter/pages/popup_form/pre_process.php<br>
+/modules/reportwriter/pages/popup_form/template_main.php<br>
+/modules/banking/pages/bills/js_include.php<br>
+/modules/orders/pages/orders/js_include.php</p>
+<p>// 2008-01-02 - misc bugs<br>
+/modules/reportwriter/pages/form_gen/pre_process.php (created temp filename incorrectly)<br>
+/modules/services/shipping/modules/fedex.php (added ability to close fedex for earlier days)<br>
+/modules/services/shipping/label_mgr/fedex/pre_process.php<br>
+/modules/banking/pages/register/pre_process.php (duplicate currency format in displaying page) <br>
+/modules/services/shipping/modules/fedex.php (fixed bug in  third party billing)<br>
+/modules/general/functions/gen_functions.php (problem erasing country when customer selected)<br>
+/modules/accounts/pages/popup_accts/js_include.php<br>
+/includes/javascript/general.js (date select not working on ship manager with firefox browser)<br>
+/modules/services/pages/ship_mgr/js_include.php<br>
+/modules/gen_ledger/pages/journal/pre_process.php (added title to general journal entry for register) <br>
+/modules/accounts/functions/accounts.php (defaults to COMPNAY_COUNTRY if country is imported blank) <br>
+/modules/orders/pages/orders/js_include.php (calendar not working in purchase receive/vendor credit memo) <br>
+/modules/banking/classes/banking.php (not incrementing check number properly) <br>
+/modules/gen_ledger/classes/gen_ledger.php<br>
+/modules/orders/pages/orders/pre_process.php (not filtering the constant TEXT_SEARCH and failing to post when no sku is present) </p>
+<p>// 2008-01-02 - Added greater than and less than criteria to reportwriter and ability to compare to other db fields<br>
+/modules/reportwriter/functions/generator_functions.php<br>
+/modules/reportwriter/language/en_us/language.php<br>
+/modules/general/language/en_us/language.php</p>
+<p>// 2008-01-03 - Added ability to round to next variable increment (0.05, 0.25, 5.00) in price sheets<br>
+/modules/inventory/language/en_us/language.php<br>
+/modules/services/pages/price_sheets/js_include.php<br>
+/modules/inventory/pages/popup_price_mgr/js_include.php<br>
+/modules/inventory/functions/inventory.php</p>
+<p>// 2008-01-04 - Fixed bug in freight estimator for FedEx LTL, added default weight class<br>
+/modules/services/shipping/modules/fedex.php<br>
+/modules/services/shipping/language/en_us/language.php<br>
+/modules/services/pages/popup_shipping/pre_process.php<br>
+/modules/services/pages/popup_shipping/template_main.php<br>
+/modules/services/pages/popup_shipping/template_detail.php<br>
+/modules/services/shipping/modules/usps.php</p>
+<p>// 2008-01-07 - Fixed bug in searching by period <br>
+/modules/banking/pages/register/pre_process.php<br>
+/modules/banking/pages/register/template_main.php<br>
+/modules/banking/language/en_us/language.php<br>
+  /modules/banking/pages/reconciliation/pre_process.php<br>
+  /modules/orders/pages/inv_mgr/pre_process.php<br>
+/modules/orders/pages/status/pre_process.php</p>
+<p>// change table to allow alphanumeric number in table current status <br>
+/modules/install/sql/current/tables.sql<br>
+/modules/install/updater.php</p>
+<p>// Added print button to ship manager to spawn pdf generator without needed to re-post transaction<br>
+/modules/orders/pages/inv_mgr/pre_process.php<br>
+/modules/orders/pages/inv_mgr/js_include.php<br>
+/modules/orders/pages/inv_mgr/template_main.php</p>
+<p>// added journal definition to manual<br>
+  /doc/manual/ch05-AccountingTutorial/03-PhreeBooksSpecific.html</p>
+<p>// *************************** svn update 2008-01-09 ***************************//</p>
+<p>// 2008-01-09 - misc bug fixes<br>
+/modules/services/shipping/modules/fedex.php ( fixed rounding not happending on LTL rates)<br>
+/modules/services/shipping/language/en_us/modules/usps.php ( pointing to wrong url )<br>
+/modules/services/shipping/ship_mgr/usps.php<br>
+/modules/install/language/en_us/chart_setup.php ( remove question mark, replace with period ) <br>
+/modules/gen_ledger/pages/journal/js_include.php ( row not deleting as marked )<br>
+/modules/reportwriter/pages/main/pre_process.php ( fixed bug in slashes and re-organized )<br>
+/modules/reportwriter/pages/main/template_main.php<br>
+/modules/orders/pages/inv_mgr/pre_process.php ( added purch_order_id to search fields ) <br>
+/modules/orders/pages/inv_mgr/template_main.php<br>
+/modules/orders/pages/status/pre_process.php<br>
+/modules/orders/pages/status/template_main.php<br>
+/modules/orders/pages/status/js_include.php<br>
+/modules/reportwriter/pages/builder/template_security_setup.php ( bug in displaying report title with special characters )<br>
+/modules/reportwriter/pages/builder/template_crit_setup.php<br>
+/modules/reportwriter/pages/builder/templatefield_setup.php<br>
+/modules/reportwriter/pages/builder/template_db_setup.php<br>
+/modules/reportwriter/pages/builder/template_page_setup.php<br>
+/modules/reportwriter/pages/builder/template_id.php<br>
+/modules/reportwriter/pages/builder/template_import.php<br>
+/modules/reportwriter/pages/builder/pre_process.php<br>
+/modules/reportwriter/pages/builder/template_TplFrmCBlk.php<br>
+/modules/reportwriter/pages/builder/template_TplFrmCDta.php<br>
+/modules/reportwriter/pages/builder/template_TplFrmData.php<br>
+/modules/reportwriter/pages/builder/template_TplFrmImg.php<br>
+/modules/reportwriter/pages/builder/template_TplFrmLine.php<br>
+/modules/reportwriter/pages/builder/template_TplFrmPgNum.php<br>
+/modules/reportwriter/pages/builder/template_TplFrmRect.php<br>
+/modules/reportwriter/pages/builder/template_TplFrmTbl.php<br>
+/modules/reportwriter/pages/builder/template_TplFrmTBlk.php<br>
+/modules/reportwriter/pages/builder/template_TplFrmTDup.php<br>
+/modules/reportwriter/pages/builder/template_TplFrmText.php<br>
+/modules/reportwriter/pages/builder/template_TplFrmTtl.php<br>
+DELETE - /modules/reportwriter/pages/builder/template_FrmTtl.php<br>
+
+/modules/reportwriter/pages/rpt_gen/template_save.php<br>
+/modules/reportwriter/pages/rpt_gen/template_page_update.php<br>
+/modules/reportwriter/pages/rpt_gen/template_filter.php<br>
+/modules/reportwriter/functions/generator_functions.php<br>
+/modules/reportwriter/functions/builder_functions.php<br>
+/modules/inventory/pages/popup_prices/template_main.php ( caused error in log when a bad sku was entered )<br>
+/modules/reportwriter/language/en_us/language.php<br>
+/includes/header_navigation.php</p>
+<p>// 2008-01-10 - added ability to create shipping log entry without generating a label for FedEx, UPS <br>
+/modules/services/shipping/language/en_us/language.php<br>
+/modules/services/shipping/ship_mgr/fedex.php<br>
+/modules/services/shipping/ship_mgr/ups.php<br>
+/modules/services/pages/popup_tracking/pre_process.php<br>
+/modules/services/pages/popup_tracking/js_include.php<br>
+/modules/services/pages/popup_tracking/template_main.php<br>
+/modules/services/pages/ship_mgr/js_include.php</p>
+<p>// 2008-01-15 - New Help files<br>
+  /doc/manual/ch15-ProgrammersRef/03-Translations.html</p>
+<p>// 2008-01-15 - Added new processing for shipping methods<br>
+/modules/reportwriter/functions/generator_functions.php<br>
+/modules/reportwriter/language/en_us/language.php</p>
+<p>// 2008-01-15 - Remove Inventory re-valuation button (will be part of General Ledger Menu when working)<br>
+/modules/inventory/pages/main/template_main.php</p>
+<p>// 2008-01-17 - Added account balance information to pay Bills screen<br>
+/modules/banking/pages/bills/pre_process.php<br>
+/modules/banking/pages/bills/template_main.php<br>
+/modules/banking/language/en_us/language.php<br>
+/modules/banking/javascript/banking.js</p>
+<p>// 2008-01-17 - Added view ship status to invoice manager, changed icon/text<br>
+  /themes/default/icons/16x16/phreebooks/stock_id.png<br>
+/modules/orders/pages/inv_mgr/template_main.php<br>
+/modules/orders/pages/inv_mgr/js_include.php<br>
+/modules/general/language/en_us/language.php<br>
+/modules/services/shipping/ship_mgr/fedex.php<br>
+/modules/services/shipping/ship_mgr/flat.php<br>
+/modules/services/shipping/ship_mgr/freeshipper.php<br>
+/modules/services/shipping/ship_mgr/item.php<br>
+/modules/services/shipping/ship_mgr/storepickup.php<br>
+/modules/services/shipping/ship_mgr/table.php<br>
+/modules/services/shipping/ship_mgr/ups.php<br>
+/modules/services/shipping/ship_mgr/usps.php</p>
+<p>// 2008-01-18 - Added upgrade.txt file<br>
+  /upgrade.txt 
+</p>
+<p>// 2008-01-18 - Fixed bug in Banking bill popup <br>
+/modules/banking/javascript/banking.js<br>
+/modules/services/payment/modules/nova_xml.php<br>
+/modules/services/pages/ship_mgr/template_main.php</p>
+<p>// *************************** svn update 2008-01-17 ***************************//</p>
+</body>
+</html>

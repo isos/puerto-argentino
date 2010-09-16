@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.65">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table current_status">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table current_status">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css"><title>Table current_status</title>
+
+</head>
+<body>
+<h1 align="center">Table current_status</h1>
+Table current_status holds the next available reference number for various PhreeBooks activities. PhreeBooks will not allow duplicate numbers in the journal for any of these numbers. Fields that are type varchar can use alphanumeric values.<br />
+<br />
+Table Type: InnoDB<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>id</td>
+<td>int (11)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Auto-increment number for record id.</td>
+</tr>
+<tr>
+  <td>next_po_num</td>
+  <td>int (11)</td>
+  <td>0</td>
+  <td>Holds the next vendor purchase order number.</td>
+</tr>
+<tr>
+  <td>next_so_num</td>
+  <td>varchar (16)</td>
+  <td>NOT NULL</td>
+  <td>Holds the next customer sales order number.</td>
+</tr>
+<tr>
+  <td>next)inv_num</td>
+  <td>int (11)</td>
+  <td>0</td>
+  <td>Holds the next customer invoice  number.</td>
+</tr>
+<tr>
+  <td>next_check_num</td>
+  <td>int (11)</td>
+  <td>0</td>
+  <td>Holds the next vendor payment number.</td>
+</tr>
+<tr>
+  <td>next_deposit_num</td>
+  <td>varchar (16)</td>
+  <td>NOT NULL</td>
+  <td>Holds the next customer receipt deposit number.</td>
+</tr>
+<tr>
+  <td>next_shipment_num</td>
+  <td>int (11)</td>
+  <td>0</td>
+  <td>Holds the next shipment reference number.</td>
+</tr>
+<tr>
+  <td>next_cm_num</td>
+  <td>varchar (16)</td>
+  <td>NOT NULL</td>
+  <td>Holds the next customer credit memo number.</td>
+</tr>
+<tr>
+  <td>next_ap_quote_num</td>
+  <td>varchar (16)</td>
+  <td>NOT NULL</td>
+  <td>Holds the next vendor quote number.</td>
+</tr>
+<tr>
+  <td>next_ar_quote_num</td>
+  <td>varchar (16)</td>
+  <td>NOT NULL</td>
+  <td>Holds the next customer quote number.</td>
+</tr>
+</tbody>
+</table>
+<br />
+<br />
+</body></html>

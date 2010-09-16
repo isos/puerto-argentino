@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="01.04.08">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Revision.PhreeBooks.Rev 1p5">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="PhreeBooks Release 1.5">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>PhreeBooks Release 1.5</title>
+<style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-size: large;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<h1 align="center">PhreeBooks Release 1.5</h1>
+<p>// 2007-12-04 Change log, release 1.4 to Release 1.5<br />
+  /doc/manual/ch01-Introduction/04-02-Rev1p5.html (this file) <br />
+/doc/manual/ch01-Introduction/04-RevHistory.html<br />
+/doc/manual/version.txt<br />
+  /includes/version.php<br />
+/modules/install/updater.php<br />
+/modules/install/updates/R14toR15.php</p>
+<p>// *************************** sql statements ***************************//<br />
+// sql statements are rolled into the base release and incorporated into the updater script for automatic db update</p>
+<p>// *************************** code changes ***************************//</p>
+<p>// 2008-04-09 - Incorporate TCPDF for UTF-8 support<br />
+/includes/addons/tcpdf (entire distribution - not included in standard distribution)<br />
+/includes/addons/tcpdf.txt (lists changes to TCPDF standard distribution) <br />
+  /modules/reportwriter/classes/form_generator.php<br />
+  /modules/reportwriter/classes/report_generator.php <br />
+/modules/reportwriter/language/en_us/language.php<br />
+/modules/reportwriter/classes/balance_sheet.php (fixed bug causing tcpdf to hang)<br />
+/modules/reportwriter/classes/income_statement.php (fixed bug causing tcpdf to hang)</p>
+<p>// 2008-04-10 - Misc Bugs and changes <br />
+  /modules/reportwriter/functions/builder_functions.php (bug in displaying page properties in report field setup) <br />
+  /my_files/reports/CustomerList.rpt.txt (bug) <br />
+  /modules/accounts/pages/main/template_c_payment.php (bug reloading if error on cc name) <br />
+  /modules/accounts/pages/main/pre_process.php (decrypt was adding junk at end, this removes it from explode) <br />
+  /includes/javascript/general.js (cleanCurrency wasn't coverting decimal point) <br />
+  /modules/inventory/pages/popup_inv/js_include.php (didn't translate currency before inserting into order form) <br />
+/modules/orders/pages/popup_orders/js_include.php (improved javascript form load) <br />
+/modules/orders/javascript/orders.js (fix rounding error due ot order of operations precedence)<br />
+/modules/orders/pages/orders/pre_process.php (not indicating vendor on the page description) <br />
+/modules/banking/pages/bulk_bills/js_include.php (not looking at post date when determining discount)<br />
+/modules/banking/pages/bulk_bills/template_main.php<br />
+/modules/accounts/pages/main/js_include.php (added hook for additional javascript init operations) <br />
+/modules/services/pages/price_sheets/pre_process.php (not handling currencies input properly) </p>
+<p>// 2008-04-09 - Added ability to recur general journal entries<br />
+/modules/orders/pages/popup_recur/pre_process.php<br />
+/modules/orders/language/en_us/language.php<br />
+/modules/orders/classes/orders.php<br />
+/modules/gen_ledger/pages/journal/pre_process.php<br />
+/modules/gen_ledger/pages/journal/js_include.php<br />
+/modules/gen_ledger/pages/journal/template_main.php<br />
+/modules/gen_ledger/language/en_us/language.php<br />
+/modules/gen_ledger/classes/gen_ledger.php<br />
+/modules/gen_ledger/functions/gen_ledger.php<br />
+/modules/gen_ledger/pages/popup_journal/pre_process.php<br />
+/modules/gen_ledger/pages/popup_journal/js_include.php</p>
+<p>// 2008-04-21 - added securit checks on search to not show results if user doesn't have permission)<br />
+/modules/general/pages/search/template_main.php<br />
+/modules/general/language/en_us/language.php</p>
+<p>// 2008-04-28 - changed icon for dashobard remove, added favorite reports feature <br />
+/modules/general/boxes/personal_links.php<br />
+/modules/general/boxes/favorite_reports.php<br />
+/modules/general/language/en_us/boxes/favorite_reports.php<br />
+/themes/default/icons/16x16/phreebooks/dashboard-remove.png</p>
+<p>// 2008-05-05 - fixed/added automatic fill in of sales reps when customer is selected<br />
+/modules/orders/pages/orders/js_include.php<br />
+/modules/orders/javascript/orders.js<br />
+/modules/orders/ajax/cust_defaults.php<br />
+/modules/orders/functions/orders.php<br />
+/modules/accounts/pages/popup_accts/js_include.php</p>
+<p>// ************************* SVN - Update ************************************** // </p>
+<p>// 2008-05-06 - added inactive state for users to disable accounts from logging in and showing up on forms, enhanced user form <br />
+  (sql upate change) <br />
+  /modules/general/pages/login/pre_process.php<br />
+  /modules/general/pages/users/pre_process.php<br />
+  /modules/general/pages/users/template_main.php<br />
+  /modules/general/pages/users/template_detail.php<br />
+/modules/general/language/en_us/language.php  </p>
+<p>// 2008-05-06 - Misc bugs and fixes<br />
+/modules/gen_ledger/language/en_us/language.php (added constant for GL duplicate references) <br />
+/modules/general/classes/encryption.php (not storing encrypted values correctly)<br />
+/modules/general/functions/validations.php ( corrected header when sending via sendmail ) <br />
+/modules/general/functions/html_functions.php ( enhanced combo box to allow change of width and add on change parameters ) <br />
+/index.php ( added constant date_delimiter to javascript for date formatting bug )<br />
+/includes/javascript/general.js ( added functions cleanDate and formatDate for locale date formats )<br />
+/modules/general/language/en_us/language.php ( added DATE_DELIMITER constant )<br />
+/modules/gen_ledger/pages/utils/js_include.php ( fixed bug calculating dates for locale formats )</p>
+<p>// ************************* SVN - Update ************************************** //  </p>
+<p>// 2008-05-15 - Misc Bugs and fixes<br />
+/modules/banking/pages/reconciliation/pre_process.php ( pulling wrong open entries past current period ) <br />
+/modules/orders/classes/orders.php ( error if both add billing and  shipping is checked in order screen when creating new customer ) <br />
+/modules/gen_ledger/classes/gen_ledger.php ( not re-posting payments/receipts record if credit memo with multiple payment ) <br />
+/modules/general/functions/html_functions.php ( bug causing error log to fll up ) <br />
+/modules/accounts/pages/main/pre_process.php ( display error if decryption not successful ) <br />
+/modules/accounts/pages/main/template_b_general.php ( inactive checkbox not saving ) <br />
+/modules/accounts/pages/main/template_c_general.php<br />
+/modules/accounts/pages/main/template_e_general.php<br />
+/modules/accounts/pages/main/template_v_general.php<br />
+/modules/general/functions/general.php ( not passing action to fix balance errors )<br />
+/modules/general/pages/admin_tools/pre_process.php<br />
+/modules/reportwriter/pages/rpt_gen/template_filter.php ( fixed bug truncating data on reports - ignoring checkbox )<br />
+/modules/reportwriter/classes/report_generator.php<br />
+/modules/banking/pages/bills/js_include.php ( AJAX call to load credit card values when operating in POS mode ) <br />
+/modules/orders/classes/orders.php ( fixed bug in re-posting recur entries )<br />
+/modules/gen_ledger/classes/gen_ledger.php<br />
+/modules/gen_ledger/pages/journal/pre_process.php<br />
+</p>
+<p>// 2008-05-27 - Updated GL to show GL full names (per user config variable), modified order screen, enhanced taxes <br />
+/modules/gen_ledger/classes/gen_ledger.php<br />
+/modules/gen_ledger/pages/journal/pre_process.php<br />
+/modules/gen_ledger/pages/journal/js_include.php<br />
+/modules/gen_ledger/pages/journal/template_main.php<br />
+/modules/orders/classes/orders.php<br />
+/modules/orders/functions/orders.php<br />
+/modules/orders/javascript/orders.js<br />
+/modules/orders/pages/orders/pre_process.php<br />
+/modules/orders/pages/orders/js_include.php<br />
+/modules/orders/pages/orders/template_main.php<br />
+/modules/orders/pages/popup_orders/js_include.php<br />
+/modules/setup/functions/setup.php<br />
+/modules/inventory/functions/inventory.php<br />
+/modules/inventory/language/en_us/language.php<br />
+/modules/inventory/pages/main/pre_process.php<br />
+/modules/inventory/pages/main/js_include.php<br />
+/modules/inventory/pages/main/template_tab_gen.php</p>
+<p>// 2008-06-18 - added click to edit on line of lists<br />
+/modules/inventory/pages/inv_fields/template_main.php<br />
+/modules/orders/pages/inv_mgr/template_main.php<br />
+/modules/orders/pages/status/template_main.php<br />
+/modules/services/pages/price_sheets/template_main.php<br />
+/modules/general/pages/search/template_main.php<br />
+/modules/setup/classes/assets_tabs.php<br />
+/modules/setup/classes/chart_of_accounts.php<br />
+/modules/setup/classes/countries.php<br />
+/modules/setup/classes/currency.php<br />
+/modules/setup/classes/departments.php<br />
+/modules/setup/classes/dept_types.php<br />
+/modules/setup/classes/inv_tabs.php<br />
+/modules/setup/classes/tax_auths.php<br />
+/modules/setup/classes/tax_rates.php<br />
+/modules/setup/classes/zones.php</p>
+<p>// 2008-06-18 - bug in install script<br />
+/modules/install/sql/current/tables.sql</p>
+<p>// ************************* SVN - Update ************************************** // </p>
+<p>// 2008-06-19 - Misc Bugs and fixes<br />
+  /modules/reportwriter/classes/statement_builder.php  <br />
+
+/modules/reportwriter/functions/builder_functions.php ( added configurable filename to downloaded/emailed pdfs ) <br />
+/modules/reportwriter/functions/generator_functions.php<br />
+
+/modules/reportwriter/pages/builder/template_crit_setup.php<br />
+/modules/reportwriter/pages/form_gen/pre_process.php<br />
+/modules/reportwriter/language/en_us/language.php<br />
+/modules/orders/pages/popup_orders/js_include.php ( disabling wrong row on multi-item orders, bug from prior svn update order to 2 lines )<br />
+/modules/orders/pages/popup_orders/js_include.php ( font color on sku was not correct on open order ) <br />
+/modules/orders/javascript/orders.js ( insert default gl account when adding new row ) <br />
+/modules/inventory/pages/popup_adj/pre_process.php ( added sku to search fields )<br />
+/modules/inventory/pages/popup_assy/pre_process.php<br />
+/modules/reportwriter/functions/generator_functions.php ( bug saving custom reports for selection type greater than 9 ) <br />
+/includes/application_top.php ( fixed incorrect pointer when using shared ssl cert ) <br />
+/modules/inventory/pages/popup_prices/template_main.php ( javascript error when multi-currency is off ) <br />
+/doc/manual/ch08-HowTo/HowTo-ZenCart.html<br />
+/modules/install/sql/current/tables.sql ( incorporate db changes in this update for fresh installs )<br />
+/modules/install/language/en_us/config_data.php<br />
+/modules/general/functions/gen_functions.php ( enhanced sql date function for special reports ) </p>
+<p>// 2008-07-07 - Added recur ability to Sales Orders and Purchase Orders<br />
+/modules/orders/classes/orders.php<br />
+/modules/orders/pages/orders/js_include.php<br />
+/modules/orders/pages/orders/template_main.php<br />
+/modules/orders/pages/popup_recur/pre_process.php</p>
+<p>// 2008-07-14 - More work on enhanced order screen<br />
+/modules/orders/pages/orders/js_include.php<br />
+/modules/orders/pages/orders/template_main.php<br />
+/modules/orders/javascript/orders.js<br />
+/modules/inventory/pages/popup_inv/pre_process.php<br />
+/modules/inventory/pages/popup_inv/js_include.php<br />
+/modules/inventory/pages/popup_inv/template_main.php</p>
+<p>// 2008-07-21 - Work on addition of order discount functionality<br />
+/modules/orders/pages/orders/pre_process.php<br />
+/modules/orders/pages/orders/js_include.php<br />
+/modules/orders/pages/orders/template_main.php<br />
+/modules/orders/javascript/orders.js<br />
+/modules/orders/language/en_us/language.php<br />
+/modules/orders/classes/orders.php<br />
+/modules/orders/functions/orders.php<br />
+/modules/gen_ledger/language/en_us/language.php<br />
+/modules/install/language/en_us/config_data.php<br />
+/modules/orders/pages/popup_orders/js_include.php</p>
+<p>// ************************* SVN - Update ************************************** // </p>
+<p>// 2008-07-25 - Misc Bugs and fixes<br />
+/modules/reportwriter/pages/builder/pre_process.php ( bug inserting date fields when creating new reports/forms ) <br />
+/modules/services/pages/imp_exp/template_detail.php ( bug not specifying form encoding for importing files ) <br />
+/modules/orders/pages/orders/pre_process.php ( audit log not reflecting add versus edit when payment, print button is pressed ) </p>
+<p>// 2008-07-29 - fixed url generation error for images pointing to SSL for all cases<br />
+/index.php<br />
+/includes/application_top.php<br />
+/modules/general/functions/html_functions.php<br />
+/modules/inventory/pages/main/template_tab_gen.php<br />
+/doc/manual/ch03-Installation/04-01-configPHP.html<br />
+[addons]<br />
+/includes/addons/tcpdf.txt<br />
+/includes/addons/tcpdf/tcpdf.php
+<br />
+[modules]<br />
+/my_files/custom/assets/pages/main/template_detail.php</p>
+<p>// 2008-08-05 - changes to double/single line order screen<br />
+/index.php<br />
+/includes/javascript/general.js<br />
+/modules/orders/pages/orders/js_include.php<br />
+/modules/orders/pages/orders/template_main.php<br />
+/modules/orders/functions/orders.php<br />
+/modules/orders/javascript/orders.js<br />
+/modules/orders/pages/popup_orders/js_include.php<br />
+/modules/install/updates/R14toR15.php<br />
+/modules/install/language/en_us/config_data.php</p>
+<p>// ************************* SVN - Update ************************************** // </p>
+<p>/modules/install/updater.php<br />
+  /modules/install/popup_help_screen.php  <br />
+/modules/install/updates/R14toR15.php<br />
+/modules/services/pricesheets/language/en_us/modules/quantity.php<br />
+/doc/manual/version.txt</p>
+<p>// ************************* SVN - Update (Release Candidate 1) ************************************** // </p>
+<p>// 2008-08-26 - feedback from release candidate 1<br />
+/modules/orders/pages/orders/pre_process.php ( divide by zero error when posting an invoice with zero subtotal )<br />
+/modules/orders/pages/popup_orders/js_include.php ( divide by zero error when full price is zero ) <br />
+/modules/install/language/en_us/config_data.php ( changed description of constant INVENTORY_AUTO_ADD ) <br />
+/modules/gen_ledger/classes/gen_ledger.php ( implemented INVENTORY_AUTO_ADD operation ) <br />
+/modules/inventory/pages/main/pre_process.php ( set the serialize flag when creating item )<br />
+/modules/inventory/pages/main/template_tab_gen.php ( disable serialize flag - should not be able to change once set ) <br />
+/modules/install/sql/current/tables.sql ( shorten comments to 60 characters for mysql strict mode install ) <br />
+/modules/orders/pages/orders/template_main.php ( javascript error editing existing orders ) <br />
+/modules/gen_ledger/classes/gen_ledger.php ( fix divide by zero warning ) <br />
+/modules/orders/javascript/orders.js ( not filling posted column for ship all in single line mode ) <br />
+/modules/orders/pages/popup_orders/js_include.php ( bug with recurring POs receiving inventory copying recur ref num ) <br />
+/modules/install/sql/current/tables.sql ( error installing table data_security with table prefixes ) </p>
+<p>// ************************* SVN - Update ************************************** // </p>
+<p>&nbsp;</p>
+<p>&nbsp; </p>
+</body>
+</html>

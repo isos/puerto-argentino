@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.45">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table configuration">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table configuration">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css"><title>Table configuration</title>
+
+</head>
+<body>
+<h1 align="center">Table configuration</h1>
+Table configuration holds constants used throughout PhreeBooks. They
+are grouped by the field configuration_group_id with table
+configuration_group to separate the constants into user defined
+groupings. Some group id's are hidden to the user as they are used by
+add-on modules for shipping, payments, etc. <br />
+<br />
+Table Type: MyISAM<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>configuration_id</td>
+<td>int (11)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Auto-increment number for record id.</td>
+</tr>
+
+
+<tr><td>configuration_title</td><td>text</td><td>NOT NULL</td><td>The title used in the Company -&gt; {category} listing as seen by the user. </td></tr><tr><td>configuration_key</td><td>varchar (255)</td><td>NOT NULL</td><td>UNIQUE
+- This field defines a constant load with every page and used through
+most of the scripts. The syntax is all uppercase with underscores to
+separate words.</td></tr><tr><td>configuration_value</td><td>text</td><td>NOT NULL</td><td>The value assigned to the constant</td></tr><tr><td>configuration_description</td><td>text</td><td>NOT NULL</td><td>The description used to help the user set the value of the constant. </td></tr><tr><td>configuration_group_id</td><td>int (11)</td><td>0</td><td>INDEX - Maps to the configuration_group table to help organize the configuration constants.</td></tr><tr><td>sort_order</td><td>int (5)</td><td></td><td>Defines the order for which the configuration item appears in the listing by group.</td></tr><tr><td>last_modified</td><td>datetime</td><td>NULL</td><td>Date the record was last modified.</td></tr><tr><td>date_added</td><td>datetime</td><td>0000-00-00 00:00:00</td><td>Date the configuration constant was added to the table.</td></tr><tr><td>use_function</td><td>text</td><td></td><td>Defines the function to use when displaying the configuration constant.</td></tr><tr><td>set_function</td><td>text</td><td></td><td>Defines
+the function to use to format the input field of the configuration
+value. This can be to restrict the choices (pull-down menu) or map
+textual descriptions to sytem values.</td></tr></tbody>
+</table>
+<br /><br />
+</body></html>

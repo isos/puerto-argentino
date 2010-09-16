@@ -1,0 +1,46 @@
+// +-----------------------------------------------------------------+
+// |                   PhreeBooks Open Source ERP                    |
+// +-----------------------------------------------------------------+
+// | Copyright (c) 2008, 2009, 2010 PhreeSoft, LLC                   |
+// | http://www.PhreeSoft.com                                        |
+// +-----------------------------------------------------------------+
+// | This program is free software: you can redistribute it and/or   |
+// | modify it under the terms of the GNU General Public License as  |
+// | published by the Free Software Foundation, either version 3 of  |
+// | the License, or any later version.                              |
+// |                                                                 |
+// | This program is distributed in the hope that it will be useful, |
+// | but WITHOUT ANY WARRANTY; without even the implied warranty of  |
+// | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the   |
+// | GNU General Public License for more details.                    |
+// |                                                                 |
+// | The license that is bundled with this package is located in the |
+// | file: /doc/manual/ch01-Introduction/license.html.               |
+// | If not, see http://www.gnu.org/licenses/                        |
+// +-----------------------------------------------------------------+
+//  Path: /includes/addons/tcpdf.txt
+//
+
+// Changes to the tcpdf standard release version 4.8.009 to work in PhreeBooks:
+
+// The following change is to set the configuration parameters within TCPDF
+File: /includes/addons/tcpdf/tcpdf.php, 
+
+Line 131:
+Replace: require_once(dirname(__FILE__).'/config/tcpdf_config.php');
+With:    require_once(DIR_FS_ADDONS . 'tcpdf/config/tcpdf_config.php');
+
+// bug displaying long reports and forms on TCPDF Release 3.0.003 (causes indefinite hang)
+Line 7423:
+Add after:
+		protected function UTF8StringToArray($str) {
+With:
+			if ($str == '') return;
+
+// bug with empty char arrays
+Line 3055: (function GetArrStringWidth)
+From: 			foreach ($sa as $char) {
+To:  			if ($sa) foreach ($sa as $char) {
+
+// the remaining changes are made through constants in /modules/reportwriter/language/en_us/language.php
+// or configuration constants (after Release 1.4)

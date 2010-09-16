@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="01.04.02">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Revision.PhreeBooks.Rev 1p1">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="PhreeBooks Release 1.1">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>PhreeBooks Release 1.1</title>
+</head>
+
+<body>
+
+<h1 align="center">PhreeBooks Release 1.1</h1>
+<p>// 2007-09-13 Change log, release 1.0 to Release 1.1:</p>
+<p>// sql statements<br>
+  // to add fields to increment RQF, and credit memo numbers<br>
+  ALTER TABLE `current_status` ADD `next_cm_num` VARCHAR( 16 ) NOT NULL ,<br>
+  ADD `next_ap_quote_num` VARCHAR( 16 ) NOT NULL ,<br>
+  ADD `next_ar_quote_num` VARCHAR( 16 ) NOT NULL ;</p>
+<p>// 2007-08-13 For longer customer purchase orders<br>
+/modules/install/sql/current/tables.sql - changed length of purch_order_id field to 24 in table journal_main.</p>
+<p>// 2007-08-13 Added file for installation start-up help <br>
+  /install.txt</p>
+<p>// 2007-08-13 To add telephone and email to order form when opening posted order<br>
+  /modules/orders/functions/orders.php<br>
+  /modules/orders/popup.php</p>
+<p>// 2007-08-13 To keep print window on top when printing from the orders form<br>
+  /modules/orders/orders.php<br>
+  /modules/orders/javascript/orders.js</p>
+<p>// 2007-08-13 To fix bug closing SO when deleting invoice when no items have been invoiced<br>
+  /modules/orders/classes/orders.php</p>
+<p>// 2007-08-13 To add special table fields to forms (qty backordered, qty on SO, etc.)<br>
+  /modules/reportwriter/report_builder.php<br>
+  /modules/reportwriter/functions/builder_functions.php<br>
+  /modules/reportwriter/functions/generator_functions.php<br>
+  /modules/reportwriter/language/en_us/language.php<br>
+  /modules/reportwriter/classes/form_generator.php<br>
+  /modules/reportwriter/classes/entry_builder.php<br>
+  /modules/reportwriter/forms/rb_TplFrmTbl.php</p>
+<p>// 2007-08-13 Fix bug on date pre-selection on forms filter<br>
+  /modules/reportwriter/forms/fg_filter.php</p>
+<p>// 2007-08-13 Zencart upload fixes<br>
+  /modules/services/zencart/modules/product_ul.php<br>
+  /modules/inventory/forms/inventory_main.php</p>
+<p>// 2007-08-13 All standard reports to account for DB_PREFIX constant</p>
+<p>// **************************************************************************<br>
+  // svn change #2</p>
+<p>// to fix image upload path<br>
+  /modules/services/zencart/classes/zencart.php</p>
+<p>// to fix product upload price sheets, price levels<br>
+  /modules/services/zencart/classes/zencart.php<br>
+  /modules/services/zencart/modules/product_ul.php<br>
+  /modules/setup/functions/setup.php<br>
+  /modules/inventory/popup_prices.php<br>
+  /modules/inventory/functions/inventory.php</p>
+<p>// bug in inventory field when updating field<br>
+  /modules/inventory/language/en_us/language.php<br>
+  /modules/inventory/forms/fields_detail.php<br>
+  /modules/inventory/fields.php</p>
+<p>// fix qualifier in Zencart upload to test for inventory field 'catalog'<br>
+  /modules/inventory/forms/inventory_main.php</p>
+<p>// fix non-secure warning on image load when running HTTPS:<br>
+  /modules/inventory/forms/inventory_detail.php</p>
+<p>// fix bug in balance verification, added $currencies to global list, and allow duplicate deposit ticket IDs<br>
+  /modules/gen_ledger/classes/gen_ledger.php</p>
+<p>// fix sales tax value calculation and notification in order screen<br>
+  /modules/orders/javascript/orders.js</p>
+<p>// fix bug in account reconciliation to combine deposits with same reference ID<br>
+  /modules/banking/reconciliation.php<br>
+  /modules/banking/language/en_us/language.php</p>
+<p>// fix require of language file not existing (or needed)<br>
+  /modules/services/import_export.php</p>
+<p>// href link generator bug passed parameter missing<br>
+  /modules/services/pricesheets/forms/forms_main.php<br>
+  /modules/accounts/forms/accounts_main.php<br>
+  /modules/inventory/forms/inventory_main.php<br>
+  /modules/orders/invoice_mgr.php<br>
+  /modules/orders/status.php<br>
+  /modules/reportwriter/reports.php</p>
+<p>// added reports choice to menus<br>
+  /includes/menu_navigation.php</p>
+<p>// fix innerText (IE) vs textContent (Firefox)<br>
+  /modules/banking/reconciliation.php<br>
+  /modules/gen_ledger/journal.php<br>
+  /modules/inventory/adjustments.php<br>
+  /modules/services/popup_imp_exp.php</p>
+<p>// Check register<br>
+  /modules/banking/register.php<br>
+  /includes/menu_navigation.php<br>
+  /modules/banking/language/en_us/language.php</p>
+<p>// **************************************************************************<br>
+  // svn change #3</p>
+<p>// add sales rep to order screens<br>
+  /modules/orders/forms/orders_detail.php<br>
+  /modules/orders/functions/orders.php<br>
+  /modules/orders/orders.php<br>
+  /modules/orders/popup.php</p>
+<p>// fix bug in form generator with [tablex] alias plus other bugs<br>
+  /modules/reportwriter/functions/generator_functions.php<br>
+  /modules/reportwriter/forms/rb_TplFrmData.php<br>
+  /modules/reportwriter/language/en_us/language.php</p>
+<p>// bug in caution notification in messageStack<br>
+  /modules/general/language/en_us/language.php<br>
+  /modules/general/classes/message_stack.php</p>
+<p>// fixes error generated trying to open config.txt when doesn't exist<br>
+  /modules/general/functions/general.php</p>
+<p>// Fixes misc bugs in import beginnning balances<br>
+  /modules/gen_ledger/language/en_us/language.php<br>
+  /modules/gen_ledger/classes/beg_balances_imp.php<br>
+  /modules/gen_ledger/beg_balances_imp.php<br>
+  /modules/gen_ledger/beg_balances.php</p>
+<p>// fix bug creating GL account not filling history table<br>
+  /modules/setup/classes/chart_of_accounts.php</p>
+<p>// fix bug in balance sheet and income statement reports<br>
+  /modules/reportwriter/classes/special_reports.php</p>
+<p>// manual correction<br>
+  /doc/manual/ch03-Installation/04-02-BeginningBalances.html<br>
+  /doc/manual/version.txt</p>
+<p>// pre-select invoices to print from the receipts page<br>
+  /modules/banking/bills.php</p>
+<p>// **************************************************************************<br>
+  // svn change #4</p>
+<p>// To create special_report ability for forms (gathers info not native to reportwriter structure)<br>
+  // and the class for everything known for a given sale/invoice<br>
+  /modules/reportwriter/functions/generator_functions.php<br>
+  /modules/reportwriter/classes/entry_builder.php<br>
+  /modules/reportwriter/functions/builder_functions.php<br>
+  /modules/reportwriter/forms/rb_TplFrmData.php<br>
+  /modules/reportwriter/forms/rb_TplFrmTBlk.php<br>
+  /modules/reportwriter/forms/rb_TplFrmTbl.php</p>
+<p>// manual addition<br>
+  /doc/manual/ch08-HowTo/HowTo-ZenCart.html</p>
+<p>// keep the print windows on top during print<br>
+  /modules/banking/bills.php</p>
+<p>// added processing functions to retrieve buyers name and shipping code to language<br>
+  /modules/reportwriter/functions/generator_functions.php<br>
+  /modules/reportwriter/language/en_us/language.php</p>
+<p>// fixed bug in RFQ's to retrieve next number, DB field didn't exist<br>
+  /modules/install/sql/current/tables.sql<br>
+  /modules/install/sql/current/install_data.sql</p>
+<p>// fix bug in loading account information for customer credit memos<br>
+  /modules/orders/forms/orders_detail.php<br>
+  /modules/orders/popup.php</p>
+<p>// All standard reports to account for errors and new invoice special functions</p>
+<p>// added capability to update the database after upgrade, roll the version<br>
+  /includes/application_top.php<br>
+  /modules/install/updater.php<br>
+  /includes/version.php</p>
+<p>// removed duplicate version.php file<br>
+  /modules/install/includes/application_top.php<br>
+  DELETE - /modules/install/version.php</p>
+<p>// Some fixes to the installation script<br>
+  /modules/install/includes/modules/pages/inspect/header_php.php<br>
+  /modules/install/includes/modules/pages/database_setup/header_php.php<br>
+  /modules/install/includes/languages/en_us/finished.php<br>
+/includes/application_top.php (fixed error when config.php not found during install) <br>
+/modules/install/includes/functions/install.php (removed dir creation warning that already existed from distro) </p>
+<p>// Changes to Doc files for revision hsitory<br> 
+/doc/manual/ch01-Introduction/04-RevHistory.html<br>/doc/manual/ch01-Introduction/04-01-Rev1p0.html<br>
+added /doc/manual/ch01-Introduction/04-02-Rev1p1.html (this file) </p>
+<p></p>
+<p>&nbsp; </p>
+</body>
+</html>

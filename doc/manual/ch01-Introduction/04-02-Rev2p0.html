@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="01.04.14">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Revision.PhreeBooks.Rev 2p0">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="PhreeBooks Release 2.0">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>PhreeBooks Release 2.0</title>
+</head>
+
+<body>
+
+<h1 align="center">PhreeBooks Release 2.0</h1>
+<p>// 2009-04-11 Change log, release 1.9 to Release 2.0<br />
+  /doc/manual/ch01-Introduction/04-02-Rev2p0.html (this file) <br />
+/doc/manual/ch01-Introduction/04-RevHistory.html<br />
+/doc/manual/version.txt<br />
+  /includes/version.php<br />
+/modules/install/updater.php<br />
+/modules/install/updates/R19toR20.php (if necessary)<br />
+/install/sql/curernt/tables.sql</p>
+<p>// *************************** sql statements ***************************//<br />
+// sql statements are rolled into the base release and incorporated into the updater script for automatic db update</p>
+<p>// *************************** code changes ***************************//</p>
+<p>// 2009-12-15 - Misc bugs and changes<br />
+/modules/orders/javascript/orders.js ( fix for terms being overwritten for drop ships) |<br />
+/modules/orders/ajax/load_order.php<br />
+/modules/services/pages/popup_tracking/pre_process.php ( fix for custom shipping modules ) <br />
+/modules/reportwriter/classes/form_generator.php ( fix for multi-page multi-group forms page numbering ) <br />
+/modules/reportwriter/functions/generator_functions.php<br />
+/modules/services/pages/popup_shipping/pre_process.php ( bug printing labels )<br />
+/modules/services/pages/popup_shipping/template_detail.php<br />
+/modules/services/shipping/functions/shipping.php</p>
+<p>// 2009-12-17 - Enhanced chart of account to add headings for subaccount support <br />
+  /modules/setup/classes/chart_of_accounts.php<br />
+  /modules/setup/language/en_us/modules/chart_of_accounts.php<br />
+  /modules/gen_ledger/functions/gen_ledger.php  <br />
+  /modules/general/functions/gen_functions.php  <br />
+  /modules/accounts/pages/main/template_c_general.php<br />
+/modules/accounts/pages/main/template_v_general.php<br />
+/modules/banking/pages/bills/pre_process.php<br />
+/modules/banking/pages/bills_deposit/pre_process.php<br />
+/modules/banking/pages/bulk_bills/pre_process.php<br />
+/modules/gen_ledger/pages/journal/pre_process.php<br />
+/modules/general/pages/search/pre_process.php<br />
+/modules/inventory/pages/adjustments/pre_process.php<br />
+/modules/inventory/pages/main/pre_process.php<br />
+/modules/inventory/pages/transfer/pre_process.php<br />
+/modules/orders/pages/orders/pre_process.php<br />
+/modules/setup/classes/tax_auths.php<br />
+/modules/setup/classes/tax_auths_vend.php<br />
+/modules/setup/functions/setup.php<br />
+
+/modules/general/language/en_us/language.php<br />
+/modules/reportwriter/classes/subaccount_bs.php<br />
+/modules/reportwriter/language/en_us/classes/subaccount_bs.php</p>
+<p>// *************************** SVN Update ***************************//</p>
+<p>// 2009-12-15 - Misc bugs and changes<br />
+/modules/setup/classes/chart_of_accounts.php<br />
+/modules/reportwriter/classes/subaccount_bs.php<br />
+/modules/reportwriter/classes/subaccount_is.php<br />
+/modules/reportwriter/language/en_us/classes/subaccount_is.php<br />
+/modules/gen_ledger/functions/gen_ledger.php<br />
+/my_files/reports/IncomeStatmntWithSubaccounts.rpt.txt<br />
+/my_files/reports/BalanceSheetWithSubAccounts.rpt.txt<br />
+/modules/orders/pages/orders/js_include.php ( added feature to scan bar codes at line entry screen ) <br />
+/modules/orders/pages/popup_bar_code/js_include.php<br />
+/modules/orders/language/en_us/language.php<br />
+/modules/general/functions/localization.php ( syntax error on utf8 convert ) <br />
+/modules/orders/javascript/orders.js ( bug with vendor status popup ) <br />
+/modules/gen_ledger/classes/beg_balances_imp.php ( bug with import script with titles ) <br />
+/modules/setup/pages/company_mgr/pre_process.php ( bug creating new company ) <br />
+/modules/general/boxes/open_inv.php ( added dashboard module to show open invoices ) <br />
+/modules/general/language/en_us/boxes/open_inv.php<br />
+/modules/orders/javascript/orders.js ( bug with editing closed sales order being reopened )<br />
+/modules/orders/ajax/load_order.php<br />
+/modules/banking/functions/banking.php ( bug passing discount percent to bill form ) <br />
+/modules/reportwriter/classes/statement_builder.php ( bug to remove discounts causing balance errors ) <br />
+/modules/banking/functions/banking.php ( bug when direct date is entered ) <br />
+/modules/reportwriter/pages/builder/js_include.php ( bug entering criteria in builder ) <br />
+/modules/reportwriter/functions/generator_functions.php<br />
+/modules/orders/pages/status/pre_process.php ( added secondary sort by so/po number desc ) <br />
+/modules/banking/pages/popup_bills/pre_process.php<br />
+/modules/banking/javascript/banking.js<br />
+/modules/banking/pages/bulk_bills/pre_process.php<br />
+/modules/banking/pages/bulk_bills/template_main.php<br />
+/modules/banking/pages/bills/template_main.php<br />
+/modules/banking/pages/bills/js_include.php<br />
+/modules/inventory/pages/main/pre_process.php ( fix to copy special pricing when copying SKUs ) <br />
+/modules/reportwriter/pages/builder/template_crit_setup.php<br />
+/modules/reportwriter/functions/builder_functions.php<br />
+/modules/reportwriter/functions/generator_functions.php<br />
+/modules/general/boxes/company_links.php<br />
+/modules/general/language/en_us/boxes/company_links.php<br />
+/modules/general/language/en_us/language.php<br />
+/modules/general/pages/index/pre_process.php<br />
+/modules/general/classes/ctl_panel.php<br />
+/includes/application_top.php<br />
+/modules/general/functions/html_functions.php<br />
+/modules/install/updates/R19toR20.php<br />
+/modules/general/boxes/personal_links.php<br />
+/modules/general/boxes/favorite_reports.php<br />
+/modules/general/pages/admin_tools/pre_process.php ( added feature to archive and remove old audit log files ) <br />
+/modules/general/pages/admin_tools/template_main.php<br />
+/modules/general/boxes/mini_financial.php ( added mini-financial statement to dashboard )<br />
+/modules/general/language/en_us/boxes/mini_financial.php<br />
+/includes/menu_navigation.php ( reworked dashboard to use single scritp for all menu headings )<br />
+/modules/general/pages/index/pre_process.php<br />
+/modules/general/pages/index/js_include.php<br />
+/modules/general/pages/index/template_main.php<br />
+REMOVE: /modules/setup/pages/cat_co/*<br />
+REMOVE: /modules/setup/pages/cat_setup/*<br />
+REMOVE: /modules/quality/pages/cat_qa/*<br />
+REMOVE: /modules/orders/pages/cat_ar/*<br />
+REMOVE: /modules/orders/pages/cat_ap/*<br />
+REMOVE: /modules/inventory/pages/cat_inv/*<br />
+REMOVE: /modules/hr/*<br />
+REMOVE: /modules/gen_ledger/pages/cat_gl/*<br />
+REMOVE:  /modules/banking/pages/cat_bnk/*</p>
+<p>// 2010-01-05 - improved user restrictions and reworkd user preferences<br />
+/modules/setup/pages/company_mgr/pre_process.php<br />
+/modules/general/language/en_us/language.php<br />
+/modules/general/language/en_us/admin_tools.php<br />
+/modules/general/pages/users/pre_process.php<br />
+/modules/general/pages/users/template_detail.php<br />
+/modules/general/pages/login/pre_process.php<br />
+/modules/orders/pages/orders/pre_process.php<br />
+/modules/orders/pages/orders/template_main.php<br />
+/modules/inventory/pages/transfer/template_main.php<br />
+/modules/inventory/pages/assemblies/template_main.php<br />
+/modules/inventory/pages/adjustments/template_main.php<br />
+/modules/general/functions/gen_functions.php<br />
+/modules/orders/language/en_us/language.php<br />
+/modules/banking/classes/banking.php<br />
+/soap/classes/orders.php<br />
+<br />
+// *************************** SVN Update ***************************//</p>
+<p>// 2010-01-11 - Misc bugs and changes<br />
+/modules/accounts/pages/main/pre_process.php ( added hook for more contact type modules ) <br />
+/modules/general/functions/gen_functions.php ( added enhanced combo box ) <br />
+/includes/javascript/general.js<br />
+/modules/general/functions/html_functions.php<br />
+/modules/general/language/en_us/language.php<br />
+/modules/inventory/pages/popup_prices/template_main.php ( bug not formatting currencies ) <br />
+/modules/banking/functions/banking.php ( bug displaying credit memo balances properly )<br />
+/modules/banking/ajax/load_bill.php<br />
+/modules/banking/pages/popup_bills_accts/template_main.php<br />
+/modules/banking/pages/popup_bills/template_main.php<br />
+/modules/reportwriter/classes/entry_builder.php<br />
+/modules/banking/pages/bills/pre_process.php ( bug displaying proper journal entry description for cust refunds ) <br />
+/modules/banking/pages/bulk_bills/pre_process.php<br />
+/modules/gen_ledger/language/en_us/language.php<br />
+/modules/inventory/ajax/inv_details.php ( bug flagging stock of non-stock items ) <br />
+/modules/banking/javascript/banking.js ( fixed field length )<br />
+/modules/banking/pages/bills/template_main.php<br />
+/modules/install/includes/config_data.php<br />
+/modules/install/updates/R19toR20.php<br />
+/modules/install/language/en_us/config_data.php<br />
+/modules/banking/pages/bills_deposit/pre_process.php<br />
+/modules/general/functions/validations.php<br />
+/modules/install/index.php ( prevent mailcious attempt at install ) <br />
+/modules/install/includes/application_top.php<br />
+/modules/general/classes/currencies.php ( clean currency not working properly ) <br />
+/modules/inventory/pages/bulk_prices/template_main.php ( bug in security settings ) <br />
+/modules/accounts/functions/accounts.php<br />
+/modules/general/pages/ctl_panel/template_main.php ( bug when security is set to read-only ) <br />
+/modules/gen_ledger/classes/gen_ledger.php ( fixed bug with coa history when rolling to new fiscal year )<br />
+/modules/gen_ledger/pages/journal/pre_process.php ( fixed bug in deleting recurring entries updating wrong period )<br />
+/modules/orders/classes/orders.php<br />
+/modules/banking/pages/bills/js_include.php ( added balance update on date change )<br />
+/modules/banking/pages/bills/template_main.php<br />
+/modules/banking/pages/bulk_bills/js_include.php<br />
+/modules/banking/pages/bulk_bills/template_main.php<br />
+/modules/services/payment/modules/moneyorder.php ( bug saving reference value in proper location ) <br />
+/modules/reportwriter/classes/aged_summary.php ( bug duplicating entries resulting in incorrect total ) <br />
+/modules/reportwriter/pages/builder/template_field_setup.php ( eliminate wrap on action icon when row is long ) <br />
+/modules/reportwriter/functions/generator_functions.php<br />
+/modules/reportwriter/classes/aged_summary.php<br />
+/modules/reportwriter/classes/aged_receivables.php<br />
+/modules/general/pages/login/pre_process.php ( added cookie to remember login prefs and restore page after session expires ) <br />
+/modules/general/pages/login/template_main.php<br />
+/modules/general/functions/gen_functions.php<br />
+/index.php</p>
+<p>// 2010-01-14 - Added CRM module to trunk <br />
+/includes/menu_navigation.php<br />
+/includes/security_tokens.php<br />
+/modules/general/language/en_us/language.php<br />
+/modules/accounts/language/en_us/language.php<br />
+/modules/accounts/functions/accounts.php<br />
+/modules/accounts/ajax/load_contact_info.php<br />
+/modules/accounts/pages/main/pre_process.php<br />
+/modules/accounts/pages/main/js_include.php<br />
+/modules/accounts/pages/main/template_i_general.php<br />
+/modules/accounts/pages/main/template_i_history.php<br />
+/modules/accounts/pages/main/template_i_notes.php</p>
+<p>// 2010-02-02 - Added budget capability<br />
+/includes/security_tokens.php<br />
+/includes/menu_navigation.php<br />
+/modules/general/language/en_us/language.php<br />
+/modules/gen_ledger/pages/budget/pre_process.php<br />
+/modules/gen_ledger/pages/budget/js_include.php<br />
+/modules/gen_ledger/pages/budget/template_main.php<br />
+/modules/gen_ledger/language/en_us/language.php<br />
+/modules/gen_ledger/ajax/load_gl_data.php<br />
+/modules/reportwriter/classes/is_budget.php<br />
+/modules/reportwriter/language/en_us/classes/is_budget.php<br /> 
+Bunch of reports
+</p>
+<p>// 2010-02-04 - Added precision feature for more precise unit price and quantity<br />
+/modules/install/updates/R19toR20.php<br />
+/modules/install/sql/current/tables.sql<br />
+/modules/setup/classes/currency.php<br />
+/modules/setup/language/en_us/modules/currency.php<br />
+/modules/install/language/en_us/currencies_list.php<br />
+/modules/general/classes/currencies.php<br />
+/includes/javascript/general.js<br />
+/index.php<br />
+/modules/orders/ajax/load_order.php<br />
+/modules/orders/pages/orders/template_main.php<br />
+/modules/inventory/functions/inventory.php<br />
+/modules/inventory/pages/adjustments/js_include.php<br />
+/modules/inventory/pages/popup_prices/js_include.php<br />
+/modules/inventory/pages/popup_prices/template_main.php<br />
+/modules/inventory/pages/popup_price_mgr/js_include.php<br />
+/modules/inventory/pages/popup_price_mgr/template_main.php<br />
+/modules/inventory/pages/popup_inv/template_main.php<br />
+/modules/inventory/pages/main/js_include.php<br />
+/modules/inventory/pages/main/template_tab_gen.php<br />
+/modules/inventory/pages/bulk_prices/template_main.php<br />
+/modules/inventory/pages/transfer/js_include.php<br />
+/modules/services/pages/price_sheets/template_detail.php<br />
+/modules/reportwriter/functions/generator_functions.php<br />
+/modules/reportwriter/language/en_us/language.php</p>
+<p>// 2010-02-05 - Added default price sheet to individual inventory items<br />
+/modules/general/language/en_us/language.php<br />
+/modules/accounts/language/en_us/language.php<br />
+/modules/general/functions/gen_functions.php<br />
+/modules/accounts/functions/accounts.php<br />
+/modules/accounts/pages/main/template_c_general.php<br />
+/modules/inventory/functions/inventory.php<br />
+/modules/inventory/pages/main/template_tab_gen.php<br />
+/modules/inventory/pages/main/pre_process.php</p>
+<p>// *************************** SVN Update ***************************//</p>
+<p>// 2010-02-08 - Misc bugs and changes<br />
+/index.php<br>
+/modules/general/pages/login/pre_process.php ( bug when not connected to internet )<br>
+/modules/general/functions/validations.php<br>
+/modules/services/pages/price_sheets/js_include.php ( javascript loading bug ) <br>
+/modules/services/pages/price_sheets/template_detail.php<br>
+/modules/orders/pages/popup_status/pre_process.php<br>
+/modules/banking/pages/bills/pre_process.php ( bug fixes submitted by user ) <br>
+/modules/general/functions/html_functions.php<br>
+/modules/orders/pages/orders/pre_process.php<br>
+/includes/application_top.php ( added check to make sure default currency is set )<br>
+/modules/general/classes/currencies.php<br>
+/modules/general/language/en_us/language.php<br>
+/modules/general/boxes/my_notes.php ( added new control panel module to adding notes and to do lists ) <br>
+/modules/general/language/en_us/boxes/my_notes.php</p>
+<p>// 2010-02-12 - Added ability to view reports in html <br>
+/modules/reportwriter/classes/html_generator.php<br>
+/modules/reportwriter/pages/rpt_gen/pre_process.php<br>
+/modules/reportwriter/pages/rpt_gen/template_filter.php<br>
+/modules/reportwriter/functions/generator_functions.php</p>
+<p>// 2010-02-15 - Added feature to automatically refresh session clock when browser is active<br>
+/modules/general/ajax/refresh_session.php<br>
+/includes/javascript/general.js</p>
+<p>// 2010-02-15 - Added new inventory type (Serialized Assembly)<br>
+  /includes/application_top.php<br>
+  /modules/inventory/ajax/inv_details.php  <br>
+  /modules/inventory/language/en_us/language.php  <br>
+  /modules/inventory/pages/main/pre_process.php  <br>
+/modules/inventory/pages/main/template_main.php<br>
+/modules/inventory/pages/main/template_detail.php<br>
+/modules/inventory/pages/main/template_tab_gen.php<br>
+/modules/inventory/pages/transfer/js_include.php<br>
+/modules/inventory/pages/popup_inv/pre_process.php<br>
+/modules/inventory/pages/popup_inv/template_main.php<br>
+/modules/inventory/pages/assemblies/js_include.php<br>
+/modules/inventory/pages/adjustments/js_include.php</p>
+<p>// 2010-02-16 - Added copy function to journal entries to duplicate entries to a new post<br>
+/modules/gen_ledger/language/en_us/language.php<br>
+/modules/gen_ledger/pages/journal/pre_process.php<br>
+/modules/gen_ledger/pages/journal/js_include.php<br>
+/modules/gen_ledger/pages/journal/template_main.php</p>
+<p>// 2010-02-26 - Added ability to print sequentila forms (first attempt for receipt printers ) <br>
+/modules/reportwriter/pages/builder/template_*.php<br>
+/modules/reportwriter/pages/builder/pre_process.php<br>
+/modules/reportwriter/pages/form_gen/pre_process.php<br>
+/modules/reportwriter/pages/form_gen/js_include.php</p>
+<p>// 2010 -02-26 - Ran most of code through html validator and fixed problems, Added copyright 2010 to all files <br>
+  Most  files in /modules and /includes</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>// *************************** Release ***************************//</p>
+</body>
+</html>

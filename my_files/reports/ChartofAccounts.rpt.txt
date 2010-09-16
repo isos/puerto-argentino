@@ -1,0 +1,49 @@
+/* Report Builder Export Tool */
+version:1.0
+/* Report Name: Chart of Accounts */
+/* Export File Generated: : 2009-12-04 04:12:57 */
+
+
+/* Language Fields. */
+/* Only modify the language portion between the single quotes after the colon. */
+
+/* Report Name */
+ReportName:'Chart of Accounts'
+ReportNarr:'Lists current chart of accounts. Format: Letter, Portrait'
+EmailMsg:''
+
+/* Report Field Description Information */
+FieldDesc0:'Inactive'
+FieldDesc1:'Account Type'
+FieldDesc2:'Account ID'
+FieldDesc3:'Description'
+FieldDesc4:'Inactive'
+FieldDesc5:'Account Type'
+FieldDesc6:'Primary Account'
+FieldDesc9:'Account Id'
+FieldDesc10:'Inactive'
+FieldDesc11:'Account Type'
+
+/* End of language fields. */
+
+/* DO NOT EDIT BELOW THIS LINE! */
+
+
+/* SQL report data. */
+ReportData:description='Chart of Accounts', reporttype='rpt', groupname='gl', standard_report='1', special_report='0', table1='chart_of_accounts', table2='chart_of_accounts_types', table2criteria='[table1].account_type = [table2].id', table3='', table3criteria='', table4='', table4criteria='', table5='', table5criteria='', table6='', table6criteria='';
+
+/* SQL field data. */
+FieldData0:entrytype='critlist', seqnum='1', fieldname='[table1].account_inactive', displaydesc='Inactive', visible='1', columnbreak='0', params='a:4:{s:5:\"value\";s:1:\"2\";s:7:\"default\";s:0:\"\";s:7:\"min_val\";s:0:\"\";s:7:\"max_val\";s:0:\"\";}';
+FieldData1:entrytype='critlist', seqnum='2', fieldname='[table2].description', displaydesc='Account Type', visible='1', columnbreak='0', params='a:4:{s:5:\"value\";s:1:\"0\";s:7:\"default\";s:0:\"\";s:7:\"min_val\";s:0:\"\";s:7:\"max_val\";s:0:\"\";}';
+FieldData2:entrytype='fieldlist', seqnum='1', fieldname='[table1].id', displaydesc='Account ID', visible='1', columnbreak='1', params='a:3:{s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData3:entrytype='fieldlist', seqnum='2', fieldname='[table1].description', displaydesc='Description', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"65\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData4:entrytype='fieldlist', seqnum='3', fieldname='[table1].account_inactive', displaydesc='Inactive', visible='0', columnbreak='0', params='a:3:{s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData5:entrytype='fieldlist', seqnum='4', fieldname='[table2].description', displaydesc='Account Type', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"50\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData6:entrytype='grouplist', seqnum='1', fieldname='[table1].primary_acct_id', displaydesc='Primary Account', visible='0', columnbreak='0', params='a:3:{s:7:\"default\";s:1:\"0\";s:10:\"page_break\";s:1:\"0\";s:10:\"processing\";s:1:\"0\";}';
+FieldData7:entrytype='pagelist', seqnum='0', fieldname='', displaydesc='', visible='1', columnbreak='1', params='a:41:{s:9:\"narrative\";s:57:\"Lists current chart of accounts. Format: Letter, Portrait\";s:9:\"papersize\";s:14:\"Letter:216:282\";s:16:\"paperorientation\";s:1:\"P\";s:9:\"margintop\";s:1:\"8\";s:12:\"marginbottom\";s:1:\"8\";s:10:\"marginleft\";s:1:\"8\";s:11:\"marginright\";s:1:\"8\";s:11:\"coynameshow\";s:1:\"1\";s:10:\"title1show\";s:1:\"1\";s:10:\"title2show\";s:1:\"1\";s:11:\"coynamefont\";s:9:\"helvetica\";s:15:\"coynamefontsize\";s:2:\"12\";s:16:\"coynamefontcolor\";s:5:\"0:0:0\";s:12:\"coynamealign\";s:1:\"C\";s:10:\"title1desc\";s:12:\"%reportname%\";s:10:\"title1font\";s:9:\"helvetica\";s:14:\"title1fontsize\";s:2:\"10\";s:15:\"title1fontcolor\";s:5:\"0:0:0\";s:15:\"title1fontalign\";s:1:\"C\";s:10:\"title2desc\";s:23:\"Report Generated %date%\";s:11:\"title2font \";s:9:\"helvetica\";s:14:\"title2fontsize\";s:2:\"10\";s:15:\"title2fontcolor\";s:5:\"0:0:0\";s:15:\"title2fontalign\";s:1:\"C\";s:10:\"filterfont\";s:9:\"helvetica\";s:14:\"filterfontsize\";s:1:\"8\";s:15:\"filterfontcolor\";s:5:\"0:0:0\";s:15:\"filterfontalign\";s:1:\"L\";s:8:\"datafont\";s:9:\"helvetica\";s:12:\"datafontsize\";s:2:\"10\";s:13:\"datafontcolor\";s:5:\"0:0:0\";s:13:\"datafontalign\";s:1:\"L\";s:10:\"totalsfont\";s:9:\"helvetica\";s:14:\"totalsfontsize\";s:2:\"10\";s:15:\"totalsfontcolor\";s:5:\"0:0:0\";s:15:\"totalsfontalign\";s:1:\"L\";s:9:\"trunclong\";s:1:\"0\";s:11:\"datedefault\";s:1:\"a\";s:9:\"datefield\";s:0:\"\";s:10:\"dateselect\";s:1:\"a\";s:9:\"email_msg\";s:0:\"\";}';
+FieldData8:entrytype='security', seqnum='0', fieldname='', displaydesc='', visible='1', columnbreak='1', params='u:0;e:0;d:0';
+FieldData9:entrytype='sortlist', seqnum='1', fieldname='[table1].id', displaydesc='Account Id', visible='0', columnbreak='0', params='a:1:{s:7:\"default\";s:1:\"1\";}';
+FieldData10:entrytype='sortlist', seqnum='2', fieldname='[table1].account_inactive', displaydesc='Inactive', visible='0', columnbreak='0', params='a:1:{s:7:\"default\";s:1:\"0\";}';
+FieldData11:entrytype='sortlist', seqnum='3', fieldname='[table2].description', displaydesc='Account Type', visible='0', columnbreak='0', params='a:1:{s:7:\"default\";s:1:\"0\";}';
+
+/* End of Export File */

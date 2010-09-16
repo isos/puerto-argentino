@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.185">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table users_profiles">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table users_profiles">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>Table inventory_history</title>
+
+</head>
+<body>
+<h1 align="center">Table users_profiles</h1>
+Table users_profiles contains the information to position the control panel features. The home page and each menu page can have their own control panel configuration by user. <br />
+<br />
+Table Type: InnoDB<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>id</td>
+<td>int (11)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Auto increment field to hold unique ID </td>
+</tr>
+<tr>
+  <td>user_id</td>
+  <td>int(11)</td>
+  <td>0</td>
+  <td>Holds the user id for the control panel record. </td>
+</tr>
+<tr>
+  <td>page_id</td>
+  <td>varchar(32)</td>
+  <td>NULL</td>
+  <td>Holds the category (/modules) name of the record </td>
+</tr>
+<tr>
+  <td>module_id</td>
+  <td>varchar(32)</td>
+  <td>NULL</td>
+  <td>Holds the module (/category/pages/module) of the control panel record</td>
+</tr>
+<tr>
+  <td>column_id</td>
+  <td>int(3)</td>
+  <td>0</td>
+  <td>Holds the column number where the control panel entry is located </td>
+</tr>
+<tr>
+  <td>row_id</td>
+  <td>int(3)</td>
+  <td>0</td>
+  <td>Holds the row number where the control panel entry is located. </td>
+</tr>
+<tr>
+  <td>params</td>
+  <td>text</td>
+  <td>NULL</td>
+  <td>Holds encoded parameters which vary by module.</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+</body></html>

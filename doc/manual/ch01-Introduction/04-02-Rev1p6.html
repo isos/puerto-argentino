@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="01.04.09">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Revision.PhreeBooks.Rev 1p6">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="PhreeBooks Release 1.6">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>PhreeBooks Release 1.6</title>
+<style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-size: large;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<h1 align="center">PhreeBooks Release 1.6</h1>
+<p>// 2008-09-10 Change log, release 1.5 to Release 1.6<br />
+  /doc/manual/ch01-Introduction/04-02-Rev1p6.html (this file) <br />
+/doc/manual/ch01-Introduction/04-RevHistory.html<br />
+/doc/manual/version.txt<br />
+  /includes/version.php<br />
+/modules/install/updater.php<br />
+/modules/install/updates/R15toR16.php</p>
+<p>// *************************** sql statements ***************************//<br />
+// sql statements are rolled into the base release and incorporated into the updater script for automatic db update</p>
+<p>// *************************** code changes ***************************//</p>
+<p>// 2008-09-10 - Misc bugs and changes<br />
+/includes/application_top.php ( fixed language select upon entering login with language passed as parameter ) <br />
+/modules/reportwriter/classes/income_statement.php ( YTD rows not matching current when aditional accounts added ) <br />
+/soap/classes/orders.php ( problem parsing with '&amp;' character )<br />
+/soap/classes/parser.php<br />
+/soap/orders.php<br />
+/modules/banking/pages/bulk_bills/pre_process.php ( vendor credit memos not showing )<br />
+/modules/banking/pages/bulk_bills/template_main.php<br />
+/modules/orders/pages/orders/js_include.php ( not looking at stock in single line mode ) <br />
+/modules/accounts/pages/main/template_main.php ( added color notification if customer/vendor is inactive )<br />
+/modules/accounts/pages/main/pre_process.php<br />
+/modules/accounts/functions/accounts.php ( bug with new line character in notes field ) <br />
+/modules/inventory/pages/main/template_detail.php ( added description short to title bar ) <br />
+/modules/reportwriter/classes/form_generator.php ( bug printing text fields wrapping to multiline ) <br />
+/modules/general/functions/gen_functions.php ( fixed null test to allow float values as well ) <br />
+/modules/inventory/pages/adjustments/template_main.php ( moved reference field to left column ) <br />
+/includes/javascript/general.js ( housekeeping - moved setField and clearField to general js ) <br />
+/modules/banking/javascript/banking.js<br />
+/modules/orders/javascript/orders.js<br />
+/index.php<br />
+/modules/banking/pages/bills/js_include.php<br />
+/modules/orders/pages/orders/js_include.php<br />
+/modules/banking/language/en_us/language.php ( missing define ) <br />
+/modules/reportwriter/pages/popup_form/pre_process.php ( added hook for extra operations )<br />
+/modules/reportwriter/pages/main/pre_process.php</p>
+<p>// 2008-09-11 - fixed sales rep pull downs to reflect based on employee roles, added employee roles, sync'd order screens with proper sales roles<br />
+  /doc/manual/ch15-ProgrammersRef/03-DatabaseTables/journal_main.html<br />
+  /modules/install/sql/current/tables.sql<br />
+  /modules/install/updater.php<br />
+  /modules/install/language/en_us/config_data.php  <br />
+/modules/install/updates/R15toR16.php<br />
+/modules/general/language/en_us/language.php<br />
+/modules/general/functions/gen_functions.php<br />
+/modules/banking/pages/bills/pre_process.php<br />
+/modules/banking/pages/bulk_bills/pre_process.php<br />
+/modules/accounts/pages/main/pre_process.php<br />
+/modules/accounts/pages/main/template_c_general.php<br />
+/modules/accounts/pages/main/template_e_general.php<br />
+/modules/accounts/pages/main/template_v_general.php<br />
+/modules/accounts/pages/main/template_b_notes.php<br />
+/modules/accounts/pages/main/template_e_notes.php<br />
+/modules/accounts/pages/main/template_v_notes.php<br />
+/modules/accounts/language/en_us/language.php<br />
+/modules/accounts/functions/accounts.php<br />
+/modules/gen_ledger/classes/beg_balances_imp.php<br />
+/modules/gen_ledger/classes/gen_ledger.php<br />
+/modules/gen_ledger/pages/journal/pre_process.php<br />
+/modules/inventory/pages/adjustments/pre_process.php<br />
+/modules/inventory/pages/assemblies/pre_process.php<br />
+/modules/orders/ajax/cust_defaults.php<br />
+/modules/orders/ajax/sku_price.php<br />
+/modules/orders/functions/orders.php<br />
+/modules/orders/javascript/orders.js<br />
+/modules/orders/pages/orders/pre_process.php<br />
+/modules/orders/pages/orders/js_include.php<br />
+/modules/orders/pages/orders/template_main.php<br />
+/modules/orders/pages/popup_convert_po/pre_process.php<br />
+/modules/orders/pages/popup_orders/js_include.php<br />
+/modules/orders/pages/popup_status/pre_process.php<br />
+/modules/orders/pages/popup_status/js_include.php<br />
+/modules/orders/pages/popup_status/template_main.php<br />
+/modules/reportwriter/classes/aged_receivables.php<br />
+/modules/reportwriter/classes/entry_builder.php<br />
+/modules/reportwriter/classes/statement_builder.php<br />
+/soap/classes/orders.php<br />
+</p>
+<p>// 2008-09-12 - Added new field 'full_price' to table journal_item to store the list price used to calculate discounts<br />
+/modules/orders/pages/orders/pre_process.php<br />
+/modules/orders/classes/orders.php<br />
+/modules/inventory/pages/popup_prices/js_include.php<br />
+/modules/inventory/pages/popup_inv/js_include.php</p>
+<p>// 2008-09-30 - enhanced contacts main, inv mgr, po/so mgr and inventory main and popups to allow enter key in place of icon for search <br />
+  /modules/orders/pages/inv_mgr/js_include.php<br />
+/modules/orders/pages/inv_mgr/pre_process.php<br />
+/modules/orders/pages/status/js_include.php<br />
+/modules/orders/pages/status/pre_process.php<br />
+/modules/inventory/pages/main/js_include.php<br />
+/modules/inventory/pages/main/pre_process.php<br />
+/modules/accounts/pages/main/js_include.php<br />
+/modules/accounts/pages/main/pre_process.php<br />
+/modules/accounts/pages/popup_accts/js_include.php<br />
+/modules/accounts/pages/popup_accts/pre_process.php<br />
+/modules/banking/pages/popup_bills/js_include.php<br />
+/modules/banking/pages/popup_bills/pre_process.php<br />
+/modules/banking/pages/popup_bills_accts/js_include.php<br />
+/modules/banking/pages/popup_bills_accts/pre_process.php<br />
+/modules/inventory/pages/bulk_prices/js_include.php<br />
+/modules/inventory/pages/bulk_prices/pre_process.php<br />
+/modules/inventory/pages/inv_fields/js_include.php<br />
+/modules/inventory/pages/inv_fields/pre_process.php<br />
+/modules/inventory/pages/popup_adj/js_include.php<br />
+/modules/inventory/pages/popup_adj/pre_process.php<br />
+/modules/inventory/pages/popup_assy/js_include.php<br />
+/modules/inventory/pages/popup_assy/pre_process.php<br />
+/modules/inventory/pages/popup_inv/js_include.php<br />
+/modules/inventory/pages/popup_inv/pre_process.php<br />
+/modules/orders/pages/popup_orders/js_include.php<br />
+/modules/orders/pages/popup_orders/pre_process.php<br />
+/modules/services/pages/price_sheets/js_include.php<br />
+/modules/services/pages/price_sheets/pre_process.php</p>
+<p>// 2008-10-20 - updated reports for field name changes<br />
+  /my_files/reports/SalesReport.rpt.txt<br />
+/my_files/reports/PODeliveryDates.rpt.txt<br />
+/my_files/reports/OpenSalesOrders.rpt.txt<br />
+/my_files/reports/OpenPurchaseOrders.rpt.txt<br />
+/my_files/reports/CustomerPayments.rpt.txt
+<br />
+/my_files/reports/CustomerQuotes.rpt.txt<br />
+/my_files/reports/InvoicePackingSlip.rpt.txt<br />
+/my_files/reports/Invoice.rpt.txt<br />
+/my_files/reports/PackingSlip.rpt.txt<br />
+/my_files/reports/SalesOrder.rpt.txt<br />
+/my_files/reports/RequestForQuote.rpt.txt<br />
+/my_files/reports/PurchaseOrder.rpt.txt</p>
+<p>// *************************** SVN update ***************************//</p>
+<p>// 2008-10-22 - Misc bugs and changes<br />
+  /modules/reportwriter/classes/form_generator.php ( made all single line entries multi-cell for wrapping capability )<br />
+  /modules/reportwriter/classes/entry_builder.php ( added new full price field to forms pulled from invoice ) <br />
+  /modules/general/classes/message_stack.php ( added software version number to trace file ) <br />
+/modules/inventory/pages/main/template_tab_gen.php ( displayed path of image with filename stored for retrieval )   </p>
+<p>// 2008-10-27 - Added button to calculate assembly cost at current prices<br />
+/modules/inventory/pages/main/js_include.php<br />
+/modules/inventory/pages/main/template_tab_gen.php<br />
+/modules/inventory/ajax/assy_price.php</p>
+<p>// 2008-10-28 - Added ablilty to collect tax from vendors authorities different than customers<br />
+/includes/menu_navigation.php<br />
+/includes/security_tokens.php<br />
+/modules/install/updates/R15toR16.php<br />
+/modules/install/sql/current/tables.sql<br />
+/modules/general/language/en_us/language.php<br />
+/modules/setup/classes/tax_auths.php<br />
+/modules/setup/classes/tax_rates.php<br />
+/modules/setup/classes/tax_rates_vend.php<br />
+/modules/setup/classes/tax_auths_vend.php<br />
+/modules/setup/language/en_us/modules/tax_auths_vend.php<br />
+/modules/setup/language/en_us/modules/tax_rates_vend.php<br />
+/modules/inventory/functions/inventory.php<br />
+/modules/orders/functions/orders.php<br />
+/modules/orders/language/en_us/language.php<br />
+/modules/orders/pages/orders/template_main.php<br />
+/modules/orders/pages/orders/pre_process.php<br />
+/modules/orders/classes/orders.php</p>
+<p>// *************************** SVN update ***************************//</p>
+<p>// 2008-10-29 - Enhanced report writer to allow for form table headings to have seperate properties from table<br />
+/modules/reportwriter/pages/builder/template_TplFrmTbl.php<br />
+/modules/reportwriter/language/en_us/language.php<br />
+/modules/reportwriter/classes/form_generator.php</p>
+<p>// *************************** SVN update ***************************//</p>
+<p>// 2008-10-30 - Misc bugs and changes<br />
+/modules/reportwriter/language/en_us/language.php ( fixed potential bug with languages and custom reports ) <br />
+/modules/reportwriter/functions/generator_functions.php<br />
+/modules/reportwriter/functions/builder_functions.php<br />
+/modules/reportwriter/pages/builder/template_crit_setup.php<br />
+/modules/orders/pages/status/pre_process.php ( added so/po reference to po/so manager table )<br />
+/modules/orders/pages/status/template_main.php<br />
+/modules/orders/classes/orders.php ( fixed total amount of order to better match calculated total - rounding problem ) <br />
+/modules/reportwriter/pages/builder/pre_process.php ( bug in displaying report name in page setup )<br />
+/modules/reportwriter/pages/builder/template_page_setup.php<br />
+/modules/reportwriter/functions/generator_functions.php ( fixed -0.00 problem )<br />
+/modules/reportwriter/classes/entry_builder.php ( added tax breakout block for reports ) </p>
+<p>// *************************** SVN update ***************************//</p>
+<p>// 2008-11-3 - Misc bugs and changes<br />
+/modules/general/functions/validations.php ( bug setting port with smtp mail settings )<br />
+/modules/gen_ledger/classes/gen_ledger.php ( rounding error problem )<br />
+/index.php ( to allow for custom html header info without errors ) <br />
+/modules/accounts/pages/popup_accts/pre_process.php ( added pink background to inactive customers )<br />
+/modules/accounts/pages/popup_accts/template_main.php<br />
+/modules/accounts/pages/main/pre_process.php ( added notes field to import to address book ) <br />
+/modules/orders/javascript/orders.js ( bug re-loading price on credit memos when using SKU price fill by customer ) <br />
+/modules/orders/ajax/sku_price.php ( bug loading currencies graeter than 1000 through ajax sku price fill ) <br />
+/modules/reportwriter/classes/entry_builder.php ( showing zero invoice quantity if on SO but not on invoice ) </p>
+<p>// 2008-11-05 - added restore feature using BigDump GPL Script and backup using PHP zip instead of Linux commands<br />
+  /modules/general/language/en_us/language.php<br />
+  /modules/general/language/en_us/admin_tools.php  <br />
+/modules/general/pages/backup/pre_process.php<br />
+/modules/general/pages/backup/js_include.php<br />
+/modules/general/pages/backup/template_main.php<br />
+/modules/general/pages/backup/template_restore.php<br />
+/modules/install/functions/install.php<br />
+/includes/addons/bigdump/bigdump.php<br /> 
+/includes/addons/bigdump/ChangeNotes.txt</p>
+<p>// *************************** SVN update ***************************//</p>
+<p>// 2008-12-03 - Misc bugs and changes<br />
+/modules/reportwriter/classes/entry_builder.php ( added invoice discount to invoice form ) <br />
+/modules/services/import_export/functions/import_export.php ( added the notes field to import contacts ) <br />
+/modules/accounts/pages/main/pre_process.php ( bug with secrutiy settings not setting properly ) <br />
+/modules/general/functions/general.php ( not calculating the correct beginning period for GL repair ) <br />
+/modules/general/classes/currencies.php ( moved number to words function to reportwriter language file )<br />
+/modules/reportwriter/language/en_us/language.php<br />
+/modules/reportwriter/functions/generator_functions.php<br />
+/modules/reportwriter/classes/balance_sheet.php ( moved embedded english language to language file )<br />
+/modules/reportwriter/classes/income_statement.php<br />
+/modules/reportwriter/classes/entry_builder.php<br />
+/modules/reportwriter/classes/aged_receivables.php<br />
+/modules/reportwriter/language/en_us/classes/aged_receivables.php<br />
+/modules/reportwriter/language/en_us/classes/balance_sheet.php<br />
+/modules/reportwriter/language/en_us/classes/entry_builder.php<br />
+/modules/reportwriter/language/en_us/classes/income_statement.php<br />
+/modules/orders/pages/popup_convert/pre_process.php ( fixed bug incrementing invoice num on convert from quote ) <br />
+<br />
+// *************************** Package for Release 1.6 ***************************//</p>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.80">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table import_export">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table import_export">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>Table import_export</title>
+
+</head>
+<body>
+<h1 align="center">Table import_export</h1>
+Table import_export hold the definitions and parameters to import or export data to PhreeBooks. In general, only data can be added to one table at a time. The exeptions are accounts (vendors, customers, employees) where shipping and billing addresses may also be imported. To import beginning balances, use the import beginning balances scripts as these scripts populate many tables and post the transaction properly to the journal.<br />
+<br />
+Table Type: MyISAM<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>id</td>
+<td>int (11)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Auto increment field to hold unique ID </td>
+</tr>
+<tr>
+  <td>group_id</td>
+  <td>char (3)</td>
+  <td>NOT NULL</td>
+  <td><p>Hold the group the the import_export definition is a part of. Current defined groups are:<br />
+      inv : Inventory<br />
+      ap: Accounts Payable<br />
+      ar : Accounts Receivable<br />
+      hr: Employees (Human Resources)
+  </p>
+    </td>
+</tr>
+<tr>
+  <td>custom</td>
+  <td>enum (0,1) </td>
+  <td>1</td>
+  <td>Flag to indicate is this is a standard import/export definition or has been saved and customized for a particular purpose. </td>
+</tr>
+<tr>
+  <td>security</td>
+  <td>varchar (10) </td>
+  <td>NOT NULL</td>
+  <td>Not used at this time </td>
+</tr>
+<tr>
+  <td>title</td>
+  <td>varchar (32)</td>
+  <td>NOT NULL</td>
+  <td>Textual title of the import/export definition. Appears in the description tabs at the Import/Export main page. </td>
+</tr>
+<tr>
+  <td>description</td>
+  <td>varchar (255)</td>
+  <td>NOT NULL</td>
+  <td>Textual descriptio to help identify what the purpose of the import/export definition is. </td>
+</tr>
+<tr>
+  <td>table_name</td>
+  <td>varchar (32) </td>
+  <td>NOT NULL</td>
+  <td>Specifies the default table name without prefix to bas the import/export definition from.</td>
+</tr>
+<tr>
+  <td>primary_key</td>
+  <td>varchar (32) </td>
+  <td>NOT NULL</td>
+  <td>Specifies the primary key from the table_name (above) to use as an index to retrieve data. </td>
+</tr>
+<tr>
+  <td>params</td>
+  <td>text</td>
+  <td>&nbsp;</td>
+  <td>Encoded field holds user specific parameters. NOTE: This field should not be edited in the database table. </td>
+</tr>
+<tr>
+  <td>criteria</td>
+  <td>text</td>
+  <td>&nbsp;</td>
+  <td>Encoded field holds user specific criteria. Fields include user defined criteria of which there may be more than one. NOTE: This field should not be edited in the database table.</td>
+</tr>
+<tr>
+  <td>options</td>
+  <td>text</td>
+  <td>&nbsp;</td>
+  <td>Encoded field holds user specific options. Fields such as export format, fielnames, etc. NOTE: This field should not be edited in the database table. </td>
+</tr>
+</tbody>
+</table>
+<p><br />
+  </p>
+</body></html>

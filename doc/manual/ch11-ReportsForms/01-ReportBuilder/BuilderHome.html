@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="11.01">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Reports/Forms">
+<meta name="doc_index_2" content="Forms/Reports">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Report Builder - Design Tool">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+<title>Report Builder - Introduction</title>
+</head>
+
+<body>
+<h1 align="center">Report Builder - Introduction</h1>
+
+<h2>Table of Contents</h2>
+
+<p>
+<a href="#RB_RevHist">Revision History</a><br />
+<a href="#RB_Intro">Introduction</a><br />
+<a href="#RB_RptBldr">What is Report Builder - Reports</a><br />
+<a href="#RB_FrmBldr">What is Report Builder - Forms</a><br />
+<a href="#RB_Admin">Administrator Page</a></p>
+<h2><a name="RB_RevHist">Revision History</a></h2>
+Revision History<br />
+  Rev 1.0 - 2006-11-03 - Original release<br />
+  <h2><a name="RB_Intro">Introduction</a></h2>
+<p> The report builder tool provides administrators with the ability to create, 
+    copy, edit, delete, import and export database driven reports and forms. Pre-defined 
+    reports are stored in the language directory labeled specified for the given 
+    language. After installing the plug-in, there may be several standard reports and forms    
+	installed. More reports or forms can be added by importing them from either the 
+    host servers reports directory or uploading them directly from the browser. 
+    Standard reports can be viewed and customized through the Report Viewer. Forms may only be edited through Report builder. The Report Viewer manual covers the output procedures 
+    necessary for exporting or viewing reports created with the report builder.</p>
+<p><strong>NOTE</strong>: DETAILED UNDERSTANDING OF THE DATABASES AND FIELDS IS REQUIRED TO USE REPORT BUILDER! FAILURE TO DO SO WILL RESULT IN ERRORS OR NON-FUNCTIONAL REPORTS AND FORMS.</p>
+<h3>What's the difference between a report and a form?</h3>
+<p>There are several differences between reports and forms. They are summarized in the table below: </p>
+<table width="100%" border="1">
+  <tr>
+    <td><div align="center">Reports</div></td>
+    <td><div align="center">Forms</div></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><ul>
+      <li>Strict format requirement</li>
+      <li>List data in a tabular format</li>
+      <li>Allow for easy data export in csv format</li>
+      <li> Reports can be customized without knowledge of the databases </li>
+      </ul></td>
+    <td width="50%" valign="top"> <ul>
+      <li>Fields can placed throughout the page</li>
+      <li>Contain both static and dynamic data</li>
+      <li>Can contain images and graphics</li>
+      <li>Are grouped in 'form groups' to allow variation of data presentation from the same data set</li>
+      <li>Can be viewed directly via parameters passed by other scripts </li>
+      </ul></td>
+  </tr>
+</table>
+<h2><a name="RB_RptBldr">What is Report Builder</a> - Reports </h2>
+<p> Report Builder is a web based tool that gathers the necessary webERP database 
+      information to generate company reports. Attributes such as page setup, fields 
+      retrieved, and filter criteria are entered to provide the specific information 
+      desired. Reports are generated with a standardized output but still have 
+      configurable columns and options to allow for flexibility. Every 
+    report created with this tool can be customized and formatted by the users to 
+    create custom reports. Every report consists 
+    of the following general format:</p>
+<p><strong>Header</strong>: Consists of four lines and the body heading. The first three lines are 
+      Company Name, Title 1, and Title2. Company name cannot be changed but it's 
+      attributes, such as font, color, whether to show or not, can be altered. Title 1 
+      and Title 2 are specified in each report and default to '%reportname%' and 
+'Report Generated %date%', respectively. Their attributes can also be changed. 
+      The forth header line displays the filter parameters specified for each report. 
+      This line will show for all reports. Finally, the table heading which is derived 
+      for the fields selected to show sorted by the column they show in. The table 
+      heading descriptions are included in the header of each page so every page lists the data field titles and 
+      their respective positioning within each column.</p>
+<p><strong>Body</strong>: Lists the data elements returned for the report. They appear in columns 
+      specified from the criteria setup for each report. Each column may contain one 
+      or more query results. The maximum number of columns is eight. A flag to truncate is available to limit the data to a single row, truncating the remaining information if not needed for the report. </p>
+<p><strong>Footer</strong>: Lists the page count out of the total number of pages. This field will 
+      always show and has no user configurable attributes.</p>
+
+<h2><a name="RB_FrmBldr">What is Report Builder</a> - Forms </h2>
+<p>Report builder also will build form templates used in scenarios where reports will not allow the flexibility needed for formatting the output. Invoices, Purchase Orders, Checks, and Collection Letters are good examples of forms. Forms are more complex to generate than reports but allow the user  added flexibility of positioning, font attributes, images, and enhanced data content. There are also certain requirements when building a form that need to be adhered to for the form to display properly. These will be discussed in the section on building a form. </p>
+<p>In this manual, we will use an invoice form for demonstration purposes. An invoice form contains several pieces of database information, static and dynamic, graphics, images and page numbering. All will be demonstrated in the example. </p>
+<p>The construction of a form consists of three parts similar to reports; header, body, and footer. </p>
+<p><strong>Header</strong>: The header is more complex in forms in that most of the information is processed as the header. Company name, static text, graphics and images all are handled in the header. This is because they are static through every page of the form. They can, however, be located anywhere on the page. </p>
+<p><strong>Body</strong>: The body typically contains a table of dynamic information. For our invoice example, the item description, quantity, and price will make up our body data. The tables positioning, size and format attributes are all flexible. The information for the body will continue to subsequent pages if necessary.</p>
+<p><strong>Footer</strong>: The footer typically handles the totaling of data. In our invoice example, we want to total all the items ordered, add freight and list the invoice total. This cannot be completed until all the data is processed which might span several pages. Therefore, all fields that are of type 'data total' fields display as 'continued' until the last page where the final total is inserted. </p>
+<h2><a name="RB_Admin">Administrator Page</a></h2>
+<p>The administrator page is the starting point for all report and form manipulation. Upon 
+      entry, this page displays the current standard reports loaded into the database 
+      as well as any customized reports generated by the webERP users. Forms are listed  by the Form Group they are a part of. From here, 
+      there are several choices for report/form manipulation. They will be covered in the 
+      following sections. </p>
+<p align="center"><img src="images/RBHome.gif"></p>
+
+</body>
+</html>

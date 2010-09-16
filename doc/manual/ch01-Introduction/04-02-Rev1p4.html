@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="01.04.07">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Revision.PhreeBooks.Rev 1p4">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="PhreeBooks Release 1.4">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>PhreeBooks Release 1.4</title>
+<style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-size: large;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<h1 align="center">PhreeBooks Release 1.4</h1>
+<p>// 2007-12-04 Change log, release 1.3.1 to Release 1.4<br />
+  /doc/manual/ch01-Introduction/04-02-Rev1p4.html (this file) <br />
+/doc/manual/ch01-Introduction/04-RevHistory.html<br />
+/doc/manual/version.txt<br />
+  /includes/version.php<br />
+/modules/install/updater.php<br />
+/modules/install/updates/R131toR14.php</p>
+<p>// *************************** sql statements ***************************//<br />
+// sql statements are rolled into the base release and incorporated into the updater script for automatic db update</p>
+<p>// *************************** code changes ***************************//</p>
+<p>// 2008-01-21 - Misc Bug fixes <br />
+/modules/banking/functions/banking.php ( clean up code/balance not calculated correctly ) <br />
+/modules/banking/pages/bills/pre_process.php<br />
+/modules/banking/pages/bills/js_include.php<br />
+/modules/banking/pages/bulk_bills/pre_process.php<br />
+/modules/reportwriter/functions/builder_functions.php<br />
+/modules/general/classes/object_info.php<br />
+/modules/general/classes/message_stack.php<br />
+/modules/general/functions/validations.php<br />
+/modules/general/functions/gen_functions.php<br />
+/modules/general/functions/html_functions.php<br />
+/modules/services/pages/price_sheets/template_main.php<br />
+/modules/accounts/functions/accounts.php<br />
+/modules/orders/pages/status/template_main.php<br />
+/modules/orders/pages/inv_mgr/template_main.php<br />
+/modules/services/shipping/label_mgr/fedex/pre_process.php<br />
+/my_files/custom/extra_menus/zencart.php</p>
+<p>// 2008-01-21 - Work on multi-currency displays<br />
+/includes/javascript/general.js<br />
+/modules/install/language/en_us/config_data.php ( added new constant to enable multi-currency ) <br />
+/modules/accounts/pages/main/template_detail.php<br />
+/modules/banking/pages/popup_bills/pre_process.php<br />
+/modules/banking/pages/popup_bills_accts/pre_process.php<br />
+/modules/banking/pages/reconciliation/template_main.php<br />
+/modules/banking/pages/register/template_main.php<br />
+/modules/banking/pages/bulk_bills/template_main.php<br />
+/modules/banking/pages/bills/template_main.php<br />
+/modules/gen_ledger/classes/gen_ledger.php<br />
+/modules/general/classes/currencies.php<br />
+/modules/general/language/en_us/language.php<br />
+/modules/general/pages/login/pre_process.php<br />
+/modules/services/pages/price_sheets/template_detail.php<br />
+/modules/setup/classes/currency.php<br />
+/modules/setup/language/en_us/modules/currency.php<br />
+/modules/orders/classes/orders.php<br />
+/modules/orders/functions/orders.php<br />
+/modules/orders/pages/orders/pre_process.php<br />
+/modules/orders/pages/orders/js_include.php<br />
+/modules/orders/pages/orders/template_main.php<br />
+/modules/orders/pages/popup_orders/pre_process.php<br />
+/modules/orders/pages/popup_orders/js_include.php<br />
+/modules/orders/pages/popup_orders/template_main.php<br />
+/modules/orders/pages/status/pre_process.php<br />
+/modules/orders/pages/status/template_main.php<br />
+/modules/inventory/pages/main/template_detail.php<br />
+/modules/inventory/pages/adjustments/template_main.php<br />
+/modules/inventory/pages/bulk_prices/pre_process.php<br />
+/modules/inventory/pages/popup_inv/js_include.php<br />
+/modules/inventory/pages/popup_prices/js_include.php<br />
+/modules/inventory/pages/popup_prices/template_main.php<br />
+/modules/inventory/pages/popup_price_mgr/template_main.php<br />
+/modules/reportwriter/functions/generator_functions.php<br />
+/modules/reportwriter/language/en_us/language.php<br />
+/modules/reportwriter/classes/entry_builder.php<br />
+/modules/general/boxes/todays_sales.php<br />
+/modules/general/boxes/so_status.php<br />
+/modules/general/boxes/po_status.php</p>
+<p>// *************************** svn update 2008-01-23 ***************************//</p>
+<p>// 2008-01-24 - Misc fixes and changes<br />
+/modules/orders/pages/popup_orders/pre_process.php<br />
+/modules/orders/functions/orders.php<br />
+/modules/gen_ledger/pages/journal/pre_process.php
+<br />
+/modules/banking/classes/banking.php<br />
+/modules/banking/functions/banking.php<br />
+/modules/banking/pages/bills/pre_process.php<br />
+/modules/banking/pages/popup_bills_accts/js_include.php<br />
+/modules/gen_ledger/language/en_us/language.php<br />
+/modules/accounts/pages/main/template_detail.php ( clarified heading when editing to include primary_name )<br />
+/modules/accounts/pages/main/template_detail.php ( added hooks to include additional tabs ) <br />
+/modules/general/functions/gen_functions.php ( generalized localized date to db formats ) <br />
+/modules/setup/pages/config/pre_process.php ( security tokens were wrong )<br />
+/modules/accounts/pages/main/js_include.php ( javascript error in firefox ) <br />
+/modules/orders/javascript/orders.js ( fixed conversion error in sales tax &gt; 1000 in total calculation ) <br />
+/modules/orders/pages/orders/template_main.php ( wrong constant called out )<br />
+/modules/orders/javascript/orders.js ( dates not reseting on form when form is cleared by javascript )<br />
+/modules/orders/pages/orders/js_include.php<br />
+/modules/orders/pages/popup_convert/pre_process.php<br />
+/modules/orders/pages/popup_convert/js_include.php<br />
+/modules/services/shipping/modules/fedex.php ( added function to strip special characters that FedEx cannot handle )<br />
+/modules/services/shipping/functions/shipping.php<br />
+/modules/setup/pages/config/template_main.php ( bug in Cancel not re-directing properly with ssl installs )</p>
+<p>// 2008-01-24 - Added clock to header and re-designed (without tables)<br />
+/includes/javascript/general.js<br />
+/includes/header.php<br />
+/index.php<br />
+/themes/default/css/stylesheet.css<br />
+/modules/general/language/en_us/language.php</p>
+<p>// added admin _tools menu item and new functionality<br />
+  /modules/install/updates/R131toR14.php  <br />
+/includes/menu_navigation.php<br />
+/includes/security_tokens.php<br />
+/modules/general/language/en_us/language.php<br />
+/modules/general/language/en_us/admin_tools.php<br />
+/modules/general/pages/admin_tools/pre_process.php<br />
+/modules/general/pages/admin_tools/js_include.php<br />
+/modules/general/pages/admin_tools/template_main.php<br />
+/modules/banking/classes/banking.php<br />
+/modules/orders/classes/orders.php<br />
+/modules/gen_ledger/classes/gen_ledger.php<br />
+/modules/general/boxes/so_status.php ( added unlimited number of entries option, bug fixes ) <br />
+/modules/general/boxes/po_status.php<br />
+/modules/general/boxes/todays_sales.php<br />
+/modules/general/boxes/personal_links.php</p>
+<p>// 2008-01-28 - Added some new configuration values and updated scripts to use them <br />
+/modules/install/language/en_us/config_data.php<br />
+/modules/install/updates/R131toR14.php<br />
+/modules/general/classes/message_stack.php<br />
+/modules/general/functions/gen_functions.php<br />
+/modules/accounts/pages/main/template_detail.php<br />
+/modules/banking/pages/bills/pre_process.php<br />
+/modules/banking/pages/bills/template_main.php<br />
+/modules/banking/pages/bulk_bills/pre_process.php<br />
+/modules/banking/pages/bulk_bills/template_main.php<br />
+/modules/general/pages/search/pre_process.php<br />
+/modules/general/pages/search/template_main.php<br />
+/modules/inventory/pages/adjustments/pre_process.php<br />
+/modules/inventory/pages/adjustments/template_main.php<br />
+/modules/inventory/pages/main/pre_process.php<br />
+/modules/inventory/pages/main/template_detail.php<br />
+/modules/orders/pages/orders/pre_process.php<br />
+/modules/orders/pages/orders/template_main.php<br />
+/modules/reportwriter/pages/builder/template_security_setup.php<br />
+/modules/setup/classes/chart_of_accounts.php<br />
+/modules/setup/classes/departments.php<br />
+/modules/setup/classes/tax_auths.php<br />
+/modules/setup/functions/setup.php<br />
+/modules/general/pages/login/pre_process.php<br />
+/modules/general/functions/general.php</p>
+<p>// 2008-01-28 - Added control panel screen to company menu<br />
+/includes/menu_navigation.php<br />
+/modules/setup/pages/cat_co/pre_process.php<br />
+/modules/setup/pages/cat_co/js_include.php<br />
+/modules/setup/pages/cat_co/template_main.php</p>
+<p>// *************************** svn update 2008-01-29 ***************************//</p>
+<p>// 2008-01-30 - Added capability to pull additional special reports from my_files, added aged receivables report <br />
+  /modules/reportwriter/functions/generator_functions.php  <br />
+/modules/reportwriter/functions/builder_functions.php<br />
+/modules/reportwriter/pages/builder/template_field_setup.php<br />
+DELETE - /modules/reportwriter/classes/special_reports.php<br />
+/modules/reportwriter/classes/income_statement.php<br />
+/modules/reportwriter/classes/balance_sheet.php<br />
+/modules/reportwriter/classes/aged_receivables.php<br />
+/modules/reportwriter/pages/form_gen/template_filter.php<br />
+/modules/reportwriter/pages/rpt_gen/template_filter.php</p>
+<p>// 2008-01-30 - Misc reported bug fixes and small changes<br />
+/modules/banking/functions/banking.php ( didn't declare error reporting class )<br />
+/modules/reportwriter/functions/builder_functions.php ( error calculating security permissions )<br />
+/modules/gen_ledger/classes/gen_ledger.php ( not closing invoices if a discount was taken, not correctly repairing chart_history causing balance sheet mismatch ) <br />
+/modules/orders/pages/inv_mgr/template_main.php ( payment button not pulling up invoice to pay ) <br />
+/modules/accounts/pages/main/template_detail.php ( added account short name to title bar )<br />
+/modules/orders/pages/status/pre_process.php ( seet defalut sort to post_date decending ) <br />
+/modules/services/pages/popup_tracking/pre_process.php ( allowed edit of shipping method )<br />
+/modules/services/pages/popup_tracking/js_include.php<br />
+/modules/services/pages/popup_tracking/template_main.php<br />
+/modules/services/payment/modules/nova_xml.php ( strip spaces in credit cards for readability ) <br />
+/index.php ( defined DIR_WS_WORKING )<br />
+/modules/banking/javascript/banking.js ( not calculating discount correctyl when thousnads point is present )<br />
+/modules/orders/pages/status/template_main.php ( edit button not using proper journal in PO manager) <br />
+/modules/orders/pages/popup_recur/js_include.php ( not pulling selectionproperly ) <br />
+/modules/orders/classes/orders.php ( resolved issue with closing orders and not re-opening them correctly ) <br />
+/modules/gen_ledger/classes/gen_ledger.php<br />
+/modules/banking/functions/banking.php ( cleaned up balnce function ) <br />
+/modules/services/shipping/modules/fedex.php ( not cleaning up values for greater than 1000 ) <br />
+/modules/gen_ledger/pages/journal/js_include.php ( balance was not unshaded if total rounded to zero minus ) <br />
+/modules/general/functions/gen_functions.php<br />
+/modules/services/pages/popup_shipping/template_detail.php ( fixed rounding when re-inserting into order ) </p>
+<p>// 2008-02-05 - fixed bug in fedex close reports<br />
+/modules/services/shipping/ship_mgr/fedex.php<br />
+/modules/services/shipping/label_mgr/fedex/pre_process.php<br />
+/modules/services/shipping/modules/fedex.php</p>
+<p>// bug fixes in reconciliation<br />
+  /modules/install/sql/current/tables.sql<br />
+  /modules/install/updates/R131toR14.php  <br />
+  /modules/banking/pages/reconciliation/pre_process.php  <br />
+/modules/banking/language/en_us/language.php<br />
+/modules/orders/language/en_us/language.php<br />
+/modules/orders/classes/orders.php</p>
+<p>// added utility to check and repair general ledger balances<br />
+/modules/general/pages/admin_tools/pre_process.php<br />
+/modules/general/pages/admin_tools/template_main.php<br />
+/modules/general/language/en_us/admin_tools.php<br />
+/modules/general/functions/general.php</p>
+<p>// Added the ability to display more than 8 columns, tied column width to field and position.<br />
+/modules/reportwriter/language/en_us/language.php<br />
+/modules/reportwriter/classes/report_generator.php<br />
+/modules/reportwriter/functions/builder_functions.php<br />
+/modules/reportwriter/functions/generator_functions.php<br />
+/modules/reportwriter/pages/builder/pre_process.php<br />
+/modules/reportwriter/pages/builder/js_include.php<br />
+/modules/reportwriter/pages/builder/template_field_setup.php<br />
+/modules/reportwriter/pages/builder/template_page_setup.php<br />
+/modules/reportwriter/pages/rpt_gen/pre_process.php<br />
+/modules/reportwriter/pages/rpt_gen/js_include.php<br />
+DELETE - /modules/reportwriter/pages/rpt_gen/template_page_update.php<br />
+/modules/reportwriter/pages/rpt_gen/template_filter.php<br />
+/modules/reportwriter/pages/popup_form/template_main.php<br />
+/modules/reportwriter/pages/form_gen/template_filter.php</p>
+<p>// Updated chart of accounts<br />
+/modules/install/charts/USA_Retail.php<br />
+/modules/install/charts/USA_Retail_Corp.php<br />
+/modules/install/charts/USA_General.php<br />
+/modules/install/charts/USA_General_Corp.php</p>
+<p>// *************************** svn update 2008-02-18 ***************************//</p>
+<p>// 2008-02-18 - Reportwriter fixes <br />
+/modules/reportwriter/classes/report_generator.php<br />
+/modules/reportwriter/classes/income_statement.php<br />
+/modules/reportwriter/classes/balance_sheet.php<br />
+/modules/reportwriter/pages/builder/js_include.php<br />
+/modules/reportwriter/pages/builder/template_page_setup.php</p>
+<p>// Misc bugs and improvements<br />
+/modules/general/functions/gen_functions.php ( failed to declare messageStack in case of error )<br />
+/modules/orders/pages/orders/template_main.php ( forgot to convert terminal_date if error on posting for journal  6 ) <br />
+/includes/footer.php ( updated copyright date, hook for custom logo ) <br />
+/modules/orders/pages/orders/pre_process.php ( bug reloading if new customer and add box not checked to reload data ) <br />
+/modules/install/updates/R131toR14.php<br />
+/modules/install/sql/current/tables.sql<br />
+/modules/install/language/en_us/config_data.php<br />
+/index.php<br />
+/modules/gen_ledger/pages/journal/pre_process.php<br />
+/modules/gen_ledger/pages/journal/js_include.php<br />
+/modules/general/functions/html_functions.php<br />
+/modules/general/language/en_us/language.php<br />
+/modules/install/pages/store_setup/header_php.php<br />
+/modules/setup/classes/currency.php<br />
+/modules/inventory/functions/inventory.php ( added ability to use functions with other modules ) <br />
+/modules/services/payment/modules/nova_xml.php ( filter out special character causing errors ) </p>
+<p>// added ability ot sort and add additional tabs to accounts screens, bring in custom tab contents <br />
+  /modules/accounts/pages/main/pre_process.php<br />
+/modules/accounts/pages/main/template_detail.php  </p>
+<p>// added ability to turn off shipping functions (invoices/ ship_addresses, etc)<br />
+  /includes/application_top.php<br />
+  /includes/menu_navigation.php<br />
+/includes/security_tokens.php <br />
+/includes/footer.php<br />
+/modules/orders/pages/inv_mgr/pre_process.php<br />
+/modules/orders/pages/orders/template_main.php<br />
+  /modules/accounts/pages/popup_accts/js_include.php<br />
+  <br />
+  // 2008-02-28 - Added ability to store and retrieve encryped data<br />
+/modules/general/functions/password_funcs.php<br />
+/modules/general/pages/login/pre_process.php<br />
+/modules/general/pages/login/template_main.php<br />
+/includes/database_tables.php<br />
+/modules/general/classes/encryption.php</p>
+<p>// 2008-02-29 to 2008-04-07 - Changed most files to update copyright date, plus enhancements and minor bug fixes. Prepare for initial stable release. </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

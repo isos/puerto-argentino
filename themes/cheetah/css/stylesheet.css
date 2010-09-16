@@ -1,0 +1,237 @@
+/*
+// +-----------------------------------------------------------------+
+// |                   PhreeBooks Open Source ERP                    |
+// +-----------------------------------------------------------------+
+// | Copyright (c) 2008, 2009, 2010 PhreeSoft, LLC                   |
+// | http://www.PhreeSoft.com                                        |
+// +-----------------------------------------------------------------+
+// | This program is free software: you can redistribute it and/or   |
+// | modify it under the terms of the GNU General Public License as  |
+// | published by the Free Software Foundation, either version 3 of  |
+// | the License, or any later version.                              |
+// |                                                                 |
+// | This program is distributed in the hope that it will be useful, |
+// | but WITHOUT ANY WARRANTY; without even the implied warranty of  |
+// | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the   |
+// | GNU General Public License for more details.                    |
+// |                                                                 |
+// | The license that is bundled with this package is located in the |
+// | file: /doc/manual/ch01-Introduction/license.html.               |
+// | If not, see http://www.gnu.org/licenses/                        |
+// +-----------------------------------------------------------------+
+//  Path: /themes/default/css/stylesheet.css
+*/
+
+body						{ color:#333333; margin:0; background-color:#eff;}
+
+body#login					{ margin-top:100px; text-align:center; }
+body#login .button			{ cursor:pointer; }
+body#login fieldset			{ margin:0 auto; padding:10px; width:400px; }
+body#login label			{ display:inline; margin:20px 70px; text-align:right; }
+body#login legend			{ background:#ffffff; border:1px solid #c59a6f; color:#333333; 
+							  font-size:90%; padding:0.2em 0.5em; text-align:right; }
+
+a, body, html, table		{ font:normal normal 11px Verdana,sans-serif; }
+
+
+a:hover						{ color:#0000ff; text-decoration:underline; }
+
+/*  Headings --------------------------------- */
+h1 { color: #ffffff; border:none; background-color:transparent; font-size: 16px; padding: 4px; }
+h2 { color: #003080; font-size: 16px; }
+
+/*  Header --------------------------------- */
+#header      { background-color:#003080; height: 80px; margin: 0; padding: 0; }
+#headerTitle { background-color:#003080; text-align:center; width:594px; height: 80px; margin: 0; padding: 0; }
+#header div#language { position: absolute; top: 47px; right: 30px; }
+#header div#language h4 { padding: 0 0 3px; margin: 0; color: #fff; }
+#container {position:absolute; left:0;overflow:auto; width:100%;display:block; height:95%;}
+#transcontent {position:absolute; left:0; width:100%;display:inline;}
+/*  Footer --------------------------------- */
+#footer { clear: both; text-align: center; margin: 10px 0 0 5px;}
+#footertable {
+	position: relative; left:0; width:100%;display:inline;	}
+/* Links --------------------------------- */
+a 							{ color:#0000ff; text-decoration:none; }
+a:link, a:visited, a:active { color:#0000ff; text-decoration:none; }
+a:hover                     { color:#c96e29;}
+a.button                    { padding:3px 15px; color: #000; border: 3px outset #666; margin: 0px 5px; background-color: #ceddf0; }
+a.button:hover              { background-color:#ceddf0; }
+
+a.headerLink:link,
+a.headerLink:visited,
+a.headerLink:active			{ color:#ffffff; font-weight:bold; text-decoration:none; }
+a.headerLink:hover			{ color:#ffffff; font-weight:bold; text-decoration:underline; }
+
+a.menuBoxHeadingLink:link,
+a.menuBoxHeadingLink:visited,
+a.menuBoxHeadingLink:active { color:#0000ff; font-weight:bold; text-decoration:none; }
+a.menuBoxHeadingLink:hover	{ color:#0000ff; font-weight:bold; text-decoration:none; }
+
+/*  Forms --------------------------------- */
+form              { display:inline; margin: 0; padding: 0; }
+input, select, textarea, file, checkbox, radio { font-size:11px; padding: 0; }
+input{background:#eff;border:1px solid #505050;color:#505050;}
+select {background:#eff;border:1px solid #505050;color:#505050;}
+fieldset          { margin: 0; padding: 10px; border: 1px solid #666; }
+legend            { margin: 0; padding: 0 4px; }
+label, span.label { margin: 0; padding: 0; font-weight: bold; }
+.formArea		  { border-color:#7b9ebd; border-style:solid; border-width:1px; }
+.formAreaTitle	  { font-family:Tahoma,Verdana,Arial,sans-serif; font-size:14px; font-weight:bold; }
+
+/*  Divs --------------------------------- */
+
+div.section { margin: 0; padding: 0; clear: both; }
+div.section input, div.section select, div.section div.input, div.section textarea { float: right; }
+div.section div.input input { float: none; }
+div#language input, div#language select { margin: 0; padding: 0; }
+
+div.section ul.inspect-list li  { list-style-type: none; }
+div.section ul.inspect-list li.OK { list-style-image:  url("../images/greencheck.gif"); color:#009933; }
+div.section ul.inspect-list li.FAIL { list-style-image:  url("../images/redx.gif"); color:#FF0000; }
+div.section ul.inspect-list li.WARN { list-style-image:  url("../images/yellowcaution.gif"); color:#FF9900; }
+div#error ul li.FAIL  { list-style-image:  url("../images/redx.gif"); color:#FF0000; }
+div.section ul.inspect-list li.NA { list-style-type: none;  }
+
+div.progress {color:#CC6600;}
+div.copyrightrow			{ background:#ffffff; clear:both; font-size:10px; padding:25px; text-align:center; }
+
+/* Miscellaneous --------------------------------- */
+a.nowrap                    { white-space: nowrap; }
+p                           { line-height: 1.5em; margin: 0px 0px 1em; padding: 0px; }
+.main						{ } 
+.center                     { text-align: center; }
+.page_count                 { width:auto; font-size:9px; padding:2px; }
+.page_count_right           { float:right; font-size:9px; padding:2px; }
+.pageHeading				{ width:auto; clear:both; color:#003080; font-size:16px; font-variant:small-caps; font-weight:bold; }
+.smallText					{ font-size:9px;}
+.fieldRequired				{ color:#ff0000; }
+.headerBar					{ background-color:#82a5db; width:100%; }
+.headerBarContent			{ color:#fff; font-weight:bold; padding:2px; }
+.infoBoxContent				{ background-color:#e7e6e0; color:#333333; }
+.infoBoxHeading				{ background-color:#003080; color:#ffffff; }
+.menuBoxContent				{ color:#616060; }
+.menuBoxHeading				{ background-color:#ffffff; color:#616060; }
+.toolbar                    { width:auto; padding:2px; }
+.toolbar_right              { float:right;  padding:2px; }
+
+SPAN.errors                 { color: #FF0000;}
+SPAN.emphasis               { color:#c96e29;}
+span.SortOrderHeader		{ color:#ff6600; font-weight:bold; }
+span.SortOrderHeaderLink	{ color:#0000ff; font-weight:bold; }
+
+/* message box --------------------------------- */
+.messageBox                 { }
+.messageInfo				{ width:auto; clear:both; color:#ff0000; font-size:16px; font-variant:small-caps; font-weight:bold; }
+.messageStackSuccess        { background-color:#d4ffbd; }
+.messageStackCaution        { background-color:#ffff00; }
+.messageStackError, .messageStackWarning { background-color:#ffb3b5; }
+
+
+/* tables --------------------------------- */
+th                          { background-color:#cccccc; text-align:center; }
+td.alert, span.alert		{ color:#ff0000; font-weight:bold; }
+tr.rowInactive				{ background-color:#cccccc; }
+
+.dataTableContent			{ color:#333333; }
+.dataTableHeadingContent	{ color:#333333; font-weight:bold; }
+.dataTableHeadingRow		{ background-color:#ccc;color:#000; }
+.dataTableRow				{ background:none; }
+.dataTableRowOver			{ background:url('../img/barhover.png') repeat-x white;color:#000; text-decoration:none;  cursor:pointer; }
+.dataTableRowSelected		{ background-color:#fff; }
+
+/************************* START menu drop-down menus *********************************/
+ul.nde-menu-system				{ border:1px solid #505050;background:url('../img/bar.png') repeat-x white; display:block; margin:0; padding:4px 10px; }
+ul.nde-menu-system *			{ font-size:10px;}
+ul.nde-menu-system li			{ border-right:1px solid #505050; color:#000; display:inline; font-weight:bold; margin:0; padding:0 10px; position:relative; }
+ul.nde-menu-system li a			{ color:#000; }
+ul.nde-menu-system li a:hover	{ color:#000; text-decoration:none; font-weight:bold; }
+ul.nde-menu-system li ul		{  background-color:#fff;display:block; left:0; position:absolute; top:1em; visibility:hidden; z-index:1000; }
+ul.nde-menu-system li ul li		{  border:1px solid #505050;background:url('../img/bar.png') repeat-x;display:block; list-style:none; margin:0; padding:0; width:170px; }
+ul.nde-menu-system li ul li a	{  color:#000; display:block; font-weight:normal; margin:0; padding:3px 5px;  }
+ul.nde-menu-system li ul li a:hover { background:url('../img/barhover.png') repeat-x white;color:#000; text-decoration:none; font-weight:bold; }
+ul.nde-menu-system ul 			{ display:block; margin:0; padding:0px 0 0; }
+/************************* END menu drop-down menus *********************************/
+
+/************************* START control panel boxes *********************************/
+.modbox .el					{  }
+.modbox .csl, .modbox .es	{ display:none; }
+.modbox_e .el				{ display:none; }
+.modbox_e .csl, .modbox .es {  }
+h2.modtitle					{ width:100%; padding-top:0px; padding-bottom:0px; margin: 0em; font-size:100%; font-weight:normal; }
+.mhdr						{ width:100%; border-top:1px solid #97acd4; padding:0px; margin:0px; font-size:82%; }
+.mehdr						{ width:100%; padding:0px; margin:0px; font-size:82%; }
+.mttl						{ width:90%; background-color:#f1f9fe; padding-left:2px; font-weight:bold; padding-right:5px; font-size:122%; }
+.medit						{ width:10%; background-color:#f1f9fe; white-space:nowrap; text-align:right; padding-top:2px; padding-right:2px; }
+.meditbox					{ background-color:#f1f9fe; }
+.mttlz, .mttld 				{ background-color:#f1f9fe; padding-right:2px; }
+.box 						{ display:block; margin-top:3px; overflow:hidden; width:16px; height:16px;background-repeat: no-repeat; cursor:pointer; }
+.minbox						{  }
+.maxbox						{  }
+.delbox 					{  }
+/************************* END control panel boxes *********************************/
+
+/************************* START tabtastic *********************************/
+.tabset_tabs			{ margin:0; padding:0; list-style-type:none; position:relative; z-index:2; white-space:nowrap }
+.tabset_tabs li			{ margin:0; padding:0; display:inline }
+.tabset_tabs li.firstchild a { border-left-width:1px }
+.tabset_tabs a			{ color:#339 !important;  border:1px solid #99c; text-decoration:none;
+						  padding:0 0.6em; border-left-width:0px; border-bottom:none }
+.tabset_tabs a:hover	{ color:#00c !important; }
+.tabset_tabs a.active	{ color:black !important;  border-color:black; border-left-width:1px; 
+						  cursor:default; border-bottom:white; padding-top:1px; padding-bottom:1px }
+.tabset_content			{ border:1px solid black; /*background-color:white;*/ position:relative; z-index:3; padding:0.5em 1em; display:none }
+.tabset_label			{ display:none }
+.tabset_content_active	{ display:block }
+@media aural{
+  .tabset_content,
+  .tabset_label 		{ display:block }
+}
+/************************* END tabtastic *********************************/
+
+/************************* Start Install Specific ************************/
+/*  Navigation --------------------------------- */
+#wrap          { padding:0px; margin:0px auto; text-align:left; width:760px !important; }
+#main          { position:relative; margin:0; padding:0; }
+
+#popup_content { text-align:left; margin:0px 20px 5px 0px; padding:10px; }
+#navigation    { margin:11px 0px 0px -7px; padding:0; background:transparent; width:120px !important; width:135px; }
+#navigation ul, #navigation li { margin:0; padding:0; list-style:none; }
+#navigation li { border:1px solid #666; margin-bottom:3px; }
+#navigation li { padding:3px 0 3px 9px; width:124px; display:block; text-decoration:none; color:#333; background:#fff; }
+li#step        { font-weight:bold; background-color:#ceddf0; }
+
+/*  Frames --------------------------------- 
+iframe { width:576px; height:250px; border:1px solid #666; }*/
+
+/************************* End Install Specific ************************/
+.trans, table {background:none;}
+
+/****************** AGREGADOS POR GONZALO ***************/
+.shortcuts { width:100%; margin:30px 20px 0px 30px; }
+
+#shortcut_icon { float: left; 
+		 clear: right;
+		 text-align:center;
+		 font-size:9pt;
+		 color: goldenrod;
+		 margin: 10px 0px 10px 10px;
+		 border: 1px solid goldenrod; 
+		 padding: 2px 5px 2px 5px;
+		 background-color:#FFF;
+		 height: 120px;
+		 width: 150px;	}
+#shortcut_icon:hover { border: 1px solid gold;
+		       color: gold;
+		       }
+#shortcut_icon img {
+    height: 95px;
+ }
+
+#save_icon {
+		float: left; 
+		clear: right;
+		text-align:center;
+		font-size:9pt;
+		color: #101010;
+}

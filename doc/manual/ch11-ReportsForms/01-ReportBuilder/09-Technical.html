@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="11.01.09">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Reports.Technical Reference">
+<meta name="doc_index_2" content="Forms.Technical Reference">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Technical Reference">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+<title>Report Builder - Technical Reference</title>
+</head>
+
+<body>
+<h1 align="center">Report Builder - Technical Reference</h1>
+
+<h2>Table of Contents</h2>
+
+<p>
+<a href="#RB_RevHist">Revision History</a><br />
+<a href="#RB_Intro">Introduction</a><br />
+
+<a href="#RB_FrmParam">Passing Parameters to Forms</a></p>
+<h2><a name="RB_RevHist">Revision History</a></h2>
+Revision History<br />
+  Rev 1.0 - 2006-11-03 - Original release, written by D. Premo<br />
+  <h2><a name="RB_Intro">Introduction</a></h2>
+<p> The report builder tool provides administrators with the ability to create, 
+    copy, edit, delete, import and export database driven reports and forms. Pre-defined 
+    reports are stored in the language directory labeled specified for the given 
+    language. After installing the plug-in, there may be several standard reports and forms    
+	installed. More reports or forms can be added by importing them from either the 
+    host servers reports directory or uploading them directly from the browser. 
+    Standard reports can be viewed and customized through the Report Viewer. Forms may only be edited through Report builder. The Report Viewer manual covers the output procedures 
+    necessary for exporting or viewing reports created with the report builder.</p>
+<p><strong>NOTE</strong>: DETAILED UNDERSTANDING OF THE DATABASES AND FIELDS IS REQUIRED TO USE REPORT BUILDER! FAILURE TO DO SO WILL RESULT IN ERRORS OR NON-FUNCTIONAL REPORTS AND FORMS.</p>
+<h2><a name="RB_FrmParam">Passing Parameters to Forms</a></h2>
+<p>Forms may be called directly from scripts by passing an id and criteria parameters. the parameters are assigned the variables cr[x] where [x] is replaced by the parameter to be assigned. Parameter 0 (zero) is reserved for the date field. Parameters 1-9 correspond to the order in which the criteria are ordered in the form. An example href tag might look like: </p>
+<p>&lt;a href=&quot;reportwriter/FormMaker.php?id=prch:po&amp;cr0=a&amp;cr1=Range:3:3&quot;&gt;</p>
+<p><strong>Variable 'id'</strong>: The id definitions correspond to the index value of the variable $FormGroups in the file /reportwriter/admin/defaults.php. the current definition codes are:</p>
+<p> gl:chk = Bank Checks <br />
+ar:col = Collection Letters<br />
+ar:cust = Customer Statements<br />
+gl:deps = Bank Deposit Slips<br />
+ar:inv = Invoices/Packing Slips<br />
+ar:lblc = Customer Labels<br />
+prch:lblv = Vendor Labels<br />
+prch:po = Purchase Orders<br />
+ord:quot = Customer Quotes<br />
+ar:rcpt = Sales Records<br />
+ord:so = Sales Orders<br />
+misc:misc = Miscellaneous </p>
+<p><strong>Variable cr0</strong>: The possible values for cr0 are the letters a-k as defined below (also found as  the indexes of the variable $DateChoices in the file /reportwriter/admin/defaults.php):</p>
+<p> 	a = All<br />
+b = Range<br />
+c =&gt; Today<br />
+d =&gt; This Week <br />
+e =&gt; This Week to Date <br />
+f =&gt; This Month<br />
+g =&gt; This Month to Date<br />
+h =&gt; This Quarter<br />
+i =&gt; This Quarter to Date<br />
+j =&gt; This Year<br />
+k =&gt; This Year to Date</p>
+<p><strong>Variable cr1 through cr9</strong>: Variables cr1-cr9 need to correspond to the sequence of the field as specified in the form criteria. There are three parts to the value passed. The first is the text label which must match <u>exactly</u> to a label from the criteria dropdown list for the associated field. The second and third are the >From and To values for label of the criteria if they require them (such as the labels Range and Equal To). The three values are separated by semi-colons. If the second or third parameter is not required, it may be left out (such as in the case Yes, No, Printed, Unprinted, etc.). </p>
+<p>From our example above:</p>
+<p>&lt;a href=&quot;reportwriter/FormMaker.php?id=prch:po&amp;cr0=a&amp;cr1=Range:3:3&quot;&gt;</p>
+<p>The form group for Purchase Orders will appear (listing all variations of the PO forms) as shown below:</p>
+<p align="center"><img src="images/RBFrmShow.jpg" width="484" height="145"></p>
+<p> The user must select which variation of the form he needs and can either Generate the PDF, alter the Criteria, or Cancel and return to the index.php script. The hidden parameters cr0=a will default to the All date range (date independent) and cr1=Range:3:3 would default the first field listed in the criteria listing setting the To and From value to 3. If the first criteria field is the PO Number, report writer will generate just a single PO form with the PO number equal to 3. If the user wishes to alter the criteria by pressing Criteria Setup, The default parameters will be filled in automatically but may be changed if the user desires.</p>
+<p align="center"><img src="images/RBFrmShowCrit.jpg" width="599" height="244"></p>
+<p>&nbsp;</p>
+<p>&nbsp; </p>
+</body>
+</html>

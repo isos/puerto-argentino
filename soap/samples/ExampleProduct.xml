@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<AccessRequest>
+  <AccessUserID>phreeuser</AccessUserID>
+  <AccessPassword>phreepw</AccessPassword>
+  <AccessFunction>ProductUpload</AccessFunction>
+  <Version>1.00</Version>
+  <ProductUpload>
+    <RequestHeader>
+      <RequestAction>Insert</RequestAction> (Insert, Update, Delete) (based on inactive??)
+	  <ReferenceName>Test Product Upload</ReferenceName>
+	  <Originator>
+		<StoreID>PhreeBooks</StoreID>
+		<SalesRepID>dave</SalesRepID>	(Username of uplink operator)
+		<Language>en_us</Language>		(ISO standard all lower case?? or convert to lower)
+	  </Originator>
+	</RequestHeader>
+	<ProductInformation>
+PB	  <SKU>37L104S5</SKU>							(field needs to be added to ZenCart and be unique)
+ZC	  <ProductType>Product - General</ProductType>  (Define Types??? Generic)
+B	  <ProductModel>Odyssey PC680</ProductModel>	(maps description_short to products_model)
+ZC	  <ProductImageFileName>34L105S4.jpg</ProductImageFileName> (include path???)
+ZC	  <ProductImageData>base_64_encode</ProductImageData>
+B	  <ProductTaxable>True</ProductTaxable>			(True or False)
+B	  <TaxClassType>Taxable Goods</TaxClassType>	(maps item_taxable [need to determine type] to tax_class_title)
+	  <ProductPrice>
+PB	    <MSRPrice>156.95</MSRPrice>
+B	    <RetailPrice>102.54</RetailPrice>				(maps full_price to products_price)
+        <PriceDiscountType>Amount</PriceDiscountType>	(None, Percent, Amount, Actual) [ZC: products_discount_type]
+	    <PriceDiscounts>
+		  <PriceLevel>
+		    <DiscountLevel>1</DiscountLevel>
+			<Quantity>2</Quantity>
+			<Amount>1.00</Amount>
+		  </PriceLevel>
+		  <PriceLevel>
+		    <DiscountLevel>2</DiscountLevel>
+			<Quantity>5</Quantity>
+			<Amount>3.00</Amount>
+		  </PriceLevel>
+	    </PriceDiscounts>
+	  </ProductPrice>
+B	  <ProductWeight>15.4</ProductWeight>			(maps item_weight to products_weight)
+ZC	  <DateAdded>2007-02-28</DateAdded>
+B	  <DateUpdate>2007-02-28</DateUpdate>			(maps last_update to products_last_modified)
+ZC	  <DateAvailable>2007-02-28</DateAvailable>
+B	  <StockLevel>52</StockLevel>					(maps quantity_on_hand to products_quantity)
+B	  <Manufacturer>Enersys</Manufacturer>			(maps vendor_id to manufacturers_id both mapped to description)
+ZC	  <ProductVirtual>False</ProductVirtual>		(True or False)
+ZC	  <ProductStatus>Active</ProductStatus>		(Active or Inactive)
+ZC	  <ProductFreeShipping>False</ProductFreeShipping>
+ZC	  <ProductHidePrice>False</ProductHidePrice>
+ZC	  <ProductCategory>Sealed Lead Acid</ProductCategory>	(maps description to ZenCart categories)
+ZC	  <ProductSortOrder>0</ProductSortOrder>
+	</ProductInformation>
+  </ProductUpload>
+</AccessRequest>

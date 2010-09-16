@@ -1,0 +1,19 @@
+PhreeBooks(tm) - Web based accounting and small business management 
+Welcome to PhreeBooks Accounting
+
+THE FOLLOWING IS A VERY SIMPLIFIED UPGRADE DOCUMENT.
+
+ALL OF OUR HELP DOCUMENTS ARE IN THE /doc FOLDER OF THIS DISTRIBUTION.
+
+
+You can find online documentation at: http://www.phreebooks.com/demo/includes/addons/PhreeHelp/index.php
+
+
+PhreeBooks has a built-in automatic upgrade system. However to use this you must first unpack
+the code to a web server.
+
+Replace the current files with the new ones. If you customized any of the scripts, you will need to update them as well. The list of files changed is the Release Notes for this version. 
+
+Log in, the database changes will be made automatically.
+
+Your done!

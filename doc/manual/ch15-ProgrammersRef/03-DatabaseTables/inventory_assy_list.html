@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.90">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table inventory_assy_list">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table inventory_assy_list">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>Table inventory_assy_list</title>
+
+</head>
+<body>
+<h1 align="center">Table inventory_assy_list</h1>
+Table inventory_assy_list hold the list of items used to assmeble an inventory item of type item assembly. <br />
+<br />
+Table Type: InnoDB<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>id</td>
+<td>int (11)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Auto increment field to hold unique ID </td>
+</tr>
+<tr>
+  <td>ref_id</td>
+  <td>int (11) </td>
+  <td>NOT NULL </td>
+  <td>Refers to the the id value in the inventory table of the item being assembled. </td>
+</tr>
+<tr>
+  <td>sku</td>
+  <td>varchar (15)</td>
+  <td>NOT NULL </td>
+  <td>Holds the sku of the inventory item that is part of the assembly refered to be ref_id </td>
+</tr>
+<tr>
+  <td>description</td>
+  <td>varchar (32) </td>
+  <td>NOT NULL </td>
+  <td>Holds the description of the sku. This may vary from the short name description pulled in be default in the bom tab in the maintain inventory script. </td>
+</tr>
+<tr>
+  <td>qty</td>
+  <td>float</td>
+  <td>0</td>
+  <td>Holds the quantity of the sku used in the assembly. The number need not be an integer. </td>
+</tr>
+</tbody>
+</table>
+<p><br />
+  </p>
+</body></html>

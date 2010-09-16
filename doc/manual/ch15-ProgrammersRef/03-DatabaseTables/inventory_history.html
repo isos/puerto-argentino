@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.115">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table inventory_history">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table inventory_history">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>Table inventory_history</title>
+
+</head>
+<body>
+<h1 align="center">Table inventory_history</h1>
+Table inventory_history holds the historical record of inventory as items as they are received and sold. Only items that are considered cost-trackable are stoed in this table. These include, stock-items, item assemblies, Serialized items, Master stock items. This table is the primary source of costing when calculating the cost of goods sold for tracking gross profit the the income statement. <br />
+<br />
+Table Type: InnoDB<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>id</td>
+<td>int (11)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Auto increment field to hold unique ID </td>
+</tr>
+<tr>
+  <td>ref_id</td>
+  <td>int(11)</td>
+  <td>0</td>
+  <td>This links the received item to the journal record where the item was received.</td>
+</tr>
+<tr>
+  <td>sku</td>
+  <td>varchar(15)</td>
+  <td>NULL</td>
+  <td>The inventory item SKU </td>
+</tr>
+<tr>
+  <td>serialize_number</td>
+  <td>varchar(24)</td>
+  <td>NULL</td>
+  <td>If the item is a serialized item, the serial number is stored here. NOTE: For serialized items, only one item may be received/sold per line on the order form.</td>
+</tr>
+<tr>
+  <td>remaining</td>
+  <td>float</td>
+  <td>0</td>
+  <td>The number of units of the item remaining. This value will initially start out as the number received and will be reduced as items are sold.The value should never be less than zero. </td>
+</tr>
+<tr>
+  <td>unit_cost</td>
+  <td>float</td>
+  <td>0</td>
+  <td>The cost the the item when it was purchased. This value is used when calculating the cost of good sold. </td>
+</tr>
+<tr>
+  <td>post_date</td>
+  <td>datetime</td>
+  <td>NULL</td>
+  <td>The date the inventory item was received </td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+</body></html>

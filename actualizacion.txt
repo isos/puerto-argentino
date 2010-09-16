@@ -1,0 +1,17 @@
+PhreeBooks(tm) - Programa de contabilidad basado en red para empresas pequeñas. 
+
+Bienvendio a PhreeBooks 
+
+LO QUE SIGUE ES UN PROCEDIMIENTO DE ACTUALIZACIÓN SIMPLIFICADO 
+
+LOS DOCUMENTOS DE AYUDA ESTÁN EN LA CARPETA /doc DE ESTA DISTRIBUCIÓN.
+
+Puede encontrar la documentación en línea en: http://www.phreebooks.com/demo/includes/addons/PhreeHelp/index.php
+
+PhreeBooks tiene incorporado un sistema automático de actualizaciones.  Sin embargo, para usarlo, primero debe poner los archivos de código en su servidor de red.
+
+Reemplace los archivos actuales con los nuevos.  Si usted ha hecho modificaciones al código, deberá actualizarlos también.  La lista de archivos modificados está en el archivo de notas de la versión.
+
+Una vez que haga el login, los cambios a la base de datos serán hechos automáticamente.
+
+¡Eso es todo!

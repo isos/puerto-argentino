@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.3">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Programmers Reference.Translations">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Language Translations">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>Language Translations</title>
+</head>
+
+<body>
+
+<h1 align="center">Language Translations</h1>
+<p>This section discusses the programming guidelines for translatin PhreeBooks to languages other than English (US). The PhreeBooks website download section, <a href="http|//www.PhreeBooks.com">www.PhreeBooks.com</a> contains the language translations that have been generated to date. To start a new translation, it is best to download the translation that is most similar to your language, change the iso directory name, and edit the definitions as needed. </p>
+<p>The language files are broken into the following sections. </p>
+<ol>
+  <li>General Language - Loaded with all modules includes the menu defines, pull down menu defines, and general verbage used generically throughout the site.</li>
+  <li>Module Specific - Loaded with each module (and optionally with other modules if they are dependent on the module).</li>
+  <li>Service Modules/Control Panel Modules- Shipping, Payment, price sheets. These modules are designed to be added and removed to adapt to the varying needs of each user, locale, etc. </li>
+  <li>Installation - Language defines that are used only during the instllation routines.</li>
+  <li>Custom - User defined translations to overwrite the default language.</li>
+  <li>Help Files - The manual. Written in mostly HTML (ned to be directly translated).</li>
+  <li> Reports/Forms - Cofiguration headings for reports and forms. </li>
+</ol>
+<p>The first three sections are the key files to translate. The remaining four are recommended to translate but not required. You can install in english, read the manual in english and convert the reports your are interedted in but conversion would be preferred. The following list of files are part of the General and Module specific definitions. All the files need to be present for PhreeBooks to function properly. </p>
+<p>General Language File (replace the en_us with your appropriate iso code):</p>
+<ul>
+  <li>  /modules/general/language/en_us/language.php</li>
+</ul>
+<p>Module Language Files:</p>
+<ul>
+  <li>  /modules/accounts/language/en_us/language.php</li>
+  <li>/modules/banking/language/en_us/language.php</li>
+  <li>/modules/gen_ledger/language/en_us/language.php</li>
+  <li>/modules/hr/language/en_us/language.php</li>
+  <li>/modules/inventory/language/en_us/language.php</li>
+  <li>/modules/orders/language/en_us/language.php</li>
+  <li>/modules/quality/language/en_us/language.php</li>
+  <li>/modules/reportwriter/language/en_us/language.php</li>
+  <li>/modules/setup/language/en_us/language.php</li>
+  <li>/modules/setup/language/en_us/modules/chart_of_accounts.php</li>
+  <li>/modules/setup/language/en_us/modules/countries.php</li>
+  <li>/modules/setup/language/en_us/modules/currency.php</li>
+  <li>/modules/setup/language/en_us/modules/departments.php</li>
+  <li>/modules/setup/language/en_us/modules/dept_types.php</li>
+  <li>/modules/setup/language/en_us/modules/inv_tabs.php</li>
+  <li>/modules/setup/language/en_us/modules/tax_auths.php</li>
+  <li>/modules/setup/language/en_us/modules/tax_rates.php</li>
+  <li>/modules/setup/language/en_us/modules/zones.php</li>
+  <li>/modules/services/import_export/language/en_us/language.php</li>
+</ul>
+<p>Control Panel Files:</p>
+<ul>
+  <li>/modules/general/language/en_us/boxes/personal_links.php</li>
+  <li>/modules/general/language/en_us/boxes/po_status.php</li>
+  <li>/modules/general/language/en_us/boxes/so_status.php</li>
+  <li>/modules/general/language/en_us/boxes/todays_sales.php</li>
+</ul>
+<p>Services (Payment), only needed if particular service module is loaded:</p>
+<ul>
+  <li> /modules/services/payment/language/en_us/language.php</li>
+  <li>/modules/services/payment/language/en_us/modules/cod.php</li>
+  <li>/modules/services/payment/language/en_us/modules/freecharger.php</li>
+  <li>/modules/services/payment/language/en_us/modules/moneyorder.php</li>
+  <li>/modules/services/payment/language/en_us/modules/nova_xml.php</li>
+</ul>
+<p>Services (Shipping), only needed if particular service module is loaded:</p>
+<ul>
+  <li>/modules/services/shipping/language/en_us/language.php</li>
+  <li>/modules/services/shipping/language/en_us/modules/fedex.php</li>
+  <li>/modules/services/shipping/language/en_us/modules/flat.php</li>
+  <li>/modules/services/shipping/language/en_us/modules/freeshipper.php</li>
+  <li>/modules/services/shipping/language/en_us/modules/item.php</li>
+  <li>/modules/services/shipping/language/en_us/modules/storepickup.php</li>
+  <li>/modules/services/shipping/language/en_us/modules/table.php</li>
+  <li>/modules/services/shipping/language/en_us/modules/ups.php</li>
+  <li>/modules/services/shipping/language/en_us/modules/usps.php</li>
+</ul>
+<p>Services (Price Sheets):</p>
+<ul>
+  <li>/modules/services/pricesheets/language/en_us/language.php</li>
+  <li>/modules/services/pricesheets/language/en_us/modules/quantity.php</li>
+</ul>
+<p>Install (menu files):</p>
+<ul>
+  <li>/modules/install/language/en_us/language.php</li>
+  <li>/modules/install/language/en_us/about_phreebooks.html (Straight HTML translation) </li>
+  <li>/modules/install/language/en_us/admin_setup.php</li>
+  <li>/modules/install/language/en_us/chart_setup.php</li>
+  <li>/modules/install/language/en_us/coa_defaults.php</li>
+  <li>/modules/install/language/en_us/database_setup.php</li>
+  <li>/modules/install/language/en_us/finished.php</li>
+  <li>/modules/install/language/en_us/fiscal_setup.php</li>
+  <li>/modules/install/language/en_us/index.php</li>
+  <li>/modules/install/language/en_us/inspect.php</li>
+  <li>/modules/install/language/en_us/license.php</li>
+  <li>/modules/install/language/en_us/store_setup.php</li>
+  <li>/modules/install/language/en_us/system_setup.php</li>
+</ul>
+<p>Install (database setup files): </p>
+<ul>
+  <li>/modules/install/language/en_us/chart_of_accounts_types_list.php</li>
+  <li>/modules/install/language/en_us/config_data.php</li>
+  <li>/modules/install/language/en_us/countries_list.php</li>
+  <li>/modules/install/language/en_us/currencies_list.php</li>
+  <li>/modules/install/language/en_us/import_export_list.php</li>
+  <li>/modules/install/language/en_us/state_province_list.php</li>
+</ul>
+<p>Reports and Forms:</p>
+<p>Translated reports and forms are manged through the phreebooks website. The goal is to develop reports and then translate them for others to download. The reports may then be customized for each users application.</p>
+<p>Help File:</p>
+<p>What can I say, I wrote it in english, basic html with coding for the PhreeHelp popup help system. Needs complete re-write to convet to other languages. </p>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AccessRequest>
+	<AccessUserID>phreeuser</AccessUserID>
+	<AccessPassword>phreepw</AccessPassword>
+	<AccessFunction>SalesOrderEntry</AccessFunction>
+	<SalesOrderEntry>
+	  <OrderRequest>
+		<Version>1.00</Version>
+		<RequestAction>New</RequestAction>
+		<ReferenceName>Test SO Entry</ReferenceName>
+		<Originator>
+		  <StoreID>ZenCart</StoreID>
+		  <SalesRepID>webstore</SalesRepID>
+		</Originator>
+	  </OrderRequest>
+	  <SalesOrder>
+		<OrderSummary>
+		  <SalesOrderID>ZC20061009</SalesOrderID>
+		  <SalesOrderDate>2006-10-09</SalesOrderDate>
+		  <OrderTotal>85.43</OrderTotal>
+		  <TaxTotal>5.43</TaxTotal>
+		  <ShippingTotal>5.00</ShippingTotal>
+		  <ShippingCarrier>FedEx</ShippingCarrier>
+		  <ShippingMethod>GND</ShippingMethod>
+		  <OrderNotes>Notes Here</OrderNotes>
+		</OrderSummary>
+		<Payment>
+		  <Method>Credit Card</Method>
+		  <Type>Visa</Type>
+		  <CardHolderName>John A Smith</CardHolderName>
+		  <CardNumber>4111 1111 1111 1111</CardNumber>
+		  <ExpirationDate>2016-08-27</ExpirationDate>
+		  <CVV2Number>111</CVV2Number>
+		</Payment>
+		<Customer>
+		  <CustomerID>3035551212</CustomerID>
+		  <PrimaryName>Smith Services</PrimaryName>
+		  <Contact>John Smith</Contact>
+		  <Telephone1>3035551212</Telephone1>
+		  <Telephone2>720.555.1234</Telephone2>
+		  <Fax>800-555-6666</Fax>
+		  <Email>john@smithservices.com</Email>
+		  <Website>www.smithservices.com</Website>
+		  <Address1>123 Elm Street</Address1>
+		  <Address2>Suite #3</Address2>
+		  <CityTown>Anytown</CityTown>
+		  <StateProvince>WA</StateProvince>
+		  <PostalCode>98234</PostalCode>
+		  <CountryCode>US</CountryCode>
+		  <SalesGLAccount>4000</SalesGLAccount>
+		  <TaxIDNumber>123456789</TaxIDNumber>
+		  <AccountNumber>ZC000456</AccountNumber>
+		  <BillToAddress>
+			<PrimaryName>Smith Services HQ</PrimaryName>
+			<Contact>Linda Smith</Contact>
+			<Address1>Attn: Accts Payable</Address1>
+			<Address2>1 First Street</Address2>
+			<CityTown>Bothell</CityTown>
+			<StateProvince>WA</StateProvince>
+			<PostalCode>98433</PostalCode>
+			<CountryCode>US</CountryCode>
+		  </BillToAddress>
+		  <ShipToAddress>
+			<PrimaryName>Jones Repair</PrimaryName>
+			<Contact>Jim Jones</Contact>
+			<Address1>Attn: Receiving</Address1>
+			<Address2>14433 32nd Street</Address2>
+			<CityTown>San Diege</CityTown>
+			<StateProvince>CA</StateProvince>
+			<PostalCode>92305-4251</PostalCode>
+			<CountryCode>US</CountryCode>
+			<DropShipIndicator />
+			<BlindShipIndicator />
+		  </ShipToAddress>
+		</Customer>
+		<LineItemDetails>
+		  <ItemID>34L104S3</ItemID>
+		  <Description>Panasonic SLA Battery</Description>
+		  <Quantity>2</Quantity>
+		  <UnitPrice>12.50</UnitPrice>
+		  <SalesTax>5.43</SalesTax>
+		</LineItemDetails>
+		<LineItemDetails>
+		  <ItemID>347L105S1</ItemID>
+		  <Description>Odyssey PC680</Description>
+		  <Quantity>1</Quantity>
+		  <UnitPrice>50.00</UnitPrice>
+		  <SalesTax>0.00</SalesTax>
+		</LineItemDetails>
+	  </SalesOrder>
+	</SalesOrderEntry>
+</AccessRequest>

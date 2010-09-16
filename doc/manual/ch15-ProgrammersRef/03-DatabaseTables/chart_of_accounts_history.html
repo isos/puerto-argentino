@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.35">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table chart_of_accounts_history">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table chart_of_accounts_history">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css"><title>Table chart_of_accounts_history</title>
+
+</head>
+<body>
+<h1 align="center">Table chart_of_accounts_history</h1>
+Table chart_of_accounts_history contains the historical and future
+balances of each general ledger account. Every journal entry affects
+this table. When an entry is posted to the ledger, the affected
+acocunts are incremented or decremented (according to accouting rules)
+to the posted period and rolled into future periods for as many periods
+have been created. This table is filled andmaintained by the system. DO
+NOT EDIT THE INFORMATION IN THIS TABLE or the books may become out of
+balance!<br />
+<br />
+NOTE: This table has the largest impact on a journal posting. Every
+posted entry rolls from the current period to the last period in the
+system. If too many fiscal years are generated in advance, the time to
+post an entry will significantly increase.<br />
+<br />
+Table Type: InnoDB<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>id</td>
+<td>int (11)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Identifies the history record number.</td>
+</tr>
+
+
+
+
+
+
+<tr><td>period</td><td>int (11)</td><td>0</td><td>INDEX - The accounting period of the record</td></tr><tr><td>account_id</td><td>char (15)</td><td>NOT NULL</td><td><br />INDEX - Holds the general ledger account number (or id)</td></tr><tr><td>beginning_balance</td><td>real (double)</td><td>0</td><td>Holds the beginning balance of the specific account for a given period.</td></tr><tr><td>debit_amount</td><td>real (double) </td><td>0</td><td>Holds the debit amount for the given ledger account for the given period.</td></tr><tr><td>credit_amount</td><td>real (double)</td><td>0</td><td>Holds the credit amount for the given ledger account for the given period.</td></tr><tr><td>budget</td><td>real (double)</td><td>0</td><td>Holds the budgeted amount for the given ledger accout for the given period.</td></tr><tr><td>last_update</td><td>date</td><td>0000-00-00</td><td>Last update of the record.</td></tr></tbody>
+</table>
+<br />
+<br />
+</body></html>

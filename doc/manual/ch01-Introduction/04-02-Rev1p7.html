@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="01.04.10">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Revision.PhreeBooks.Rev 1p7">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="PhreeBooks Release 1.7">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>PhreeBooks Release 1.7</title>
+</head>
+
+<body>
+
+<h1 align="center">PhreeBooks Release 1.7</h1>
+<p>// 2008-12-15 Change log, release 1.6 to Release 1.7<br />
+  /doc/manual/ch01-Introduction/04-02-Rev1p7.html (this file) <br />
+/doc/manual/ch01-Introduction/04-RevHistory.html<br />
+/doc/manual/version.txt<br />
+  /includes/version.php<br />
+/modules/install/updater.php<br />
+/modules/install/updates/R16toR17.php (if necessary)</p>
+<p>// *************************** sql statements ***************************//<br />
+// sql statements are rolled into the base release and incorporated into the updater script for automatic db update</p>
+<p>// *************************** code changes ***************************//</p>
+<p>// 2008-12-15 - Misc bugs and changes<br />
+/modules/install/sql/current/tables.sql ( left out type in table tax_authorities for new installs )<br />
+/includes/security_tokens.php ( bug in security tokens for branches )<br />
+/includes/menu_navigation.php<br />
+/modules/banking/pages/popup_bills/js_include.php ( bug opening paid for vendors for edit with non-blank shipper_code ) <br />
+/modules/orders/functions/orders.php ( bug filling pre-shipped sales with duplicate SKU numbers ) <br />
+/soap/classes/orders.php ( fixed sales tax from ZenCart to map to PhreeBooks tax rates ) <br />
+/modules/reportwriter/pages/popup_form/pre_process.php ( bug when no journal ID but main ID specified, custom modules ) <br />
+/modules/banking/pages/popup_bills_accts/pre_process.php ( fixed bug when vendor credit and no balance due not showing ) </p>
+<p>// 2008-12-15 - Added where used to inventory to find if part of an assembly<br />
+/modules/inventory/pages/main/template_tab_gen.php<br />
+/modules/inventory/pages/main/js_include.php<br />
+/modules/inventory/language/en_us/language.php<br />
+/modules/inventory/ajax/where_used.php</p>
+<p>// *************************** SVN Update ***************************//</p>
+<p>// 2009-01-08 - Misc bugs and changes<br />
+/modules/orders/pages/inv_mgr/template_main.php ( added hooks for customization ) <br />
+/modules/orders/functions/orders.php ( fixed javascript encoding for special characters )<br />
+/modules/inventory/pages/main/pre_process.php ( cost method was being overwritten by default values ) <br />
+/modules/reportwriter/classes/entry_builder.php ( added gov_id_number to invoices and packing slips ) <br />
+/modules/reportwriter/language/en_us/classes/entry_builder.php<br />
+/modules/inventory/functions/inventory.php ( bug with multi-branch inventory popup  ) </p>
+<p>//2009-01-09 - fixed error dealing with  single quote chars on company information <br />
+  /modules/general/functions/gen_functions.php<br />
+  /modules/accounts/pages/popup_accts/js_include.php<br />
+  /modules/banking/pages/bills/js_include.php<br />
+  /modules/banking/pages/popup_bills/js_include.php<br />
+  /modules/banking/pages/popup_bills_accts/js_include.php<br />
+  /modules/orders/pages/orders/js_include.php  <br />
+/modules/orders/pages/popup_orders/js_include.php  </p>
+<p>// *************************** SVN Update ***************************//</p>
+<p>// 2009-01-14 - Misc bugs and changes<br />
+/modules/reportwriter/classes/entry_builder.php ( div by zero error fix ) <br />
+/modules/reportwriter/pages/builder/template_TplFrmText.php ( duplicate line size pull down on border ) <br />
+/modules/reportwriter/pages/builder/template_TplFrmTtl.php<br />
+/modules/reportwriter/pages/builder/template_TplFrmPgNum.php<br />
+/modules/reportwriter/pages/builder/template_TplFrmRect.php</p>
+<p>// 2009-01-14 - Fixed bug calculating cost for inventory using average cost method <br />
+/modules/gen_ledger/classes/gen_ledger.php<br />
+/modules/install/updates/R16toR17.php<br />
+/modules/install/sql/current/tables.sql</p>
+<p>// *************************** SVN Update ***************************//</p>
+<p>// 2009-01-14 - Misc bugs and changes<br />
+  /modules/reportwriter/functions/generator_functions.php ( fix to allow grouping in special reports ) <br />
+/modules/reportwriter/classes/aged_receivables.php<br />
+/modules/reportwriter/functions/generator_functions.php ( bug formatting journal id to text )<br />
+/modules/reportwriter/classes/statement_builder.php<br />
+/modules/reportwriter/language/en_us/classes/statement_builder.php ( new file to separate language ) <br />
+/modules/inventory/pages/main/pre_process.php ( remove debug code left in for average cost debugging ) <br />
+/modules/install/updater.php ( include updater sql changes for fixed cost ) <br />
+/modules/inventory/pages/main/template_tab_gen.php ( changed description of calculate current assembly cost button )<br />
+/modules/inventory/language/en_us/language.php<br />
+/modules/reportwriter/functions/generator_functions.php ( bug printing when inactive = 0 needed quotes ) </p>
+<p>// 2009-01-15 - Added special report for sales backorders<br />
+/modules/reportwriter/classes/backorders_report.php<br />
+/modules/reportwriter/language/en_us/classes/backorders_report.php<br />
+/my_files/reports/Backorders.rpt.txt</p>
+<p>// 2009-01-15 - Enhanced income statement to include year-year comparison<br />
+/modules/reportwriter/classes/income_statement.php<br />
+/my_files/reports/IncomeStmt-2Years.rpt.txt</p>
+<p>// *************************** SVN Update ***************************//</p>
+<p>// 2009-01-26 - Misc bugs and changes<br />
+/modules/gen_ledger/classes/gen_ledger.php ( fixed bug calculating on_order balance when closing an open PO )<br />
+/modules/gen_ledger/pages/utils/pre_process.php ( fixed bug rolling gl balances into new fiscal year when adding new year ) /modules/setup/classes/chart_of_accounts.php ( bug allowing delete of coa with beginning balance but no journal entries ) <br />
+/modules/accounts/pages/main/pre_process.php ( bug with security tokens when adding new contacts )<br />
+/includes/security_tokens.php<br />
+/includes/menu_navigation.php<br />
+/modules/general/pages/users/template_detail.php ( removed non-functional Reports listings on all tabs except Tools ) <br />
+/modules/reportwriter/language/en_us/language.php ( renamed Branch ID to Contact ID ) <br />
+</p>
+<p>// 2009-01-26 - Added bar cade capability for sales/invoice screen ( plus UPC field to inventory table ) <br />
+  /modules/install/updates/R16toR17.php  <br />
+/modules/install/language/en_us/config_data.php<br />
+/modules/inventory/pages/main/pre_process.php<br />
+/modules/inventory/pages/main/template_tab_gen.php<br />
+/modules/inventory/pages/main/template_tab_hist.php<br />
+/modules/inventory/language/en_us/language.php<br />
+/modules/orders/ajax/bar_code_details.php<br />
+/modules/orders/javascript/orders.js<br />
+/modules/orders/language/en_us/language.php<br />
+/modules/orders/pages/orders/template_main.php<br />
+/modules/orders/pages/popup_bar_code/pre_process.php<br />
+/modules/orders/pages/popup_bar_code/js_include.php<br />
+/modules/orders/pages/popup_bar_code/template_main.php</p>
+<p>// *************************** SVN Update ***************************//</p>
+<p>// 2009-02-09 - Misc bugs and changes<br />
+/modules/gen_ledger/classes/gen_ledger.php ( part of average cost calculation fix ) <br />
+/modules/gen_ledger/classes/gen_ledger.php ( fixed bug with negative invoices calculating cogs ) <br />
+/modules/general/pages/users/template_detail.php ( bug displaying non-settable menu items ) <br />
+/modules/inventory/pages/popup_inv/pre_process.php ( hide serial number row unless item is a serialized type )<br />
+/modules/inventory/pages/popup_inv/js_include.php<br />
+/modules/inventory/pages/popup_inv/template_main.php<br />
+/modules/inventory/pages/adjustments/template_main.php<br />
+/modules/inventory/pages/assemblies/js_include.php<br />
+/modules/inventory/pages/assemblies/template_main.php<br />
+/modules/banking/pages/register/pre_process.php ( fixed bug displaying balance when multiple entries in same journal id ) <br />
+/modules/general/language/en_us/language.php<br />
+/modules/install/updates/R16toR17.php<br />
+/modules/orders/javascript/orders.js<br />
+/modules/orders/language/en_us/language.php<br />
+/modules/inventory/pages/assemblies/js_include.php ( total assemblie item counts )<br />
+/modules/inventory/pages/popup_inv/js_include.php<br />
+/modules/general/classes/split_page_results.php ( fixed bug with no items in list ) <br />
+/modules/install/functions/install.php</p>
+<p>// 2009-02-09 - Added new menu Inventory Tools<br />
+/includes/menu_navigation.php<br />
+/includes/security_tokens.php<br />
+/modules/general/language/en_us/language.php<br />
+/modules/inventory/language/en_us/language.php<br />
+/modules/inventory/pages/tools/pre_process.php<br />
+/modules/inventory/pages/tools/js_include.php<br />
+/modules/inventory/pages/tools/template_main.php</p>
+<p>// 2009-02-16 - Added support for barcode generation (using TCPDF, tested on version 4.5.014)<br />
+  /modules/reportwriter/pages/builder/template_TplFrmBarCode.php  <br />
+/modules/reportwriter/language/en_us/language.php<br />
+/modules/reportwriter/classes/form_generator.php<br />
+/modules/reportwriter/classes/report_generator.php<br />
+/modules/reportwriter/functions/generator_functions.php</p>
+<p>// 2009-03-26 - Changed default PDF generator to TCPDF to support bar codes by default, updated FPDF to Version 1.6 <br />
+/includes/addons/fpdf.txt<br />
+/includes/addons/tcpdf.txt<br />
+/modules/reportwriter/classes/form_generator.php<br />
+/modules/reportwriter/classes/report_generator.php<br />
+/modules/reportwriter/language/en_us/language.php<br />
+Entire includes/addons/fpdf Folder<br />
+Added includes/addons/tcpdf Folder</p>
+<p>// *************************** SVN Update ***************************//</p>
+<p>// Updated all forms<br />
+  /my_files/reports ( entire directory )
+</p>
+<p>// 2009-04-01 - increase SKU field length to 24 charactes and added Description for Sales field to Inventory<br />
+  /modules/install/sql/current/tables.sql<br />
+  /modules/install/updates/R16toR17.php  <br />
+  /modules/general/language/en_us/language.php  <br />
+  /modules/reportwriter/language/en_us/language.php<br />
+  /modules/reportwriter/functions/generator_functions.php<br />
+/modules/inventory/pages/main/pre_process.php<br />
+/modules/inventory/pages/main/js_include.php<br />
+/modules/inventory/pages/main/template_tab_gen.php<br />
+/modules/inventory/pages/main/template_tab_bom.php<br />
+/modules/inventory/pages/adjustments/template_main.php<br />
+/modules/inventory/pages/assemblies/template_main.php<br />
+/modules/inventory/pages/bulk_prices/template_main.php<br />
+/modules/inventory/pages/transfer/template_main.php<br />
+/modules/inventory/language/en_us/language.php<br />
+/modules/inventory/functions/inventory.php<br />
+/modules/orders/pages/orders/template_main.php<br />
+/modules/orders/pages/orders/js_include.php<br />
+/modules/orders/javascript/orders.js<br />
+/modules/reportwriter/classes/entry_builder.php</p>
+<p>// 2009-04-02 - Added ability to auto increment Customer and Vendor ID<br />
+/modules/gen_ledger/pages/journal/pre_process.php<br />
+/modules/gen_ledger/classes/gen_ledger.php<br />
+/modules/general/functions/gen_functions.php<br />
+/modules/orders/classes/orders.php<br />
+/modules/accounts/pages/main/pre_process.php<br />
+/modules/install/language/en_us/config_data.php<br />
+/modules/install/updates/R16toR17.php<br />
+/modules/install/updater.php</p>
+<p>// 2009-04-06 - Bugs testing release<br />
+/doc/manual/ch01-Introduction/04-02-Rev1p7.html<br />
+/modules/install/sql/current/demo_data.php ( make the demo data prefix enabled ) <br />
+/modules/install/pages/store_setup/header_php.php<br />
+/modules/services/shipping/modules/fedex.php ( FedEx release of new Freight XML server )<br />
+/modules/services/shipping/classes/shipping.php</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

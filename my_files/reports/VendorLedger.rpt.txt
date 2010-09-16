@@ -1,0 +1,67 @@
+/* Report Builder Export Tool */
+version:1.0
+/* Report Name: Vendor Ledger */
+/* Export File Generated: : 2009-12-04 04:12:19 */
+
+
+/* Language Fields. */
+/* Only modify the language portion between the single quotes after the colon. */
+
+/* Report Name */
+ReportName:'Vendor Ledger'
+ReportNarr:'Shows the vendor ledger, sales, credits, payments. Report size: Letter, Landscape.'
+EmailMsg:''
+
+/* Report Field Description Information */
+FieldDesc0:'Vendor ID'
+FieldDesc1:'Vendor Name'
+FieldDesc2:'Post Date'
+FieldDesc3:'Journal ID'
+FieldDesc4:'GL Type'
+FieldDesc5:'Period'
+FieldDesc6:'Post Date'
+FieldDesc7:'Journal ID'
+FieldDesc8:'Vendor ID'
+FieldDesc9:'Vendor Name'
+FieldDesc10:'Closed'
+FieldDesc11:'Reference'
+FieldDesc12:'Vendor Ref'
+FieldDesc13:'Debit Amount'
+FieldDesc14:'Credit Amount'
+FieldDesc15:'Branch ID'
+FieldDesc16:'Vendor ID'
+FieldDesc19:'Vendor ID'
+FieldDesc20:'Invoice Date'
+
+/* End of language fields. */
+
+/* DO NOT EDIT BELOW THIS LINE! */
+
+
+/* SQL report data. */
+ReportData:description='Vendor Ledger', reporttype='rpt', groupname='ap', standard_report='1', special_report='0', table1='journal_main', table2='journal_item', table2criteria='[table1].id = [table2].ref_id', table3='contacts', table3criteria='[table1].bill_acct_id = [table3].id', table4='', table4criteria='', table5='', table5criteria='', table6='', table6criteria='';
+
+/* SQL field data. */
+FieldData0:entrytype='critlist', seqnum='1', fieldname='[table3].short_name', displaydesc='Vendor ID', visible='1', columnbreak='0', params='a:4:{s:5:\"value\";s:1:\"0\";s:7:\"default\";s:0:\"\";s:7:\"min_val\";s:0:\"\";s:7:\"max_val\";s:0:\"\";}';
+FieldData1:entrytype='critlist', seqnum='2', fieldname='[table1].bill_primary_name', displaydesc='Vendor Name', visible='1', columnbreak='0', params='a:4:{s:5:\"value\";s:1:\"0\";s:7:\"default\";s:0:\"\";s:7:\"min_val\";s:0:\"\";s:7:\"max_val\";s:0:\"\";}';
+FieldData2:entrytype='critlist', seqnum='3', fieldname='[table1].post_date', displaydesc='Post Date', visible='1', columnbreak='0', params='a:4:{s:5:\"value\";s:1:\"0\";s:7:\"default\";s:0:\"\";s:7:\"min_val\";s:0:\"\";s:7:\"max_val\";s:0:\"\";}';
+FieldData3:entrytype='critlist', seqnum='4', fieldname='[table1].journal_id', displaydesc='Journal ID', visible='0', columnbreak='0', params='a:4:{s:5:\"value\";s:1:\"9\";s:7:\"default\";s:0:\"\";s:7:\"min_val\";s:14:\"10,12,13,18,19\";s:7:\"max_val\";s:0:\"\";}';
+FieldData4:entrytype='critlist', seqnum='5', fieldname='[table2].gl_type', displaydesc='GL Type', visible='0', columnbreak='0', params='a:4:{s:5:\"value\";s:1:\"6\";s:7:\"default\";s:0:\"\";s:7:\"min_val\";s:3:\"ttl\";s:7:\"max_val\";s:0:\"\";}';
+FieldData5:entrytype='fieldlist', seqnum='1', fieldname='[table1].period', displaydesc='Period', visible='0', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"15\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData6:entrytype='fieldlist', seqnum='2', fieldname='[table1].post_date', displaydesc='Post Date', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"30\";s:10:\"processing\";s:4:\"date\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData7:entrytype='fieldlist', seqnum='3', fieldname='[table1].journal_id', displaydesc='Journal ID', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"32\";s:10:\"processing\";s:6:\"j_desc\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData8:entrytype='fieldlist', seqnum='4', fieldname='[table3].short_name', displaydesc='Vendor ID', visible='0', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"30\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData9:entrytype='fieldlist', seqnum='5', fieldname='[table1].bill_primary_name', displaydesc='Vendor Name', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"65\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData10:entrytype='fieldlist', seqnum='6', fieldname='[table1].closed', displaydesc='Closed', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"15\";s:10:\"processing\";s:6:\"yesBno\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData11:entrytype='fieldlist', seqnum='7', fieldname='[table1].purchase_invoice_id', displaydesc='Reference', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"30\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData12:entrytype='fieldlist', seqnum='8', fieldname='[table1].purch_order_id', displaydesc='Vendor Ref', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"40\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData13:entrytype='fieldlist', seqnum='9', fieldname='[table2].debit_amount', displaydesc='Debit Amount', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"25\";s:10:\"processing\";s:10:\"posted_cur\";s:5:\"index\";s:1:\"1\";s:5:\"align\";s:1:\"R\";}';
+FieldData14:entrytype='fieldlist', seqnum='10', fieldname='[table2].credit_amount', displaydesc='Credit Amount', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"25\";s:10:\"processing\";s:10:\"posted_cur\";s:5:\"index\";s:1:\"1\";s:5:\"align\";s:1:\"R\";}';
+FieldData15:entrytype='fieldlist', seqnum='11', fieldname='[table1].store_id', displaydesc='Branch ID', visible='0', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"25\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData16:entrytype='grouplist', seqnum='1', fieldname='[table1].bill_acct_id', displaydesc='Vendor ID', visible='0', columnbreak='0', params='a:3:{s:7:\"default\";s:1:\"1\";s:10:\"page_break\";b:0;s:10:\"processing\";s:1:\"0\";}';
+FieldData17:entrytype='pagelist', seqnum='0', fieldname='', displaydesc='', visible='1', columnbreak='1', params='a:43:{s:9:\"narrative\";s:82:\"Shows the vendor ledger, sales, credits, payments. Report size: Letter, Landscape.\";s:9:\"papersize\";s:14:\"Letter:216:282\";s:16:\"paperorientation\";s:1:\"L\";s:9:\"margintop\";s:1:\"8\";s:12:\"marginbottom\";s:1:\"8\";s:10:\"marginleft\";s:1:\"8\";s:11:\"marginright\";s:1:\"8\";s:11:\"coynameshow\";s:1:\"1\";s:10:\"title1show\";s:1:\"1\";s:10:\"title2show\";s:1:\"1\";s:11:\"coynamefont\";s:9:\"helvetica\";s:15:\"coynamefontsize\";s:2:\"12\";s:16:\"coynamefontcolor\";s:5:\"0:0:0\";s:12:\"coynamealign\";s:1:\"C\";s:10:\"title1desc\";s:12:\"%reportname%\";s:10:\"title1font\";s:9:\"helvetica\";s:14:\"title1fontsize\";s:2:\"10\";s:15:\"title1fontcolor\";s:5:\"0:0:0\";s:15:\"title1fontalign\";s:1:\"C\";s:10:\"title2desc\";s:23:\"Report Generated %date%\";s:11:\"title2font \";s:9:\"helvetica\";s:14:\"title2fontsize\";s:2:\"10\";s:15:\"title2fontcolor\";s:5:\"0:0:0\";s:15:\"title2fontalign\";s:1:\"C\";s:10:\"filterfont\";s:9:\"helvetica\";s:14:\"filterfontsize\";s:1:\"8\";s:15:\"filterfontcolor\";s:5:\"0:0:0\";s:15:\"filterfontalign\";s:1:\"L\";s:8:\"datafont\";s:9:\"helvetica\";s:12:\"datafontsize\";s:2:\"10\";s:13:\"datafontcolor\";s:5:\"0:0:0\";s:13:\"datafontalign\";s:1:\"L\";s:10:\"totalsfont\";s:9:\"helvetica\";s:14:\"totalsfontsize\";s:2:\"10\";s:15:\"totalsfontcolor\";s:5:\"0:0:0\";s:15:\"totalsfontalign\";s:1:\"L\";s:14:\"filenameprefix\";s:0:\"\";s:14:\"filenamesource\";s:0:\"\";s:9:\"email_msg\";s:0:\"\";s:9:\"trunclong\";s:1:\"0\";s:11:\"datedefault\";s:1:\"f\";s:9:\"datefield\";s:18:\"[table1].post_date\";s:10:\"dateselect\";s:12:\"abcdefghijkl\";}';
+FieldData18:entrytype='security', seqnum='0', fieldname='', displaydesc='', visible='1', columnbreak='1', params='u:0;e:0;d:0';
+FieldData19:entrytype='sortlist', seqnum='1', fieldname='[table1].bill_acct_id', displaydesc='Vendor ID', visible='0', columnbreak='0', params='a:1:{s:7:\"default\";s:1:\"0\";}';
+FieldData20:entrytype='sortlist', seqnum='2', fieldname='[table1].post_date', displaydesc='Invoice Date', visible='0', columnbreak='0', params='a:1:{s:7:\"default\";s:1:\"1\";}';
+
+/* End of Export File */

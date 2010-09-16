@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.40">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table chart_of_accounts_types">
+<!-- glossay items - used to build glossary (zero or more)--><!-- glossary terms are imploded with a colon separator --><!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> --><!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table chart_of_accounts_types">
+<!-- End of meta tags -->
+<link rel="stylesheet" type="text/css" href="../stylesheet.css"><title>Table chart_of_accounts_types</title>
+
+</head>
+<body>
+<h1 align="center">Table chart_of_accounts_types</h1>
+Table chart_of_accounts_types holds the general ledger accounts types
+and identifies how the accounts map to the accounting standards. The
+type should not be changed but the descriptions may be for language
+translations.&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br /><br />
+NOTE: DO NOT EDIT THE id OR asset FIELD. These vales are used by the system to validate the balance sheet and income statement. <br />
+<br />
+Table Type: MyISAM<br />
+<br />
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<tbody ="">
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>id</td>
+<td>int (11)</td>
+<td>NOT NULL</td>
+<td>PRIMARY KEY - Identifies the account type id number.</td>
+</tr>
+
+
+
+
+
+
+
+<tr><td>description</td><td>varchar (30)</td><td>NOT NULL</td><td>Narrative description of the account type. Can be chaged for language translations.</td></tr><tr><td>asset</td><td>enum (0, 1)</td><td>0</td><td>States whether the account type is an asset or liability. DO NOT EDIT THIS FIELD.</td></tr></tbody>
+</table>
+<br />
+<br />
+</body></html>

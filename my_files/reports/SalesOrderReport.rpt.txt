@@ -1,0 +1,79 @@
+/* Report Builder Export Tool */
+version:1.0
+/* Report Name: Sales Order Report */
+/* Export File Generated: : 2009-12-04 04:12:50 */
+
+
+/* Language Fields. */
+/* Only modify the language portion between the single quotes after the colon. */
+
+/* Report Name */
+ReportName:'Sales Order Report'
+ReportNarr:'Lists sales orders for a given period. Format: Letter, Portrait'
+EmailMsg:''
+
+/* Report Field Description Information */
+FieldDesc0:'Store ID'
+FieldDesc1:'SO Total'
+FieldDesc2:'Sales Rep'
+FieldDesc3:'Journal ID'
+FieldDesc4:'Post Date'
+FieldDesc5:'SO Number'
+FieldDesc6:'Store ID'
+FieldDesc7:'Customer PO Number'
+FieldDesc8:'Ship Method'
+FieldDesc9:'Freight Charge'
+FieldDesc10:'Sold To'
+FieldDesc11:'SO Total'
+FieldDesc12:'Sales Rep'
+FieldDesc13:'Account ID'
+FieldDesc14:'Address 1'
+FieldDesc15:'Address 2'
+FieldDesc16:'City'
+FieldDesc17:'State'
+FieldDesc18:'Zip Code'
+FieldDesc19:'Country'
+FieldDesc20:'Store ID'
+FieldDesc21:'Post Date'
+FieldDesc22:'Period'
+FieldDesc25:'Post Date'
+FieldDesc26:'Sales Order Number'
+
+/* End of language fields. */
+
+/* DO NOT EDIT BELOW THIS LINE! */
+
+
+/* SQL report data. */
+ReportData:description='Sales Order Report', reporttype='rpt', groupname='ar', standard_report='1', special_report='0', table1='journal_main', table2='contacts', table2criteria='[table1].bill_acct_id = [table2].id', table3='', table3criteria='', table4='', table4criteria='', table5='', table5criteria='', table6='', table6criteria='';
+
+/* SQL field data. */
+FieldData0:entrytype='critlist', seqnum='1', fieldname='[table1].store_id', displaydesc='Store ID', visible='1', columnbreak='0', params='a:4:{s:5:\"value\";s:1:\"0\";s:7:\"default\";s:0:\"\";s:7:\"min_val\";s:0:\"\";s:7:\"max_val\";s:0:\"\";}';
+FieldData1:entrytype='critlist', seqnum='2', fieldname='[table1].total_amount', displaydesc='SO Total', visible='1', columnbreak='0', params='a:4:{s:5:\"value\";s:1:\"0\";s:7:\"default\";s:0:\"\";s:7:\"min_val\";s:0:\"\";s:7:\"max_val\";s:0:\"\";}';
+FieldData2:entrytype='critlist', seqnum='3', fieldname='[table1].dept_rep_id', displaydesc='Sales Rep', visible='1', columnbreak='0', params='a:4:{s:5:\"value\";s:1:\"0\";s:7:\"default\";s:0:\"\";s:7:\"min_val\";s:0:\"\";s:7:\"max_val\";s:0:\"\";}';
+FieldData3:entrytype='critlist', seqnum='4', fieldname='[table1].journal_id', displaydesc='Journal ID', visible='0', columnbreak='0', params='a:4:{s:5:\"value\";s:1:\"6\";s:7:\"default\";s:0:\"\";s:7:\"min_val\";s:2:\"10\";s:7:\"max_val\";s:0:\"\";}';
+FieldData4:entrytype='fieldlist', seqnum='1', fieldname='[table1].post_date', displaydesc='Post Date', visible='1', columnbreak='1', params='a:3:{s:10:\"processing\";s:4:\"date\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData5:entrytype='fieldlist', seqnum='2', fieldname='[table1].purchase_invoice_id', displaydesc='SO Number', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"25\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData6:entrytype='fieldlist', seqnum='3', fieldname='[table1].store_id', displaydesc='Store ID', visible='0', columnbreak='1', params='a:3:{s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData7:entrytype='fieldlist', seqnum='4', fieldname='[table1].purch_order_id', displaydesc='Customer PO Number', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"50\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData8:entrytype='fieldlist', seqnum='5', fieldname='[table1].shipper_code', displaydesc='Ship Method', visible='0', columnbreak='0', params='a:3:{s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData9:entrytype='fieldlist', seqnum='6', fieldname='[table1].freight', displaydesc='Freight Charge', visible='0', columnbreak='0', params='a:4:{s:11:\"columnwidth\";s:2:\"25\";s:10:\"processing\";s:10:\"posted_cur\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"R\";}';
+FieldData10:entrytype='fieldlist', seqnum='7', fieldname='[table1].bill_primary_name', displaydesc='Sold To', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"60\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData11:entrytype='fieldlist', seqnum='8', fieldname='[table1].total_amount', displaydesc='SO Total', visible='1', columnbreak='1', params='a:4:{s:11:\"columnwidth\";s:2:\"30\";s:10:\"processing\";s:10:\"posted_cur\";s:5:\"index\";s:1:\"1\";s:5:\"align\";s:1:\"R\";}';
+FieldData12:entrytype='fieldlist', seqnum='9', fieldname='[table1].rep_id', displaydesc='Sales Rep', visible='0', columnbreak='0', params='a:4:{s:11:\"columnwidth\";s:2:\"25\";s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData13:entrytype='fieldlist', seqnum='10', fieldname='[table2].short_name', displaydesc='Account ID', visible='0', columnbreak='0', params='a:3:{s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData14:entrytype='fieldlist', seqnum='11', fieldname='[table1].bill_address1', displaydesc='Address 1', visible='0', columnbreak='0', params='a:3:{s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData15:entrytype='fieldlist', seqnum='12', fieldname='[table1].bill_address2', displaydesc='Address 2', visible='0', columnbreak='0', params='a:3:{s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData16:entrytype='fieldlist', seqnum='13', fieldname='[table1].bill_city_town', displaydesc='City', visible='0', columnbreak='0', params='a:3:{s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData17:entrytype='fieldlist', seqnum='14', fieldname='[table1].bill_state_province', displaydesc='State', visible='0', columnbreak='0', params='a:3:{s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData18:entrytype='fieldlist', seqnum='15', fieldname='[table1].bill_postal_code', displaydesc='Zip Code', visible='0', columnbreak='0', params='a:3:{s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData19:entrytype='fieldlist', seqnum='16', fieldname='[table1].bill_country_code', displaydesc='Country', visible='0', columnbreak='0', params='a:3:{s:10:\"processing\";s:0:\"\";s:5:\"index\";s:1:\"0\";s:5:\"align\";s:1:\"L\";}';
+FieldData20:entrytype='grouplist', seqnum='1', fieldname='[table1].store_id', displaydesc='Store ID', visible='0', columnbreak='0', params='a:3:{s:7:\"default\";s:1:\"0\";s:10:\"page_break\";s:1:\"0\";s:10:\"processing\";s:1:\"0\";}';
+FieldData21:entrytype='grouplist', seqnum='2', fieldname='[table1].post_date', displaydesc='Post Date', visible='0', columnbreak='0', params='a:3:{s:7:\"default\";s:1:\"1\";s:10:\"page_break\";s:1:\"0\";s:10:\"processing\";s:1:\"0\";}';
+FieldData22:entrytype='grouplist', seqnum='3', fieldname='[table1].period', displaydesc='Period', visible='0', columnbreak='0', params='a:3:{s:7:\"default\";s:1:\"0\";s:10:\"page_break\";s:1:\"0\";s:10:\"processing\";s:1:\"0\";}';
+FieldData23:entrytype='pagelist', seqnum='0', fieldname='', displaydesc='', visible='1', columnbreak='1', params='a:43:{s:9:\"narrative\";s:63:\"Lists sales orders for a given period. Format: Letter, Portrait\";s:9:\"papersize\";s:14:\"Letter:216:282\";s:16:\"paperorientation\";s:1:\"P\";s:9:\"margintop\";s:1:\"8\";s:12:\"marginbottom\";s:1:\"8\";s:10:\"marginleft\";s:1:\"8\";s:11:\"marginright\";s:1:\"8\";s:11:\"coynameshow\";s:1:\"1\";s:10:\"title1show\";s:1:\"1\";s:10:\"title2show\";s:1:\"1\";s:11:\"coynamefont\";s:9:\"helvetica\";s:15:\"coynamefontsize\";s:2:\"12\";s:16:\"coynamefontcolor\";s:5:\"0:0:0\";s:12:\"coynamealign\";s:1:\"C\";s:10:\"title1desc\";s:12:\"%reportname%\";s:10:\"title1font\";s:9:\"helvetica\";s:14:\"title1fontsize\";s:2:\"10\";s:15:\"title1fontcolor\";s:5:\"0:0:0\";s:15:\"title1fontalign\";s:1:\"C\";s:10:\"title2desc\";s:23:\"Report Generated %date%\";s:11:\"title2font \";s:9:\"helvetica\";s:14:\"title2fontsize\";s:2:\"10\";s:15:\"title2fontcolor\";s:5:\"0:0:0\";s:15:\"title2fontalign\";s:1:\"C\";s:10:\"filterfont\";s:9:\"helvetica\";s:14:\"filterfontsize\";s:1:\"8\";s:15:\"filterfontcolor\";s:5:\"0:0:0\";s:15:\"filterfontalign\";s:1:\"L\";s:8:\"datafont\";s:9:\"helvetica\";s:12:\"datafontsize\";s:2:\"10\";s:13:\"datafontcolor\";s:5:\"0:0:0\";s:13:\"datafontalign\";s:1:\"L\";s:10:\"totalsfont\";s:9:\"helvetica\";s:14:\"totalsfontsize\";s:2:\"10\";s:15:\"totalsfontcolor\";s:5:\"0:0:0\";s:15:\"totalsfontalign\";s:1:\"L\";s:14:\"filenameprefix\";s:0:\"\";s:14:\"filenamesource\";s:0:\"\";s:9:\"email_msg\";s:0:\"\";s:9:\"trunclong\";s:1:\"0\";s:11:\"datedefault\";s:1:\"c\";s:9:\"datefield\";s:18:\"[table1].post_date\";s:10:\"dateselect\";s:12:\"abcdefghijkl\";}';
+FieldData24:entrytype='security', seqnum='0', fieldname='', displaydesc='', visible='1', columnbreak='1', params='u:0;e:0;d:0';
+FieldData25:entrytype='sortlist', seqnum='1', fieldname='[table1].post_date', displaydesc='Post Date', visible='0', columnbreak='0', params='a:1:{s:7:\"default\";s:1:\"0\";}';
+FieldData26:entrytype='sortlist', seqnum='2', fieldname='[table1].purchase_invoice_id', displaydesc='Sales Order Number', visible='0', columnbreak='0', params='a:1:{s:7:\"default\";s:1:\"1\";}';
+
+/* End of Export File */

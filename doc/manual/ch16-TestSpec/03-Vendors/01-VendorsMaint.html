@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="16.03.01">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Test Specification.Vendor Maintenance">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Test Specification - Vendor Maintenance">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+<title>Test Specification - Vendor Maintenance</title>
+</head>
+
+<body>
+<p align="center"><STRONG>PhreeBooks Test Specification</STRONG></p>
+<p align="left"><STRONG>Title</STRONG>: Vendor Creation/Deletion/Maintenance<br />
+<STRONG>Test No.</STRONG> 3.1<br />  
+<STRONG>ProgName:</STRONG> PhreeBooks<br />
+<strong>Modules
+Tested:</strong> modules/accounts/accounts.php (vendor condition) <br />
+  <STRONG>Author:</STRONG> D. Premo <br />
+<STRONG>Date:</STRONG> 10/01/2006 </p>
+<p><STRONG>Background: (Objectives, Assumptions, References, Success Criteria)</STRONG></p>
+<ol>
+  <li>Test the vendor interface for initial data entry, editting, and deletion.</li>
+  <li>    Test the vendor pop-up screen, search capabilities and sorting capabilities.</li>
+</ol>
+<p align="left"><STRONG>Objectives: </STRONG>Test the vendor setup and maintenance functions. </p>
+<p align="left"><STRONG>Assumptions: </STRONG>Clean Install preferred but not requierd </p>
+<p align="left"><STRONG>Pre-requisite Tests: </STRONG>Inventory Setup (to generate a purchase order) </p>
+<p align="left"><STRONG>Reference Documents: </STRONG>Help - Vendor Maintenance</p>
+<p align="left">  <STRONG>Test Procedure:</STRONG></p>
+<table width="100%"  border="1" cellspacing="1" cellpadding="1">
+  <tr>
+    <td><div align="center">Purpose of test </div></td>
+    <td><div align="center">Expected Results </div></td>
+    <td><div align="center">Notes</div></td>
+  </tr>
+  <tr>
+    <td><p>Accessing Vendor Entry Form<br /> 
+    </p>
+    </td>
+    <td>Maintain vendors form main pull down menu.<br />
+    Enter new Vendor from main pull down menu.</td>
+    <td>Vendors can be added from either the maintain screen or the New Vendor drop-down </td>
+  </tr>
+  <tr>
+    <td><p>Create New Vendor</p>
+    </td>
+    <td>Vendor ID is required<br />
+      Vendor ID's cannot be duplicates.</td>
+    <td>Required fields are determined by the Setup - Vendors screen </td>
+  </tr>
+  <tr>
+    <td>Delete Vendor </td>
+    <td>Vendors can be deleted if no journal entries are in the system<br />
+      Vendors cannot be deleted if a journal entry is present in the system </td>
+    <td>To test the no-delete error, a purchase order/purchase needs to be entered.</td>
+  </tr>
+  <tr>
+    <td>Edit Vendor </td>
+    <td>Vendor main record, shipping information and billing information as well as defaults can all be changed. </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Create Duplicate Vendor ID </td>
+    <td>Denied by the system.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Add Billing Address </td>
+    <td>Required fields must be present or error </td>
+    <td>Required fields are the same as for the main address. </td>
+  </tr>
+  <tr>
+    <td>Delete Billing Address </td>
+    <td>Should be allowed at any time </td>
+    <td>Should test after a purchase order is generated to verify properly. </td>
+  </tr>
+  <tr>
+    <td>Add Shipping Address </td>
+    <td>Required fields must be present or error </td>
+    <td>Required fields are the same as for the main address. </td>
+  </tr>
+  <tr>
+    <td>Delete Shipping Address </td>
+    <td>Should be allowed at any time </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Change Account Terms </td>
+    <td>Terms updated in vendor record </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Address Errors (missing data, special characters, etc.) </td>
+    <td>Test for special characters (!, /, \, ', &quot;, $, @, #, &amp;, *) </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Malicious Data Entry </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+</body>
+</html>

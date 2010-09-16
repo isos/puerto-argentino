@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- document position within table of contents; levels separated by dots(.) ie 3.2.4 (one required)-->
+<meta name="doc_pos" content="15.03.85">
+<!-- index positions - used to build index list; up to two levels separated by a dot(.) (zero or more) -->
+<meta name="doc_index_1" content="Table inventory">
+<!-- glossay items - used to build glossary (zero or more)-->
+<!-- glossary terms are imploded with a colon separator -->
+<!-- <meta name="doc_glossary_1" content="term:definition of glossary entry"> -->
+<!-- Title - Used as the table of contents and index reference title (one required)-->
+<meta name="doc_title" content="Table inventory">
+<!-- End of meta tags -->
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<title>Table inventory</title>
+
+</head>
+
+<body>
+
+<!-- The main body of text goes here -->
+<h1 align="center">Table inventory</h1>
+<p>The inventory table holds the items available for use PhreeBooks. The definitions are for the base inventory fields as shipped with PhreeBooks. The inventory manager allows additional fields to be added that are not defined within this help file. Refer to the section on Inventory Manager Overview for a detailed explanation of adding additional fields to this table. </p>
+<p>Table Type: InnoDB</p>
+<table width="100%"  border="1" cellspacing="1" cellpadding="1">
+  <tr>
+    <td><div align="center">Field Name </div></td>
+    <td><div align="center">Type</div></td>
+    <td><div align="center">Size (value) </div></td>
+    <td><div align="center">Comment</div></td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td><div align="center">integer</div></td>
+    <td><div align="center">11</div></td>
+    <td><p>auto-increment field used to uniquely identify each inventory item.<br />
+      Primary Key: YES<br />
+      Indexed: YES<br />
+      Unique: YES
+    </p>
+    </td>
+  </tr>
+  <tr>
+    <td>sku</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">15</div></td>
+    <td>The unique sku or ID associated with a given inventory item. </td>
+  </tr>
+  <tr>
+    <td>inactive</td>
+    <td><div align="center">enum</div></td>
+    <td><div align="center">0, 1</div></td>
+    <td>Specifies if the inventory item is anactive item (true) or inactive (false) </td>
+  </tr>
+  <tr>
+    <td>inventory_type</td>
+    <td><div align="center">char</div></td>
+    <td><div align="center">2</div></td>
+    <td><p>Specifies the type of inventory item. Each type has different properties. The types are defined as follows:</p>
+    <p>SI - Stock Item<br />
+      MS - Master Stock Item<br />
+      NS - Non-stock item<br />
+      DO - Description Only<br />
+      SV - Service<br />
+      LB - Labor<br />
+      AS - Assembly<br />
+      AI - Activity Item<br />
+      CI - Charge Item<br />
+      SR - Serialized
+    </p></td>
+  </tr>
+  <tr>
+    <td>description_short</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">32</div></td>
+    <td>Contains a short description of the inventory item for use primarily in the sales (customer) activities. </td>
+  </tr>
+  <tr>
+    <td>description_purchase</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">255</div></td>
+    <td>Contains the vendor description used promarily in the purchases (vendor) activities. This may include vendor part numbers, descriptions unique to the vendor that is ot to be visible to the customer, etc. </td>
+  </tr>
+  <tr>
+    <td>account_sales_income</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">15</div></td>
+    <td>Contains the default GL account used for sales (invoicing). This account only applies to the following inventory_type(s): All but Service (SV) </td>
+  </tr>
+  <tr>
+    <td>account_inventory_wage</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">15</div></td>
+    <td>Contains the default GL account used for inventory/wage valuation. As items are received, the items value is added to this account. Used for inventoray valuation activities. This account only applies to the following inventory_type(s): SI, MS, NS, SV, LB, and AS. </td>
+  </tr>
+  <tr>
+    <td>account_cost_of_sales</td>
+    <td><div align="center">varchar</div></td>
+    <td><div align="center">15</div></td>
+    <td>Contains the default GL account used for calculation of cost of sales. As items are sold, the items value is added to this account. Used for inventoray valuation activities. This account only applies to the following inventory_type(s): SI, MS, NS, SV, LB, and AS. </td>
+  </tr>
+  <tr>
+    <td>cost_method</td>
+    <td><div align="center">char</div></td>
+    <td><div align="center">1</div></td>
+    <td>Contais the cost method used for inventory_type(s): SI, MS, and AS. The valid values are (f) - FIFO; first-in first-out, (l) LIFO; last-in last-out, and (a) Average.</td>
+  </tr>
+  <tr>
+    <td>item_taxable</td>
+    <td><div align="center">enum</div></td>
+    <td><div align="center">0,1</div></td>
+    <td>Contains a boolean value used for tax calculations on whether the item is taxable or not. A value of 0 will not include the inventory item cost in the tax calculation. </td>
+  </tr>
+  <tr>
+    <td>item_cost</td>
+    <td><div align="center">float</div></td>
+    <td><div align="center"></div></td>
+    <td>Contains the cost of the item from the last purchase. This field is set by Zenbooks and cannot be changed by the user. </td>
+  </tr>
+  <tr>
+    <td>full_price</td>
+    <td><div align="center">float</div></td>
+    <td><div align="center"></div></td>
+    <td>Specifies the base unit price before adjustment with the price manager.</td>
+  </tr>
+  <tr>
+    <td>item_weight</td>
+    <td><div align="center">float</div></td>
+    <td><div align="center"></div></td>
+    <td>Specifies the item weight in the units specified in the configuration options, lb (pounds) or kg (kilograms) are the current choices. </td>
+  </tr>
+  <tr>
+    <td>quantity_on_hand</td>
+    <td><div align="center">float</div></td>
+    <td><div align="center"></div></td>
+    <td>Specifies the current quantity on hand. This value will change for purchase/receive inventory, inventory adjustments and sales/invoices activities. </td>
+  </tr>
+  <tr>
+    <td>minimum_stock_level</td>
+    <td><div align="center">float</div></td>
+    <td><div align="center"></div></td>
+    <td>User specified minimum stock level used by the system to flag low stock warnings. </td>
+  </tr>
+  <tr>
+    <td>reorder_quantity</td>
+    <td><div align="center">float</div></td>
+    <td><div align="center"></div></td>
+    <td>User specified re-order quantity used to help the purchase order process. </td>
+  </tr>
+  <tr>
+    <td>serialize</td>
+    <td><div align="center">enum</div></td>
+    <td><div align="center">0,1</div></td>
+    <td>Specifies if the inventory item is a serialized item. Serialized items can only be received as a single unit per line on POs and SOs as the serial number is assigned to the specific line item in question. </td>
+  </tr>
+  <tr>
+    <td>creation_date</td>
+    <td><div align="center">datetime</div></td>
+    <td><div align="center"></div></td>
+    <td>Timestamp generated by the system during the initial entry of the item. </td>
+  </tr>
+  <tr>
+    <td>last_update</td>
+    <td><div align="center">datetime</div></td>
+    <td><div align="center"></div></td>
+    <td>Timestamp generated by the system the last time a user change was made. </td>
+  </tr>
+  <tr>
+    <td>last_journal_date</td>
+    <td><div align="center">datetime</div></td>
+    <td><div align="center"></div></td>
+    <td>Timestamp generated by the system to specify the last time a journal entry ws posted against the inventory item. </td>
+  </tr>
+</table>
+<p>Notes:</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
