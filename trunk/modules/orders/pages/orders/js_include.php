@@ -27,13 +27,9 @@
 <!--
 // pass any php variables generated during pre-process that are used in the javascript functions.
 // Include translations here as well.
-<<<<<<< .mine
-var default_journal_id = <?php echo DEFAULT_JOURNAL_ID; ?><
-var default_final_consumer_id = <?php echo DEFAULT_FINAL_CONSUMER_ID; ?>
-=======
 var default_journal_id = <?php echo DEFAULT_JOURNAL_ID; ?>;
 var default_final_consumer_id = <?php echo DEFAULT_FINAL_CONSUMER_ID; ?>;
->>>>>>> .r27
+
 var setId                = 0; // flag used for AJAX loading of sku for bar code reading of line item
 var skuLength            = <?php echo ORD_BAR_CODE_LENGTH; ?>;
 var resClockID           = 0;
