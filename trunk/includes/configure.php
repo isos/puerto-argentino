@@ -24,9 +24,9 @@
 
 // Define the webserver and path parameters
 // Main webserver: eg, http://localhost - should not be empty for productive servers
-  define('HTTP_SERVER', 'http://192.168.1.6');
+  define('HTTP_SERVER', 'http://localhost');
 // Secure webserver: eg, https://localhost - should not be empty for productive servers
-  define('HTTPS_SERVER', 'https://192.168.1.6'); // eg, https://localhost 
+  define('HTTPS_SERVER', 'https://localhost'); // eg, https://localhost 
 // secure webserver for admin areas?
   define('ENABLE_SSL_ADMIN', 'false');
 
@@ -37,7 +37,7 @@
 
 // * DIR_FS_* = Filesystem directories (local/physical)
 //the following path is a COMPLETE path to your PhreeBooks files. eg: /var/www/vhost/accountname/public_html/app_dir/
-  define('DIR_FS_ADMIN', '/home/gonetil/www/phreebooks2/');
+  define('DIR_FS_ADMIN', '/datos/workspaces/phpworkspace/KioscoHugo/');
 
 // define the default language
   define('DEFAULT_LANGUAGE','es_cr');
