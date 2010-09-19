@@ -154,7 +154,7 @@ if (!$custom_html) {
   <script type="text/javascript" src="includes/javascript/ajax.js"></script>
   <script type="text/javascript" src="includes/javascript/general.js"></script>
   <script type="text/javascript" src="includes/javascript/jquery.js"></script>
-  <script type="text/javascript" src="includes/javascript/jquery.hotkeys-0.7.9.min"></script>
+  <script type="text/javascript" src="includes/javascript/jquery.hotkeys.js"></script>
 
   <?php if ($include_tabs) { ?>
   <script type="text/javascript" src="includes/addons/tabtastic/tabs.js"></script>

@@ -50,7 +50,8 @@ if ($messageStack->size > 0) echo $messageStack->output();
 			window.location = $(keys_ids[key]).attr("href");
 
 	}
-
+	
+	$(document).bind('keydown','Alt+n', function() { alert('alt n'); } );
 	$(document).bind('keydown', 'Ctrl+c', function() { shortcut(99);}); //nueva compra
 	$(document).bind('keydown', 'Ctrl+v', function() { shortcut(118);}); //nueva venta
 	$(document).bind('keydown', 'Ctrl+i', function() { shortcut(105);}); //ir a inventario
