@@ -362,7 +362,11 @@ echo html_input_field('bill_email', $order->bill_email, 'size="35" maxlength="48
 				echo '</tr>' . chr(10);
 			}
 		} else {
-			$hidden_fields .= '<script type="text/javascript">addInvRow();</script>' . chr(10);
+			
+			$hidden_fields .= '<script type="text/javascript">
+							addInvRow(); 
+							
+							</script>' . chr(10);
 		} ?>
       </table>
 	</td>
@@ -479,9 +483,10 @@ echo $hidden_fields;
   </div></a>
 
 <script> 
-      if (journalID == 12) //o sea, es la ventana de ventas
-	  ajaxOrderData(default_final_consumer_id, 0, default_journal_id, true, false);
 
+      if (journalID == 12) //o sea, es la ventana de ventas
+	  	  ajaxOrderData(default_final_consumer_id, 0, default_journal_id, true, false);
+      
 	/* si es una orden de compra o compra, y no se selecciono el proveedor, entonces no le dejo cargar nada*/
     if ((journalID == 4) || (journalID == 6)) {
         $('#sku_1').focus( function () {
@@ -493,6 +498,11 @@ echo $hidden_fields;
 					}
 					});
      }
+    
+	//shortcut para buscar
+    bindEvents($(document)); 
+
+   
       
 </script>
 </form> 

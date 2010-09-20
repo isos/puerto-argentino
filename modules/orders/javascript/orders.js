@@ -33,7 +33,6 @@ var ship_add = new Array(0);
 
 var current_row = "" ; //cada vez que se pone el foco sobre una fila, marco aqui cual es la fila actual
 
-
 function ClearMainForm() {
 	clearAddress('bill');
 	clearAddress('ship');
@@ -522,6 +521,24 @@ function copyAddress() {
 	document.getElementById('ship_country_code').selectedIndex = document.getElementById('bill_country_code').selectedIndex;
 }
 
+/**** CAMBIOS INTRODUCIDOS POR GONZALO *********/
+/*
+ * Al generarse nuevas filas en las órdenes, no se linkean los eventos pre-existentes a los nuevos elementos. 
+ * Con esta funcion, vuelvo a linkear los objetos del formulario con los eventos predefinidos
+ * @param jQuery_object : indica a que objeto se le engancharán los eventos. Pueden ser los input, el document o lo que sea necesario . Simplifica la 
+ * 					legibilidad  
+ * */
+function bindEvents(jQuery_object) {
+	
+	// abro la ventana de busqueda de productos
+	jQuery_object.bind('keydown','Alt+b', function() { InventoryList($(current_row).attr('id').substring(4));  } );
+
+	// guardo la orden
+	jQuery_object.bind('keydown','Alt+G', function() { submitToDo('save'); } );
+}
+
+
+/**** FIN CAMBIOS INTRODUCIDOS POR GONZALO *********/
 function addInvRow() {
   var newCell;
   var cell;
@@ -532,6 +549,7 @@ function addInvRow() {
     var newRow2 = document.getElementById('item_table').insertRow(-1);
     var rowCnt  = (newRow2.rowIndex - 1)/2;
   }
+  
 
   // NOTE: any change here also need to be made to template form for reload if action fails
 //  cell = '<td rowspan="'+(single_line_list?1:2)+'" align="center">';
@@ -644,8 +662,14 @@ function addInvRow() {
 
   setField('sku_'+rowCnt, text_search);
   setId = rowCnt; // set the upc auto-reader to the newest line added
+  
+  
+  bindEvents($("input:text"));
+  
   return rowCnt;
 }
+
+
 
 function removeInvRow(index) {
   var i, acctIndex, offset, newOffset;
