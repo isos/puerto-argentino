@@ -46,11 +46,39 @@
   define('DB_TYPE', 'mysql');
   define('DB_PREFIX', '');
   
+  /***
+   * INICIO ZONA DE CONFIGURACION ESPECIFICA PARA PUERTO-ARGENTINO 
+   */
+  
 // definiciones especificas para el Kiosco de Hugo
 
   define('DEFAULT_FINAL_CONSUMER_ID',2);
   define('DEFAULT_JOURNAL_ID',18);
   define('DEFAULT_THEME','cheetah');
-
+  
+//longitud minima de un sku para que sea considerado como valido
+  define('MIN_SKU_LENGTH',11);
+  
   define('COMPANY_NAME','phreebooks2');
+
+  //COMBINACIONES DE TECLAS 
+  
+  //Ir al index del usuario
+  define('GO_HOME_SHORTCUT','Alt+q');
+  
+  //Pagina Inicial: Crear compra
+  define('NEW_PURCHASE_SHORTCUT','Alt+c');
+
+  //Pagina Inicial: Nueva venta
+  define('NEW_SELL_SHORTCUT','Alt+v');
+  
+  //Pagina Inicial: Ir al inventario
+  define('GOTO_INVENTORY_SHORTCUT','Alt+i');
+
+  //Formulario de ordenes: guardar orden
+  define('SAVE_ORDER_SHORTCUT','Alt+G'); 
+  
+   //Formulario de ordenes: abrir la ventana de busqueda
+  define('SEARCH_ITEM_SHORTCUT','Alt+B');
+   
 ?>

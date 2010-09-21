@@ -155,6 +155,9 @@ if (!$custom_html) {
   <script type="text/javascript" src="includes/javascript/general.js"></script>
   <script type="text/javascript" src="includes/javascript/jquery.js"></script>
   <script type="text/javascript" src="includes/javascript/jquery.hotkeys.js"></script>
+  <script>
+  	 $(document).bind('keydown', '<?php echo GO_HOME_SHORTCUT; ?>', function() { window.location.href = "index.php"});
+  </script>
 
   <?php if ($include_tabs) { ?>
   <script type="text/javascript" src="includes/addons/tabtastic/tabs.js"></script>
