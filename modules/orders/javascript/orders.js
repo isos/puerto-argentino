@@ -531,12 +531,38 @@ function copyAddress() {
 function bindEvents(jQuery_object) {
 	
 	// abro la ventana de busqueda de productos
-	jQuery_object.bind('keydown','Alt+b', function() { InventoryList($(current_row).attr('id').substring(4));  } );
+	jQuery_object.bind('keydown',search_item_shortcut, function() { InventoryList($(current_row).attr('id').substring(4));  } );
 
 	// guardo la orden
-	jQuery_object.bind('keydown','Alt+G', function() { submitToDo('save'); } );
+	jQuery_object.bind('keydown',save_order_shortcut, function() { submitToDo('save'); } );
+	
 }
 
+/* 
+ * Inicia una busqueda de un producto a medida que se tipea el sku, a partir de una longitud minima
+ * */
+var already_searched = false; // esta variable la uso para evitar que se dispare dos veces esta funcion, no sabemos bien por q pasa
+
+function backgroundSearch(sku_input) {
+	
+	if (!already_searched) {  
+		already_searched = true;
+		if ( (sku_input.val()).length >= min_sku_length ) 
+			sku_input.blur();
+		
+	} else 
+		already_searched = false;
+	
+}
+
+/*
+ * agrega el evento sobre los input de sku para que realice la busqueda en background
+ * */
+function addBackgroundSearch() {
+
+	$(".sku_input_text").keyup(function() { backgroundSearch($(this)); } );
+	
+}
 
 /**** FIN CAMBIOS INTRODUCIDOS POR GONZALO *********/
 function addInvRow() {
@@ -578,7 +604,7 @@ function addInvRow() {
   newCell = newRow.insertCell(-1);
   newCell.innerHTML = cell;
   
-  cell  = '<td nowrap="nowrap" class="main" align="center"><input type="text" name="sku_'+rowCnt+'" id="sku_'+rowCnt+'" size="'+(max_sku_len+1)+'" maxlength="'+max_sku_len+'" onfocus="current_row=this; clearField(\'sku_'+rowCnt+'\', \''+text_search+'\')" onblur="setField(\'sku_'+rowCnt+'\', \''+text_search+'\'); loadSkuDetails(0, '+rowCnt+')" />&nbsp;';
+  cell  = '<td nowrap="nowrap" class="main" align="center"><input type="text" class="sku_input_text" name="sku_'+rowCnt+'" id="sku_'+rowCnt+'" size="'+(max_sku_len+1)+'" maxlength="'+max_sku_len+'" onfocus="current_row=this; clearField(\'sku_'+rowCnt+'\', \''+text_search+'\')" onblur="setField(\'sku_'+rowCnt+'\', \''+text_search+'\'); loadSkuDetails(0, '+rowCnt+')" />&nbsp;';
   cell += buildIcon(image_path+'16x16/actions/system-search.png', text_search, 'id="sku_open_'+rowCnt+'" align="top" style="cursor:pointer" onclick="InventoryList('+rowCnt+')"');
   cell += buildIcon(image_path+'16x16/actions/document-properties.png', text_properties, 'id="sku_prop_'+rowCnt+'" align="top" style="cursor:pointer" onclick="InventoryProp('+rowCnt+')"');
   cell += '</td>';
@@ -665,6 +691,7 @@ function addInvRow() {
   
   
   bindEvents($("input:text"));
+  addBackgroundSearch();
   
   return rowCnt;
 }
