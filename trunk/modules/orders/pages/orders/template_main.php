@@ -500,7 +500,8 @@ echo $hidden_fields;
      }
     
 	//shortcut para buscar
-    bindEvents($(document)); 
+    bindEvents($(document));
+    addBackgroundSearch(); 
 
    
       

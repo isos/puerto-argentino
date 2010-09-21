@@ -50,17 +50,16 @@ if ($messageStack->size > 0) echo $messageStack->output();
 			window.location = $(keys_ids[key]).attr("href");
 
 	}
-	
-	$(document).bind('keydown', 'Ctrl+c', function() { shortcut(99);}); //nueva compra
-	$(document).bind('keydown', 'Ctrl+v', function() { shortcut(118);}); //nueva venta
-	$(document).bind('keydown', 'Ctrl+i', function() { shortcut(105);}); //ir a inventario
 
-/* NO LO HAGO MAS ASI, USO EL PLUGIN DE HOTKEYS
-	$(document).keypress(function(event) { 
-					shortcut(event.charCode); 
-				}
-			 ); 
-*/
+	var new_purchase_shortcut = '<?php echo NEW_PURCHASE_SHORTCUT; ?>'; 
+	var new_sell_shortcut = '<?php echo NEW_SELL_SHORTCUT; ?>'; 
+	var goto_inventory_shortcut = '<?php echo GOTO_INVENTORY_SHORTCUT; ?>'; 
+			
+	$(document).bind('keydown', new_purchase_shortcut, function() { shortcut(99);}); //nueva compra
+	$(document).bind('keydown', new_sell_shortcut, function() { shortcut(118);}); //nueva venta
+	$(document).bind('keydown', goto_inventory_shortcut, function() { shortcut(105);}); //ir a inventario
+
+
 </script>
 <?php
 echo html_control_panel($page_id, $cp_boxes);

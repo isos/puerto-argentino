@@ -30,6 +30,12 @@
 var default_journal_id = <?php echo DEFAULT_JOURNAL_ID; ?>;
 var default_final_consumer_id = <?php echo DEFAULT_FINAL_CONSUMER_ID; ?>;
 
+
+var save_order_shortcut = '<?php echo SAVE_ORDER_SHORTCUT; ?>'; 
+var search_item_shortcut = '<?php echo SEARCH_ITEM_SHORTCUT; ?>'; 
+var min_sku_length = <?php echo MIN_SKU_LENGTH; ?>; 
+
+
 var setId                = 0; // flag used for AJAX loading of sku for bar code reading of line item
 var skuLength            = <?php echo ORD_BAR_CODE_LENGTH; ?>;
 var resClockID           = 0;
