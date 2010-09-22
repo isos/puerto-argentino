@@ -53,6 +53,14 @@ echo $toolbar->build_toolbar();
 	  <script> 
 	/* por default, marco la opcion LIFO*/
 		$("#cost_method option[value='l']").attr('selected', 'selected');
+
+	/* si al ingresar el sku/codigo de barras, ingresan un enter (a mano o lo hace el lector), 	se ejecutará un submit del formulario para que vaya al siguiente*/
+		$("#sku").keydown(function(event) {
+			if (event.keyCode == '13') {
+			     event.preventDefault();
+			     submitToDo('create')
+			   }
+		});
 	  </script>
     </tr>
     <tr>
