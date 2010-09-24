@@ -188,7 +188,7 @@ class toolbar {
 	$output .= HEADING_TITLE_SEARCH_DETAIL . '<br />';
 	$output .= html_input_field('search_text', $this->search_text, $params = '');
 	if ($this->search_text) $output .= '&nbsp;' . html_icon('actions/view-refresh.png', TEXT_RESET, 'small', 'onclick="location.href = \'index.php?' . gen_get_all_get_params(array('search_text', 'search_period', 'search_date', 'page', 'action')) . '\';" style="cursor:pointer;"');
-    $output .= '&nbsp;' . html_icon('actions/system-search.png', TEXT_SEARCH, 'small', 'onclick="searchPage(\'' . gen_get_all_get_params(array('search_text', 'page', 'action')) . '\')" style="cursor:pointer;"');
+    $output .= '&nbsp;' . html_icon('actions/system-search.png', TEXT_SEARCH, 'small', 'onclick="searchPage(\'' . gen_get_all_get_params(array('search_text', 'page', 'action')) . '\')" style="cursor:pointer;" id="search_mini_icon" ');
 	$output .= '</div>' . "\n";
 	return $output;
   }
