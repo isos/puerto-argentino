@@ -37,6 +37,7 @@ require_once(DIR_FS_WORKING . 'functions/inventory.php');
 $error = false;
 $processed = false;
 $search_text = ($_POST['search_text']) ? db_input(db_prepare_input($_POST['search_text'])) : db_input(db_prepare_input($_GET['search_text']));
+
 if ($search_text == TEXT_SEARCH) $search_text = '';
 $action = isset($_GET['action']) ? $_GET['action'] : $_POST['todo'];
 if (!$action && $search_text <> '') $action = 'search'; // if enter key pressed and search not blank

@@ -364,7 +364,7 @@ function jumpToPage(get_params) {
 
 function searchPage(get_params) {
   var searchText = document.getElementById('search_text').value;
-  location.href = 'index.php?'+get_params+'search_text='+searchText;
+  window.location.href = 'index.php?'+get_params+'search_text='+searchText;
 }
 
 function periodPage(get_params) {
