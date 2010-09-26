@@ -24,11 +24,11 @@
 
 // Define the webserver and path parameters
 // Main webserver: eg, http://localhost - should not be empty for productive servers
-  define('HTTP_SERVER', 'http://localhost');
+ define('HTTP_SERVER', 'http://'.$_SERVER["HTTP_HOST"]);
 // Secure webserver: eg, https://localhost - should not be empty for productive servers
-  define('HTTPS_SERVER', 'https://localhost'); // eg, https://localhost 
+ define('HTTPS_SERVER', 'https://'.$_SERVER["HTTP_HOST"]); // eg, https://localhost 
 // secure webserver for admin areas?
-  define('ENABLE_SSL_ADMIN', 'false');
+ define('ENABLE_SSL_ADMIN', 'false')
 
 // NOTE: be sure to leave the trailing '/' at the end of these lines if you make changes!
 // * DIR_WS_* = Webserver directories (virtual/URL)
