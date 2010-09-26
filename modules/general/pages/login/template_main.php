@@ -40,7 +40,7 @@ echo html_form('login', FILENAME_DEFAULT, 'cat=general&amp;module=login');
 				echo '  <td class="main" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $pass_message . '</td>' . chr(10);
 				echo '</tr>' . chr(10);
 				} ?>
-		      <tr>
+		      <tr style="visibility:hidden;">
 		        <td class="main">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo TEXT_LOGIN_COMPANY; ?></td>
 		        <td><?php echo html_pull_down_menu('company', load_company_dropdown(), $admin_company); ?></td>
 		      </tr>
