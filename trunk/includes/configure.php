@@ -28,7 +28,7 @@
 // Secure webserver: eg, https://localhost - should not be empty for productive servers
  define('HTTPS_SERVER', 'https://'.$_SERVER["HTTP_HOST"]); // eg, https://localhost 
 // secure webserver for admin areas?
- define('ENABLE_SSL_ADMIN', 'false')
+ define('ENABLE_SSL_ADMIN', 'false');
 
 // NOTE: be sure to leave the trailing '/' at the end of these lines if you make changes!
 // * DIR_WS_* = Webserver directories (virtual/URL)
@@ -37,7 +37,7 @@
 
 // * DIR_FS_* = Filesystem directories (local/physical)
 //the following path is a COMPLETE path to your PhreeBooks files. eg: /var/www/vhost/accountname/public_html/app_dir/
-  define('DIR_FS_ADMIN', '/datos/workspaces/phpworkspace/KioscoHugo/');
+  define('DIR_FS_ADMIN', dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR);
 
 // define the default language
   define('DEFAULT_LANGUAGE','es_cr');
