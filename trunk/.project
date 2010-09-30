@@ -4,8 +4,15 @@
 	<comment></comment>
 	<projects>
 	</projects>
+
 	<buildSpec>
+		<buildCommand>
+			<name>net.sourceforge.phpeclipse.parserbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>net.sourceforge.phpeclipse.phpnature</nature>
 	</natures>
 </projectDescription>
