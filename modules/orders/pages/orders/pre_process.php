@@ -181,12 +181,11 @@ $order        = new orders();
 
 $action       = (isset($_GET['action']) ? $_GET['action'] : $_POST['todo']);
 /*** AGREGO ESTAS LINEAS PARA EVITAR EL FORM RESUBMISION  */
-if ($action) { //ya se hizo el submit
-
+if ($_SERVER['REQUEST_METHOD']!='GET' && $action) { //ya se hizo el submit
 	$session = new SessionManager();
 	$action = ($session->validate_session($_POST['random'])) ? $action : null; //si no valida la sesion, invalido el action
-  /*	if ($action == null)
-		echo "encontre un resubmit"; */
+  	/*if ($action == null)
+		die("encontre un resubmit");*/
 }
 /*** FIN DE LAS LINEAS PARA EVITAR EL FORM RESUBMISION  */
 
