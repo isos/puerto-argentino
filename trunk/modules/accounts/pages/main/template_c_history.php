@@ -56,7 +56,7 @@
 		if ($result) {
 		  array_shift($result); // the first entry is for new stuff, don't display
 		  foreach ($result as $value) {
-		    echo '<tr><td><a href="' . html_href_link(FILENAME_DEFAULT, 'cat=orders&amp;module=orders&amp;action=edit&amp;jID=' . ($type == 'v' ? 4 : 10) . '&amp;oID=' . $value['id'], 'SSL') . '">' . $value['purchase_invoice_id'] . '</a></td>';
+		    echo '<tr><td><a href="' . html_href_link(FILENAME_DEFAULT, 'cat=orders&amp;module=orders&amp;action=edit&amp;jID=' . ($type == 'v' ? 4 : 10) . '&amp;oID=' . $value['id'], 'SSL') . '">' . $value['purchase_invoice_id'] .ACT_ACTION_OPEN. '</a></td>';
 		    echo '<td>' . ($value['purch_order_id'] ? $value['purch_order_id'] : '&nbsp;') . '</td>';
 		    echo '<td align="center">' . gen_spiffycal_db_date_short($value['post_date']) . '</td>';
 		    echo '<td align="center">' . ($value['closed'] ? '&nbsp;' : TEXT_YES) . '</td>';
@@ -80,7 +80,7 @@
 		if ($result) {
 		  array_shift($result); // the first entry is for new stuff, don't display
 		  foreach ($result as $value) {
-		    echo '<tr><td><a href="'   . html_href_link(FILENAME_DEFAULT, 'cat=orders&amp;module=orders&amp;action=edit&amp;jID=' . $value['journal_id'] . '&amp;oID=' . $value['id'], 'SSL') . '">' . $value['purchase_invoice_id'] . '</a></td>';
+		    echo '<tr><td><a href="'   . html_href_link(FILENAME_DEFAULT, 'cat=orders&amp;module=orders&amp;action=edit&amp;jID=' . $value['journal_id'] . '&amp;oID=' . $value['id'], 'SSL') . '">' . $value['purchase_invoice_id'] .ACT_ACTION_OPEN. '</a></td>';
 		    echo '<td>' . ($value['purch_order_id'] ? $value['purch_order_id'] : '&nbsp;') . '</td>';
 		    echo '<td align="center">' . gen_spiffycal_db_date_short($value['post_date']) . '</td>';
 		    echo '<td align="center">' . ($value['closed'] ? TEXT_YES : '&nbsp;') . '</td>';

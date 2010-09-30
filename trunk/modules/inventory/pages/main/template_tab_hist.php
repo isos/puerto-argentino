@@ -53,12 +53,12 @@
 		    <th><?php echo INV_PO_DATE; ?></th>
 		    <th><?php echo TEXT_QUANTITY; ?></th>
 		    <th><?php echo INV_PO_RCV_DATE; ?></th>
-		  </tr>
+		  
 		  <?php 
 			if ($sku_history['open_po']) {
 			  foreach ($sku_history['open_po'] as $value) {
 				echo '<tr>' . chr(10);
-				echo '  <td align="center"><a href="' . html_href_link(FILENAME_DEFAULT, 'cat=orders&amp;module=orders&amp;action=edit&amp;jID=4&amp;oID=' . $value['id'], 'SSL') . '">' . $value['purchase_invoice_id'] . '</a></td>' . chr(10);
+				echo '  <td align="center"><a href="' . html_href_link(FILENAME_DEFAULT, 'cat=orders&amp;module=orders&amp;action=edit&amp;jID=4&amp;oID=' . $value['id'], 'SSL') . '">' . $value['purchase_invoice_id'] .INV_ACTION_OPEN. '</a></td>' . chr(10);
 				echo '  <td align="center">' . gen_spiffycal_db_date_short($value['post_date']) . '</td>' . chr(10);
 				echo '  <td align="center">' . ($value['qty'] ? $value['qty'] : '&nbsp;') . '</td>' . chr(10);
 				echo '  <td align="center">' . gen_spiffycal_db_date_short($value['date_1']) . '</td>' . chr(10);
@@ -79,7 +79,7 @@
 			if ($sku_history['open_so']) {
 			  foreach ($sku_history['open_so'] as $value) {
 				echo '<tr>' . chr(10);
-				echo '  <td align="center"><a href="' . html_href_link(FILENAME_DEFAULT, 'cat=orders&amp;module=orders&amp;action=edit&amp;jID=10&amp;oID=' . $value['id'], 'SSL') . '">' . $value['purchase_invoice_id'] . '</a></td>' . chr(10);
+				echo '  <td align="center"><a href="' . html_href_link(FILENAME_DEFAULT, 'cat=orders&amp;module=orders&amp;action=edit&amp;jID=10&amp;oID=' . $value['id'], 'SSL') . '">' . $value['purchase_invoice_id'] . INV_ACTION_OPEN. '</a></td>' . chr(10);
 				echo '  <td align="center">' . gen_spiffycal_db_date_short($value['post_date']) . '</td>' . chr(10);
 				echo '  <td align="center">' . ($value['qty'] ? $value['qty'] : '&nbsp;') . '</td>' . chr(10);
 				echo '  <td align="center">' . gen_spiffycal_db_date_short($value['date_1']) . '</td>' . chr(10);
