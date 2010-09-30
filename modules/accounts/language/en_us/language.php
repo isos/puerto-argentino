@@ -191,4 +191,7 @@ define('ACT_LOG_ADD_ACCOUNT','Added account - ');
 define('ACT_LOG_UPDATE_ACCOUNT','Updated account - ');
 define('ACT_LOG_DELETE_ACCOUNT','Deleted account - ');
 
+//default actions
+define('ACT_ACTION_OPEN','Open');
+
 ?>

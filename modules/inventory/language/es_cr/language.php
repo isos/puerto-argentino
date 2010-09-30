@@ -347,4 +347,7 @@ $price_mgr_rounding = array(
 	'2' => TEXT_NEXT_FRACTION,
 	'3' => TEXT_NEXT_INCREMENT);
 
+
+define('INV_ACTION_OPEN',' (Acceder)');
+
 ?>

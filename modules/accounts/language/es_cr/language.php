@@ -188,5 +188,8 @@ define('ACT_LOG_ADD_ACCOUNT','Cuenta Agregada - ');
 define('ACT_LOG_UPDATE_ACCOUNT','Cuenta Actualizada - ');
 define('ACT_LOG_DELETE_ACCOUNT','Cuenta Borrada - ');
 
+//default actions
+define('ACT_ACTION_OPEN',' (Acceder)');
+
 
 ?>
