@@ -192,6 +192,7 @@ define('INV_OPEN_PO','Open Purchase Orders');
 define('INV_OPEN_SO','Open Sales Orders');
 define('INV_PURCH_BY_MONTH','Purchases By Month');
 define('INV_SALES_BY_MONTH','Sales By Month');
+define('INV_AVG_USAGE','Average Usage (not including this month)');
 
 define('INV_NO_RESULTS','No Results Found');
 define('INV_PO_NUMBER','PO Number');
