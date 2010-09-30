@@ -89,7 +89,7 @@
 			  echo '<tr><td align="center" colspan="4">' . INV_NO_RESULTS . '</td></tr>' . chr(10);
 			}
 		  ?>
-		  <tr><th colspan="4"><?php echo 'Average Usage (not including this month)'; ?></th></tr>
+		  <tr><th colspan="4"><?php echo INV_AVG_USAGE; ?></th></tr>
 		  <tr>
 		    <th><?php echo TEXT_LAST_MONTH; ?></th>
 		    <th><?php echo TEXT_LAST_3_MONTH; ?></th>

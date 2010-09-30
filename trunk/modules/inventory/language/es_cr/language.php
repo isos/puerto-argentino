@@ -194,6 +194,7 @@ define('INV_OPEN_PO','Órdenes de Compra Pendientes');
 define('INV_OPEN_SO','Órdenes de Venta Pendientes');
 define('INV_PURCH_BY_MONTH','Compras Mensuales');
 define('INV_SALES_BY_MONTH','Ventas Mensuales');
+define('INV_AVG_USAGE','Uso promedio (sin incluir este mes)');
 
 define('INV_NO_RESULTS','No se encontró');
 define('INV_PO_NUMBER','No. de OC');
