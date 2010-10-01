@@ -547,7 +547,7 @@ function backgroundSearch(sku_input) {
 	
 	if (!already_searched) {  
 		already_searched = true;
-		if ( (sku_input.val()).length >= min_sku_length ) 
+//		if ( (sku_input.val()).length >= min_sku_length ) 
 			sku_input.blur();
 		
 	} else 
@@ -559,9 +559,17 @@ function backgroundSearch(sku_input) {
  * agrega el evento sobre los input de sku para que realice la busqueda en background
  * */
 function addBackgroundSearch() {
+	   /*
+	    * agrega el evento sobre los input de sku para que realice la busqueda en background
+	    * */
+	   
+	   	$(".sku_input_text").keydown(function(event) {
+	   		if (event.keyCode == '13') {
+	   			backgroundSearch($(this));
+	   		}
+	   	} );
 
-	$(".sku_input_text").keyup(function() { backgroundSearch($(this)); } );
-	
+
 }
 
 /**** FIN CAMBIOS INTRODUCIDOS POR GONZALO *********/
