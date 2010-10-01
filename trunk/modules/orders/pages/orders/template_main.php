@@ -483,25 +483,26 @@ echo $hidden_fields;
   </div></a>
 
 <script> 
-	//si es una venta, se carga el default_final_consumer_id 
-	if (journalID == 12) //o sea, es la ventana de ventas
-		ajaxOrderData(default_final_consumer_id, 0, journalID, true, false);
-       
-	// si es una orden de compra o compra, y no se selecciono el proveedor, entonces no le dejo cargar nada*/
+
+      if (journalID == 12) //o sea, es la ventana de ventas
+	  	  ajaxOrderData(default_final_consumer_id, 0, default_journal_id, true, false);
+      
+	/* si es una orden de compra o compra, y no se selecciono el proveedor, entonces no le dejo cargar nada*/
     if ((journalID == 4) || (journalID == 6)) {
         $('#sku_1').focus( function () {
-			var proveedor = $('#search').val();
+					var proveedor = $('#search').val();
 					
-			if ((proveedor == 'Busque') || (proveedor = "")) {
-				alert('Antes de cargar productos, es necesario seleccionar un proveedor');
-				$('#search').focus();
-			}
-		});
-     }		
+					if ((proveedor == 'Busque') || (proveedor = "")) {
+						alert('Antes de cargar productos, es necesario seleccionar un proveedor');
+						$('#search').focus();
+					}
+					});
+     }
     
 	//shortcut para buscar
     bindEvents($(document));
     addBackgroundSearch(); 
+
    
       
 </script>
