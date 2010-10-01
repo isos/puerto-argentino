@@ -541,18 +541,10 @@ function bindEvents(jQuery_object) {
 /* 
  * Inicia una busqueda de un producto a medida que se tipea el sku, a partir de una longitud minima
  * */
-var already_searched = false; // esta variable la uso para evitar que se dispare dos veces esta funcion, no sabemos bien por q pasa
+
 
 function backgroundSearch(sku_input) {
-	
-	if (!already_searched) {  
-		already_searched = true;
-//		if ( (sku_input.val()).length >= min_sku_length ) 
-			sku_input.blur();
-		
-	} else 
-		already_searched = false;
-	
+	sku_input.blur();	
 }
 
 /*
