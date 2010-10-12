@@ -11,7 +11,7 @@ This link contains the latest help file. The installation section contains helpf
 
 
 PhreeBooks has a built-in automatic installation system. However to use this you must first unpack
-the code to a web server.
+the code to a web se  rver.
 
 The web server can either be on your local computer or on an internet host.
 
