@@ -155,3 +155,15 @@
 <?php } ?>
   </td></tr></table>
 </div>
+<script>
+
+
+
+$(document).ready(function() {
+		if ($("#price_sheet").val() != "") { 
+			$("#full_price").css("text-decoration","line-through")
+			$("#price_sheet").css("background-color","yellow"); 
+		}
+		});
+
+</script>

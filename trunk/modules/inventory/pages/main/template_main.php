@@ -64,7 +64,16 @@ echo $toolbar->build_toolbar($add_search = true);
 	<td class="dataTableContent" onclick="submitSeq(<?php echo $query_result->fields['id'] . ', \'edit\''; ?>)"><?php echo $query_result->fields['description_short']; ?></td>
 <!-- Agrego columnas para precio de compra y de venta -->
 	<td class="dataTableContent" onclick="submitSeq(<?php echo $query_result->fields['id'] . ', \'edit\''; ?>)"><?php echo $query_result->fields['item_cost']; ?></td>
-	<td class="dataTableContent" onclick="submitSeq(<?php echo $query_result->fields['id'] . ', \'edit\''; ?>)"><?php echo $query_result->fields['full_price']; ?></td>
+	
+	
+	<td class="dataTableContent" onclick="submitSeq(<?php echo $query_result->fields['id'] . ', \'edit\''; ?>)"><?php echo $query_result->fields['full_price'];?>
+			<?php //agrego esto para mostrar los productos con price_sheet 
+				if ($query_result->fields['price_sheet'] != "") {
+					echo " <span style='background-color:yellow'>( ".$query_result->fields['price_sheet']."%)<span>";
+				 
+    			} ?> 
+	</td>
+	
 	<td class="dataTableContent" align="center" onclick="submitSeq(<?php echo $query_result->fields['id'] . ', \'edit\''; ?>)"><?php echo $qty_in_stock; ?></td>
 	<td class="dataTableContent" style="width:10px" align="center" onclick="submitSeq(<?php echo $query_result->fields['id'] . ', \'edit\''; ?>)"><?php echo ($query_result->fields['inactive']=='0' ? '' : TEXT_YES); ?></td>
 <!--	Saco la columna Pedidos 
