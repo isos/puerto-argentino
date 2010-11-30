@@ -553,7 +553,8 @@ switch ($action) {
 		'item_cost' => INV_ENTRY_INV_ITEM_COST,
 		'full_price' => INV_ENTRY_FULL_PRICE,
 		'quantity_on_hand'        => INV_HEADING_QTY_ON_HAND,
-		'inactive'                => TEXT_INACTIVE);
+		'inactive'                => TEXT_INACTIVE,
+		'price_sheet' => INT_ENTRY_PRICE_SHEET);
 	//	'quantity_on_order'       => INV_HEADING_QTY_ON_ORDER,
 	//	'quantity_on_sales_order' => INV_HEADING_QTY_ON_SO);
 	$result = html_heading_bar($heading_array, $_GET['list_order']);
@@ -571,7 +572,7 @@ switch ($action) {
 	}
 
 	$field_list = array('id', 'sku', 'inactive', 'inventory_type', 'description_short', 'item_cost', 'full_price', 
-			'quantity_on_hand', 'quantity_on_order', 'quantity_on_sales_order');
+			'quantity_on_hand', 'quantity_on_order', 'quantity_on_sales_order', 'price_sheet');
 
 	// hook to add new fields to the query return results
 	if (is_array($extra_query_list_fields) > 0) $field_list = array_merge($field_list, $extra_query_list_fields);
