@@ -176,6 +176,7 @@ define('INV_ENTRY_ACCT_SALES', 'Cuenta Ventas/Ingreso');
 define('INV_ENTRY_ACCT_INV', 'Cuenta Valor de Inventario');
 define('INV_ENTRY_ACCT_COS', 'Cuenta Costo de Inventario Vendido');
 define('INV_ENTRY_INV_ITEM_COST','Precio de Costo');
+define('INT_ENTRY_PRICE_SHEET','Escala de precios');
 define('INV_ENTRY_FULL_PRICE', 'Precio de Venta');
 define('INV_ENTRY_ITEM_WEIGHT', 'Peso');
 define('INV_ENTRY_ITEM_MINIMUM_STOCK', 'Inventario Mínimo');

@@ -542,7 +542,6 @@ function bindEvents(jQuery_object) {
  * Inicia una busqueda de un producto a medida que se tipea el sku, a partir de una longitud minima
  * */
 
-
 function backgroundSearch(sku_input) {
 	sku_input.blur();	
 }

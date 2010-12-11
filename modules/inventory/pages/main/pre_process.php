@@ -553,8 +553,8 @@ switch ($action) {
 		'item_cost' => INV_ENTRY_INV_ITEM_COST,
 		'full_price' => INV_ENTRY_FULL_PRICE,
 		'quantity_on_hand'        => INV_HEADING_QTY_ON_HAND,
-		'inactive'                => TEXT_INACTIVE,
-		'price_sheet' => INT_ENTRY_PRICE_SHEET);
+		'inactive'                => TEXT_INACTIVE);
+		//'price_sheet' => INT_ENTRY_PRICE_SHEET
 	//	'quantity_on_order'       => INV_HEADING_QTY_ON_ORDER,
 	//	'quantity_on_sales_order' => INV_HEADING_QTY_ON_SO);
 	$result = html_heading_bar($heading_array, $_GET['list_order']);
