@@ -376,7 +376,10 @@ function InventoryList(rowCnt) {
 	var storeID = document.getElementById('store_id').value;
 	var sku     = document.getElementById('sku_'+rowCnt).value;
 	var cID     = document.getElementById('bill_acct_id').value;
-	window.open("index.php?cat=inventory&module=popup_inv&type="+account_type+"&rowID="+rowCnt+"&storeID="+storeID+"&cID="+cID+"&search_text="+sku,"inventory","width=700px,height=550px,resizable=1,scrollbars=1,top=150,left=200");
+	var preffered = '';
+	if (cID != '')
+		preffered = "&f2=1";
+	window.open("index.php?cat=inventory&module=popup_inv&type="+account_type+"&rowID="+rowCnt+"&storeID="+storeID+"&cID="+cID+"&search_text="+sku+preffered,"inventory","width=700px,height=550px,resizable=1,scrollbars=1,top=150,left=200");
 }
 
 function GLList(elementID) {
