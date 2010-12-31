@@ -114,13 +114,17 @@
 		  </tr>
       <?php 
 		if ($sku_history['purchases']) {
+		$purchases = 0;	
 		  foreach ($sku_history['purchases'] as $value) {
+		  	$purchases += $value['qty'];
 		    echo '<tr>' . chr(10);
 			echo '  <td align="center">' . gen_spiffycal_db_date_short($value['post_date']) . '</td>' . chr(10);
 		    echo '  <td align="center">' . ($value['qty'] ? $value['qty'] : '&nbsp;') . '</td>' . chr(10);
 		    echo '  <td align="right">' . ($value['total_amount'] ? $currencies->format($value['total_amount']) : '&nbsp;') . '</td>' . chr(10);
 			echo '</tr>' . chr(10);
+			
 		  }
+		  echo "<tr> <td align='center'>Total:</td><td align='center'>".$purchases."</td><td>&nbsp;</td></tr>";
 		} else {
 		  echo '<tr><td align="center" colspan="4">' . INV_NO_RESULTS . '</td></tr>' . chr(10);
 		}
@@ -137,13 +141,17 @@
 		  </tr>
       <?php 
 		if ($sku_history['sales']) {
+			$sales = 0;
 		  foreach ($sku_history['sales'] as $value) {
+		  	$sales += $value['qty'];
 		    echo '<tr>' . chr(10);
 			echo '  <td align="center">' . gen_spiffycal_db_date_short($value['post_date']) . '</td>' . chr(10);
 		    echo '  <td align="center">' . ($value['qty'] ? $value['qty'] : '&nbsp;') . '</td>' . chr(10);
 		    echo '  <td align="right">' . ($value['total_amount'] ? $currencies->format($value['total_amount']) : '&nbsp;') . '</td>' . chr(10);
 			echo '</tr>' . chr(10);
+		
 		  }
+		  	echo "<tr> <td align='center'>Total:</td><td align='center'>".$sales."</td><td>&nbsp;</td></tr>";
 		} else {
 		  echo '<tr><td align="center" colspan="4">' . INV_NO_RESULTS . '</td></tr>' . chr(10);
 		}
@@ -160,13 +168,16 @@
 		  </tr>
       <?php 
 		if ($sku_history['adjustments']) {
-			
+		 $adjustments = 0;	
 		  foreach ($sku_history['adjustments'] as $key => $value) {
+		  	$adjustments += $value['qty'];
 		    echo '<tr>' . chr(10);
 			echo '  <td align="center">' .gen_spiffycal_db_date_short($value['post_date']) . '</td>' . chr(10);
 		    echo '  <td align="center">' . ($value['qty'] ? $value['qty'] : '&nbsp;') . '</td>' . chr(10);
 			echo '</tr>' . chr(10);
+			
 		  }
+		  echo "<tr> <td align='center'>Total:</td><td align='center'>".$adjustments."</td></tr>";
 		} else {
 		  echo '<tr><td align="center" colspan="4">' . INV_NO_RESULTS . '</td></tr>' . chr(10);
 		}
