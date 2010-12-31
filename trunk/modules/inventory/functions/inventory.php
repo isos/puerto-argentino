@@ -473,6 +473,12 @@ define('DEFAULT_INPUT_FIELD_LENGTH',120);
 	  	'usage'        => 0,
 	  	'total_amount' => 0,
 	  );
+	  $history['adjustments'][$index] = array(
+	  	'post_date'    => $cur_month,
+	  	'qty'          => 0,
+	  	'total_amount' => 0,
+	  );
+	  
 	  $cur_month = gen_specific_date($cur_month, 0, -1, 0);
 	}
 	$last_year = ($dates['ThisYear'] - 1) . '-' . substr('0' . $dates['ThisMonth'], -2) . '-01';
@@ -481,7 +487,7 @@ define('DEFAULT_INPUT_FIELD_LENGTH',120);
 	$sql = "select m.id, m.journal_id, m.store_id, m.purchase_invoice_id, i.qty, i.post_date, i.date_1, 
 	i.id as item_id 
 	  from " . TABLE_JOURNAL_MAIN . " m inner join " . TABLE_JOURNAL_ITEM . " i on m.id = i.ref_id 
-	  where m.journal_id in (4, 10) and i.sku = '" . $sku ."' and m.closed = '0' 
+	  where m.journal_id in (4, 10, 16) and i.sku = '" . $sku ."' and m.closed = '0' 
 	  order by i.date_1";
 	$result = $db->Execute($sql);
 	while(!$result->EOF) {
@@ -494,6 +500,10 @@ define('DEFAULT_INPUT_FIELD_LENGTH',120);
 		  $gl_type   = 'sos';
 		  $hist_type = 'open_so';
 		  break;
+	    case 16: //agrego para recuperar tambien los ajustes de inventario
+	      $gl_type = 'adj';
+	      $hist_type = 'open_ad';
+	      break;  
 	  }
 	  $sql = "select sum(qty) as qty from " . TABLE_JOURNAL_ITEM . " 
 		where gl_type = '" . $gl_type . "' and so_po_item_ref_id = " . $result->fields['item_id'];
@@ -535,6 +545,7 @@ define('DEFAULT_INPUT_FIELD_LENGTH',120);
 		  }
 		  break;
 	    case 16:
+	      $history['adjustments'][$month]['qty'] += $result->fields['qty']; //agrego para recuperar los ajustes
 	      $history['sales'][$month]['usage'] += $result->fields['qty'];
 		  break;
 	  }

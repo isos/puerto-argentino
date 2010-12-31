@@ -45,7 +45,7 @@
   <fieldset class="formAreaTitle">
    <legend><?php echo INV_SKU_ACTIVITY; ?></legend>
    <table border="0" width="100%" cellspacing="1" cellpadding="1">
-	  <tr><td valign="top" width="50%">
+	  <tr><td valign="top" width="40%">
 		<table border="1" width="100%" cellspacing="1" cellpadding="1">
 		  <tr><th colspan="4"><?php echo INV_OPEN_PO; ?></th></tr>
 		  <tr>
@@ -104,7 +104,7 @@
 		  </tr>
 		</table>
 	  </td>
-	  <td valign="top" width="25%">
+	  <td valign="top" width="20%">
 		<table border="1" width="100%" cellspacing="1" cellpadding="1">
 		  <tr><th colspan="4"><?php echo INV_PURCH_BY_MONTH; ?></th></tr>
 		  <tr>
@@ -127,7 +127,7 @@
 	  ?>
 		</table>
 	  </td>
-	  <td valign="top" width="25%">
+	  <td valign="top" width="20%">
 		<table border="1" width="100%" cellspacing="1" cellpadding="1">
 		  <tr><th colspan="4"><?php echo INV_SALES_BY_MONTH; ?></th></tr>
 		  <tr>
@@ -142,6 +142,29 @@
 			echo '  <td align="center">' . gen_spiffycal_db_date_short($value['post_date']) . '</td>' . chr(10);
 		    echo '  <td align="center">' . ($value['qty'] ? $value['qty'] : '&nbsp;') . '</td>' . chr(10);
 		    echo '  <td align="right">' . ($value['total_amount'] ? $currencies->format($value['total_amount']) : '&nbsp;') . '</td>' . chr(10);
+			echo '</tr>' . chr(10);
+		  }
+		} else {
+		  echo '<tr><td align="center" colspan="4">' . INV_NO_RESULTS . '</td></tr>' . chr(10);
+		}
+	  ?>
+		</table>
+	  </td>
+	  
+	  <td valign="top" width="20%"> <!-- TABLA QUE MUESTRA LOS AJUSTES DE INVENTARIO -->
+		<table border="1" width="100%" cellspacing="1" cellpadding="1">
+		  <tr><th colspan="4"><?php echo INV_POPUP_ADJ_WINDOW_TITLE; ?></th></tr>
+		  <tr>
+		    <th><?php echo TEXT_MONTH; ?></th>
+		    <th><?php echo INV_ADJ_QUANTITY; ?></th>
+		  </tr>
+      <?php 
+		if ($sku_history['adjustments']) {
+			
+		  foreach ($sku_history['adjustments'] as $key => $value) {
+		    echo '<tr>' . chr(10);
+			echo '  <td align="center">' .gen_spiffycal_db_date_short($value['post_date']) . '</td>' . chr(10);
+		    echo '  <td align="center">' . ($value['qty'] ? $value['qty'] : '&nbsp;') . '</td>' . chr(10);
 			echo '</tr>' . chr(10);
 		  }
 		} else {
