@@ -204,8 +204,8 @@ define('INV_PO_DATE','Fecha OC');
 define('INV_SO_DATE','Fecha OV');
 define('INV_PO_RCV_DATE','Fecha de Entrada');
 define('INV_SO_SHIP_DATE','Fecha a Entregar');
-define('INV_PURCH_COST','Costo de la Compra');
-define('INV_SALES_INCOME','Monto de Ventas');
+define('INV_PURCH_COST','Costo'); //decia Costo de la Compra. By Gonzalo
+define('INV_SALES_INCOME','Monto'); //decia Monto de Ventas. By Gonzalo
 define('TEXT_MONTH','Este Mes');
 
 define('INV_MSG_COPY_INTRO', 'Digite el nuevo código al que quiere copiar este:');
