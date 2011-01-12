@@ -151,7 +151,7 @@
 	// Load queryFactory db classes
 	require(DIR_FS_CLASSES . 'db/' . DB_TYPE . '/query_factory.php');
 	$db = new queryFactory();
-	$db->connect(DB_SERVER, DB_SERVER_USERNAME, DB_SERVER_PASSWORD, DB_DATABASE);
+	$db->connect(DB_SERVER, DB_SERVER_USERNAME, DB_SERVER_PASSWORD, DB_SERVER_NAME);
 	
 	// set application wide parameters for phreebooks module
 	$configuration = $db->Execute_return_error("select configuration_key as cfgKey, configuration_value as cfgValue
