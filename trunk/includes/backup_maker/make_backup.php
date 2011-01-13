@@ -2,8 +2,8 @@
 /*** CONFIGURACION DEL SCRIPT ***/
 
 	/** CONFIGURACION IMPORTANTE **/
-	$base_dir = "/home/gonetil/www/phreebooks2/";
-    	$company = "phreebooks2";
+	$base_dir = "/datos/workspaces/phpworkspace/KioscoHugo/";
+   	$company = "phreebooks2";
 	$database = "phreebooks2";
 
 	
@@ -36,13 +36,11 @@ if (file_exists($custom_path)) { include($custom_path); }
 	if (ini_get('max_execution_time') < 20000) set_time_limit(20000);
 
 	// dump db
-	require(DIR_FS_WORKING . 'functions/database.php');
+	//require(DIR_FS_WORKING . 'functions/database.php');
         // Load queryFactory db classes
-        require(DIR_FS_WORKING. 'classes/db/mysql/query_factory.php');
+        //require(DIR_FS_WORKING. 'classes/db/mysql/query_factory.php');
 	require(DIR_FS_MY_FILES . $company. '/config.php');
-        $db = new queryFactory();
-        $db->connect(DB_SERVER, DB_SERVER_USERNAME, DB_SERVER_PASSWORD, $database);
-
+        
 	$dest_dir           = DIR_FS_MY_FILES . 'backups/';
 	$company_dir        = DIR_FS_MY_FILES . $company. '/';
 	$compressed_dbname  = 'db-' . $company . '-' . date('Ymd');
@@ -52,7 +50,13 @@ if (file_exists($custom_path)) { include($custom_path); }
 	$db_save_full_path  = $dest_dir .    $db_filename;
 	if (!is_dir($dest_dir)) mkdir($dest_dir);
 
-	if (!$result = dump_db_table($db, 'all', $db_save_full_path, 'both')) break;
+	/***  PARA HACER EL DUMP, usamos directamente mysqldump**********/
+    	    
+        $command = "mysqldump --opt -h ".DB_SERVER." -u".DB_SERVER_USERNAME." -p".DB_SERVER_PASSWORD." ".$database." > ".$dest_dir.$db_filename;
+        
+        system($command);
+	/************/
+        
 	// compress the company directory
 	unset($output);
 	switch ($conv_type) {
