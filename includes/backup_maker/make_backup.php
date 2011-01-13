@@ -36,10 +36,12 @@ if (file_exists($custom_path)) { include($custom_path); }
 	if (ini_get('max_execution_time') < 20000) set_time_limit(20000);
 
 	// dump db
-	//require(DIR_FS_WORKING . 'functions/database.php');
+	require(DIR_FS_WORKING . 'functions/database.php');
         // Load queryFactory db classes
-        //require(DIR_FS_WORKING. 'classes/db/mysql/query_factory.php');
+    require(DIR_FS_WORKING. 'classes/db/mysql/query_factory.php');
 	require(DIR_FS_MY_FILES . $company. '/config.php');
+	$db = new queryFactory();
+    $db->connect(DB_SERVER, DB_SERVER_USERNAME, DB_SERVER_PASSWORD, $database);
         
 	$dest_dir           = DIR_FS_MY_FILES . 'backups/';
 	$company_dir        = DIR_FS_MY_FILES . $company. '/';
