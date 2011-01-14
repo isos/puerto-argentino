@@ -45,9 +45,27 @@ $toolbar->add_help('04');
 echo $toolbar->build_toolbar(); 
 
 // Build the page
+
 ?>
 <div class="pageHeading"><?php echo $config_groups[$gID]['title']; ?></div>
+
+<?php if ($gID == 20) {  //mantenimiento del servidor, muestro opcion para reiniciar mysql
+?>
+	<!--  RESTART MYSQL -->
+	<script>
+		function promp_restart() {
+			if (confirm('¿está seguro que desea reiniciar el servidor de bases de datos? Perderá cualquier operación que aún no se haya completado')) {
+				$.ajax({url:'includes/addons/custom_scripts/mysql_restart.php', success: function(msg) { alert(msg); } });
+			}
+		}
+	</script>
+	<div style='float:right; display: inline'>
+		<a href="#" onclick="promp_restart();"> Reiniciar Base de datos </a>
+	</div>
+<?php } //fin opcion de reinicio de mysql ?>
+
 <div><?php echo $config_groups[$gID]['description']; ?></div>
+
 <table border="0" width="100%" cellspacing="2" cellpadding="2">
   <tr>
 <!-- body_text //-->
@@ -150,6 +168,7 @@ echo $toolbar->build_toolbar();
     echo '            </td>' . "\n";
   }
 ?>
+
           </tr>
         </table></td>
       </tr>
