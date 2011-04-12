@@ -1177,7 +1177,7 @@ function processSkuDetails(resp) { // call back function
 	   field = (journalID == 6)?"pstd_":"qty_";
 		need=Math.max(0, data.reorder_quantity - data.quantity_on_hand);
 		if (data.reorder_quantity == 0) //o sea, nunca se definio esta cantidad
-			document.getElementById(field+rowCnt).style.borderColor = 'yellow';
+			document.getElementById(field+rowCnt).style.borderColor = 'blue';
 		document.getElementById(field+rowCnt).value = need;
   }
   /*
