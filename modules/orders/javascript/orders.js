@@ -1101,6 +1101,7 @@ function processSkuDetails(resp) { // call back function
 //    alert(data.error);
 	return;
   }
+  
   var rowCnt = data.rID;
   var exchange_rate = document.getElementById('currencies_value').value;
   document.getElementById('sku_'     +rowCnt).value       = data.sku;
@@ -1125,7 +1126,7 @@ function processSkuDetails(resp) { // call back function
 	    document.getElementById('desc_'  +rowCnt).value   = data.description_short;
 	  }
 	  break;
-	case  '6':
+	case  '6'://compra		
 	case  '7':
     case '21':
 	  qty_pstd = 'pstd_';
@@ -1168,6 +1169,21 @@ function processSkuDetails(resp) { // call back function
 	  break;
 	default:
   }
+/*
+ * Inicio calculo automatico de la cantidad a comprar
+ * En caso de ordenes de compra y de compras, intento calcular la cantidad a comprar en base a la cantidad de reorden y al stock actual
+ */
+  if ((journalID == 6) || (journalID == 4)) {
+	   field = (journalID == 6)?"pstd_":"qty_";
+		need=Math.max(0, data.reorder_quantity - data.quantity_on_hand);
+		if (data.reorder_quantity == 0) //o sea, nunca se definio esta cantidad
+			document.getElementById(field+rowCnt).style.borderColor = 'yellow';
+		document.getElementById(field+rowCnt).value = need;
+  }
+  /*
+   * Fin calculo automatico de la cantidad a comprar
+   */  
+  
   updateRowTotal(rowCnt, false);
   if (data.stock_note) {
     for (var i=0; i<data.stock_note.length; i++) {
@@ -1183,6 +1199,7 @@ function processSkuDetails(resp) { // call back function
 	rowCnt = parseInt((document.getElementById('item_table').rows.length / 2) - 1);
   }
   var qty = document.getElementById(qty_pstd+rowCnt).value;
+  
   var sku = document.getElementById('sku_'+rowCnt).value;
   if (qty != '' && sku != '' && sku != text_search) rowCnt = addInvRow();
   document.getElementById('sku_'+rowCnt).focus();
