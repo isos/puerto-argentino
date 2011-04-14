@@ -1178,7 +1178,8 @@ function processSkuDetails(resp) { // call back function
 		need=Math.max(0, data.reorder_quantity - data.quantity_on_hand);
 		if (data.reorder_quantity == 0) //o sea, nunca se definio esta cantidad
 			document.getElementById(field+rowCnt).style.borderColor = 'blue';
-		document.getElementById(field+rowCnt).value = need;
+		if (document.getElementById(field+rowCnt).value == '')
+			document.getElementById(field+rowCnt).value = need;
   }
   /*
    * Fin calculo automatico de la cantidad a comprar
