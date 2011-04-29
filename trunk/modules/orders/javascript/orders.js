@@ -1094,7 +1094,8 @@ function loadSkuDetails(iID, rowCnt) {
 }
 
 function processSkuDetails(resp) { // call back function
-  var qty_pstd;
+ 
+ var qty_pstd;
   var text = '';
   data = parseXML(resp);
   if (data.error) {
