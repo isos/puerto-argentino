@@ -107,6 +107,11 @@ if ($security_level < 3 && $order->id) {
   $toolbar->icon_list['print']['show'] = false;
 }
 
+/* agrego este if para el los_stock */
+if(JOURNAL_ID == 4 ){
+	require(DIR_FS_MODULES . 'orders/pages/low_stock/low_stock.php');
+}
+
 // pull in extra toolbar overrides and additions
 if (count($extra_toolbar_buttons) > 0) {
   foreach ($extra_toolbar_buttons as $key => $value) $toolbar->icon_list[$key] = $value;
