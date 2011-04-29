@@ -12,7 +12,7 @@
 			 */
 			
 			$result_second = $db->Execute("SELECT id, (quantity_on_order - quantity_on_hand) as qty FROM ".TABLE_INVENTORY. " 
-										   WHERE quantity_on_hand < quantity_on_order and inactive = '0'and vendor_id = $vendor_id and quantity_on_order > 0");
+										   WHERE quantity_on_hand < minimum_stock_level and inactive = '0'and vendor_id = $vendor_id and quantity_on_order > 0");
 			$i = 0;
 			while (!$result_second->EOF){
 				$json [$result_second->fields['id'] ]= $result_second->fields['qty'] ;
