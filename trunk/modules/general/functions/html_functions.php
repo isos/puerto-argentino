@@ -188,8 +188,9 @@
   function html_radio_field($name, $value = '', $checked = false, $compare = '', $parameters = '', $reinsert_value = true) {
     $selection  = '<input type="radio" name="' . gen_output_string($name) . '" id="' . gen_output_string($name) . '_' . $value . '"';
     $selection .= ' value="' . gen_output_string($value) . '"';
+    
     if (($checked == true) || (($reinsert_value==true) && isset($GLOBALS[$name]) && is_string($GLOBALS[$name]) && ($GLOBALS[$name] == 'on')) || (($reinsert_value==true) && isset($value) && isset($GLOBALS[$name]) && (stripslashes($GLOBALS[$name]) == $value)) || (gen_not_null($value) && gen_not_null($compare) && ($value == $compare)) ) {
-      $selection .= ' checked="checked"';
+      $selection .= ' checked="checked" selected="selected"';
     }
     if (gen_not_null($parameters)) $selection .= ' ' . $parameters;
     $selection .= ' />';
