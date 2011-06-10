@@ -302,9 +302,14 @@ define('DEFAULT_INPUT_FIELD_LENGTH',120);
 		case 'radio':
 			$output .= '<td class="main">';
 			$choices = explode(',',$params['default']);
+			
 			while ($choice = array_shift($choices)) {
 				$values = explode(':',$choice);
-				$output .= html_radio_field($param_array['field_name'], $values[0], ($cInfo->$param_array['field_name']==$values[0]) ? true : false);
+				$values[0] = trim($values[0]);
+				$cInfo->$param_array['field_name'] = trim($cInfo->$param_array['field_name']);
+				$cmp =  strcmp($values[0],$cInfo->$param_array['field_name']);
+				
+				$output .= html_radio_field($param_array['field_name'], $values[0], (($cmp == 0)?true:false));
 				$output .= '&nbsp;' . $values[1] . '&nbsp;';
 			}
 			$output .= '</td></tr>';
