@@ -11,7 +11,7 @@
 			 * $result_second = $db->Execute("SELECT id FROM ".TABLE_INVENTORY. " WHERE quantity_on_hand < (minimum_stock_level + quantity_on_sales_order - quantity_on_order) and inactive = '0'and vendor_id = '".."'");
 			 */
 			
-			$result_second = $db->Execute("SELECT id, (reorder_quantity - quantity_on_hand) as qty FROM ".TABLE_INVENTORY. " 
+			$result_second = $db->Execute("SELECT id, reorder_quantity as qty FROM ".TABLE_INVENTORY. " 
 										   WHERE quantity_on_hand < minimum_stock_level and inactive = '0'and vendor_id = $vendor_id and quantity_on_order > 0");
 			$i = 0;
 			while (!$result_second->EOF){
