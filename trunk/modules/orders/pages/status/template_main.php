@@ -50,13 +50,14 @@ switch (JOURNAL_ID) {
 }
 if ($search_text) $toolbar->search_text = $search_text;
 $toolbar->search_period = $acct_period;
-echo $toolbar->build_toolbar($add_search = true, $add_periods = true); 
+echo $toolbar->build_toolbar($add_search = true, $add_periods = true,$add_date=false,$add_closed=true);
+?> 
 
-// Build the page
-?>
 <div class="pageHeading"><?php echo PAGE_TITLE; ?></div>
-<div class="page_count_right"><?php echo $query_split->display_links($query_numrows, MAX_DISPLAY_SEARCH_RESULTS, MAX_DISPLAY_PAGE_LINKS, $_GET['page']); ?></div>
-<div class="page_count"><?php echo $query_split->display_count($query_numrows, MAX_DISPLAY_SEARCH_RESULTS, $_GET['page'], constant('ORD_TEXT_' . JOURNAL_ID . '_NUMBER_OF_ORDERS')); ?></div>
+<div class="page_count_right"><?php echo $query_split->display_links($query_numrows, MAX_DISPLAY_SEARCH_RESULTS, MAX_DISPLAY_PAGE_LINKS, $_GET['page']); ?>
+</div>
+<div class="page_count"><?php echo $query_split->display_count($query_numrows, MAX_DISPLAY_SEARCH_RESULTS, $_GET['page'], constant('ORD_TEXT_' . JOURNAL_ID . '_NUMBER_OF_ORDERS')); ?>
+</div>
 <table border="0" width="100%" cellspacing="0" cellpadding="1">
   <tr class="dataTableHeadingRow"><?php echo $list_header; ?></tr>
 <?php
