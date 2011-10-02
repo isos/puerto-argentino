@@ -434,10 +434,16 @@
     global $_GET;
     if ($exclude_array == '') $exclude_array = array();
     $get_url = '';
+    
     reset($_GET);
     while (list($key, $value) = each($_GET)) {
       if (($key != session_name()) && ($key != 'error') && (!in_array($key, $exclude_array))) $get_url .= $key . '=' . $value . '&amp;';
     }
+    
+    //agrego estas 2 lineas para que los nuevos filtros cerrado/abierto sean incluidos en $_GET
+    if (isset($_REQUEST['filter_closed']))
+    	$get_url .= 'filter_closed='. $_REQUEST['filter_closed']. '&amp;';
+    	
     return $get_url;
   }
 
