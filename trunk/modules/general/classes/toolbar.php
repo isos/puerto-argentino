@@ -157,12 +157,14 @@ class toolbar {
 		'order'  => $order);
   }
 
-  function build_toolbar($add_search = false, $add_period = false, $add_date = false) { // build the main toolbar
+  function build_toolbar($add_search = false, $add_period = false, $add_date = false, $add_closed=false) { // build the main toolbar
 	global $messageStack;
     $output = '';
-	if ($add_search) $output .= $this->add_search();
+	if ($add_closed) $output .= $this->add_closed();
+    if ($add_search) $output .= $this->add_search();
 	if ($add_period) $output .= $this->add_period();
 	if ($add_date)   $output .= $this->add_date();
+	
 	$output .= '<div id="tb_main_' . $this->id . '" class="toolbar">' . "\n";
 	// Sort the icons by designated order
 	$sort_arr = array();
@@ -182,7 +184,19 @@ class toolbar {
     if ($messageStack->size > 0) $output .= $messageStack->output();
 	return $output;
   }
-
+  
+  function add_closed() { 
+  	$val = (isset($_REQUEST['filter_closed']))?$_REQUEST['filter_closed']:'only_open';
+  	$output = '<span style="text-align:right; display:block"> Mostrar: &nbsp;&nbsp;';
+  	$output .= 'Todas<input type="radio" name="filter_closed" value="all"'.(($val == 'all')?"CHECKED":"").'>&nbsp;&nbsp;';
+  	$output .= 'Solo Abiertas<input type="radio" name="filter_closed" value="only_open"'.(($val == 'only_open')?"CHECKED":'').'>&nbsp;&nbsp;';
+  	$output .= 'Solo Cerradas:<input type="radio" name="filter_closed" value="only_closed"'.(($val == 'only_closed')?"CHECKED":"").'></span><br/>';
+  	$output .= "<script>
+  					$('input:radio').click(function() 
+  									{ $('form#status').submit(); } ); 
+  				</script> ";
+  	return $output;
+  }
   function add_search() {
 	$output = '<div id="tb_search_' . $this->id . '" class="toolbar_right">' . "\n";
 	$output .= HEADING_TITLE_SEARCH_DETAIL . '<br />';

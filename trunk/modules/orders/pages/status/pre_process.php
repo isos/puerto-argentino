@@ -23,6 +23,7 @@
 //
 
 /**************   Check user security   *****************************/
+
 define('JOURNAL_ID',$_GET['jID']);
 switch (JOURNAL_ID) {
   case  3: $security_level = $_SESSION['admin_security'][SECURITY_ID_RFQ_STATUS];      break;
@@ -98,8 +99,19 @@ $field_list = array('id', 'post_date', 'purchase_invoice_id', 'purch_order_id', 
 // hook to add new fields to the query return results
 if (is_array($extra_query_list_fields) > 0) $field_list = array_merge($field_list, $extra_query_list_fields);
 
+
+if (isset($_REQUEST['filter_closed'])) {
+	switch ($_REQUEST['filter_closed']) {
+		case  'all' : $filter_closed = " "; break;//and (closed=0 or closed=1) "; break; 
+		case  'only_closed' :  $filter_closed = " and closed=1 "; break;
+		case  'only_open' : $filter_closed = " and closed <> 1 "; break;
+		default:  $filter_closed = " and closed=0 "; break;
+	}
+} else $filter_closed = "and closed=0 ";
+	
+
 $query_raw = "select " . implode(', ', $field_list) . " from " . TABLE_JOURNAL_MAIN . " 
-	where journal_id = " . JOURNAL_ID . $period_filter . $search . " order by $disp_order, purchase_invoice_id DESC";
+	where journal_id = " . JOURNAL_ID . $period_filter . $search . $filter_closed." order by $disp_order, purchase_invoice_id DESC";
 
 $query_split  = new splitPageResults($_GET['page'], MAX_DISPLAY_SEARCH_RESULTS, $query_raw, $query_numrows);
 $query_result = $db->Execute($query_raw);
