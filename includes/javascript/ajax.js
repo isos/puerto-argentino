@@ -22,7 +22,7 @@
 //
 
 //the number of simultaenous asynchronous requests we can have
-ajaxQueueNum = 20;
+ajaxQueueNum = 200;
 
 //our handlers.  These match the typeid tag in our xml response
 ajaxRH = new Array();
