@@ -22,7 +22,7 @@
 //
 
 //the number of simultaenous asynchronous requests we can have
-ajaxQueueNum = 200;
+ajaxQueueNum = 20;
 
 //our handlers.  These match the typeid tag in our xml response
 ajaxRH = new Array();
@@ -30,6 +30,9 @@ ajaxRH = new Array();
 //store our requests in here
 ajaxReq = new Array();
 ajaxReq[0] = 0;
+
+//requests que no pudieron realizarse porque
+ajaxPendingRequests = new Array();
 
 //registers a new handler function for an xml request return
 function regHandler(resp,handler) {
@@ -115,6 +118,18 @@ function loadXMLReq(url,reqMode,noCache) {
 
 	}
 
+	//si ya no se podian lanzar mas requests concurrentes 
+	if ((openIndex == 0)) { 
+		ajaxPendingRequests.push({url : url , reqMode : reqMode, noCache : noCache});
+		return;
+	} else if (ajaxPendingRequests.length > 0) { //si hay requests pendientes, asi que este request debera esperar
+		ajaxPendingRequests.push({url : url , reqMode : reqMode, noCache : noCache});
+		req = ajaxPendingRequests.shift();
+		url = req.url;
+		reqMode = req.reqMode;
+		noCache = req.noCache;
+	}
+	
 	//our callback function for processing the return from our xml request
 	callBackFunc = function xmlHttpChange() {
 				
@@ -159,6 +174,12 @@ function loadXMLReq(url,reqMode,noCache) {
 										}
 				
 									}
+								}
+								
+								//si habia requests AJAX pendientes, desencola uno y lo intenta relanzar
+								if (ajaxPendingRequests.length > 0) {
+									req = ajaxPendingRequests.shift();
+									loadXMLReq(req.url,req.reqMode,req.noCache);
 								}
 								break;
 
