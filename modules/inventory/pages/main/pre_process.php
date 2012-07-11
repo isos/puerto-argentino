@@ -301,6 +301,13 @@ switch ($action) {
 			}
 		}
 		db_perform(TABLE_INVENTORY, $sql_data_array, 'update', "id = " . $id);
+		
+		if ($_POST['etiqueta']) { 
+			$result = $db->Execute("select count(*) as cant from `etiquetas_pendientes` where sku = '$sku' ");
+			if ($result->fields['cant'] == 0)
+				$result = $db->Execute("INSERT INTO `etiquetas_pendientes` values ('$sku') ");
+		}
+		
 		gen_add_audit_log(INV_LOG_INVENTORY . TEXT_UPDATE, $sku . ' - ' . $sql_data_array['description_short']);
 	} else if ($error == true) {
 		$category_list = $db->Execute("select category_id, category_name, category_description 

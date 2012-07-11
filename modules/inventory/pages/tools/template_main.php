@@ -74,3 +74,66 @@ echo $toolbar->build_toolbar();
   </table>
 </fieldset>
 </form>
+
+<hr/>
+<h3> Etiquetas para imprimir </h3>
+<div>
+	<label for="nueva_etiqueta">Agregar</label><input type="text" name="nueva_etiqueta" id="nueva_etiqueta" onkeypress> <br/>
+	<a href="#" onclick="imprimir_listado(); return false;"> Imprimir listado </a>
+</div>
+<br/>
+<table id="etiquetas_pendientes">
+<?php
+foreach ( $etiquetas_pendientes as $sku_id => $item) { ?>
+       <tr id="<?php echo $item['sku']; ?>"> 
+       		<td> <?php echo $item['sku']; ?> </td>
+       		<td> <?php echo $item['precio']; ?> </td>
+       		<td> <?php echo $item['descripcion']; ?> </td>
+       		<td> <a href="#" onclick="eliminar_pendiente('<?php echo $item['sku']; ?>'); return false;"> Eliminar </td>
+       	</tr>	
+<?php } ?>
+</table>
+<div>
+	<a href="#" onclick="vaciar_listado(); return false;">Vaciar listado</a> 
+</div>
+
+<script>
+	function eliminar_pendiente(sku) { 
+		url = "index.php?cat=inventory&module=ajax&op=etiquetas_pendientes&action=remove&sku=" +sku;
+		$.post(url, function(data){ $("#"+sku).fadeOut().remove(); });
+	}
+	
+	function agregar_pendiente(sku) {
+		url = "index.php?cat=inventory&module=ajax&op=etiquetas_pendientes&action=add&sku=" +sku;
+		$.getJSON(url,
+			  function(json){
+			  	$("#etiquetas_pendientes").append("<tr id='"+json['sku']+"'> <td>"+json['sku']+"</td><td>"+json.precio+"</td><td>"+json.descripcion+"</td><td> <a href='#' onclick='eliminar_pendiente(\""+json.sku+"\"); return false;\'> Eliminar </td></tr>"); 
+  		});
+		
+	}
+	
+	function vaciar_listado(){ 
+		url = "index.php?cat=inventory&module=ajax&op=etiquetas_pendientes&action=remove_all";
+		if (confirm("¿Esta seguro que desea eliminar todas las etiquetas pendientes?")) {
+				$.post(url, function(msg){ if (msg == "success") $("#etiquetas_pendientes tr").remove(); });
+		}
+		
+	}
+	
+	function imprimir_listado() { 
+		url = "index.php?cat=inventory&module=ajax&op=etiquetas_pendientes&action=get_all";
+		window.open(url, "_BLANK",'width=595,height=892,menubar=no,resizable=yes,scrollbars=yes,directories=no');
+
+	}
+	$(document).ready(function(){
+		
+		$("#nueva_etiqueta").keypress(function(event) {
+			  if ( event.which == 13 ) {
+			     event.preventDefault();
+			     $input = $(event.target);
+			     agregar_pendiente($input.val());
+			     $input.val("");
+			   }
+			});
+	 })
+</script>
