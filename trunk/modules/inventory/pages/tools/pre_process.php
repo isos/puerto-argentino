@@ -157,6 +157,19 @@ switch ($action) {
   default:
 }
 
+
+$items= $db->Execute("select inv.id as id,inv.sku as sku, description_sales as descr from `etiquetas_pendientes` ep INNER JOIN `inventory` inv on ep.sku = inv.sku");
+
+require_once(DIR_FS_MODULES."/inventory/functions/inventory.php");
+$etiquetas_pendientes = array();
+while(!$items->EOF) {
+	  $sku_id = $items->fields['id'];
+	  $precio = inv_calculate_sales_price(1,$sku_id);
+	  $etiquetas_pendientes[$sku_id]['sku'] = $items->fields['sku'];
+	  $etiquetas_pendientes[$sku_id]['descripcion'] = $items->fields['descr'];
+	  $etiquetas_pendientes[$sku_id]['precio'] = $precio;
+	  $items->MoveNext();
+	}
 /*****************   prepare to display templates  *************************/
 $include_header   = true;
 $include_footer   = true;

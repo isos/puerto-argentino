@@ -164,6 +164,11 @@ $(document).ready(function() {
 			$("#full_price").css("text-decoration","line-through")
 			$("#price_sheet").css("background-color","yellow"); 
 		}
+		
+		
+		$("#item_cost").parent("td").append("Generar etiqueta <input type='checkbox' name='etiqueta' id='etiqueta'>");
+		$("#item_cost").change(function() { $("#etiqueta").attr('checked',true); });
+		
 		});
 
 </script>
