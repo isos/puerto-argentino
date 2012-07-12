@@ -167,7 +167,7 @@ $(document).ready(function() {
 		
 		
 		$("#item_cost").parent("td").append("Generar etiqueta <input type='checkbox' name='etiqueta' id='etiqueta'>");
-		$("#item_cost").change(function() { $("#etiqueta").attr('checked',true); });
+		$("#full_price").change(function() { $("#etiqueta").attr('checked',true); });
 		
 		});
 
