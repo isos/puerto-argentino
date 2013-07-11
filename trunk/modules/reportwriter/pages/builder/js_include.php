@@ -30,8 +30,8 @@
 var paperWidth       = <?php echo $paperwidth; ?>;
 var paperHeight      = <?php echo $paperheight; ?>;
 var paperOrientation = '<?php echo $paperorientation; ?>';
-var marginLeft       = <?php echo (isset($marginleft)? $marginleft : 0); ?>;
-var marginRight      = <?php echo (isset($marginright) ?$marginright: 0); ?>;
+var marginLeft       = <?php echo ( (isset($marginleft) && (!empty($marginleft) ) ) ? $marginleft : 0); ?>;
+var marginRight      = <?php echo ( (isset($marginright) && (!empty($marginright))) ?$marginright: 0); ?>;
 
 function init() {
 	if ('<?php echo ($FormParams['IncludePage']) ? 'open' : 'close' ?>' == 'close') {
