@@ -151,11 +151,7 @@ if (!$custom_html) {
   </script>
   <?php } ?>
 
-  <script type="text/javascript" src="includes/javascript/ajax.js"></script>
-  <script type="text/javascript" src="includes/javascript/general.js"></script>
-  <script type="text/javascript" src="includes/javascript/jquery.js"></script>
-  <script type="text/javascript" src="includes/javascript/jquery.hotkeys.js"></script>
-  <script type="text/javascript" src="includes/javascript/extra_functions.js"></script>
+
   <script type="text/javascript">
   	$(document).bind('keydown', '<?php echo GO_HOME_SHORTCUT; ?>', function() { window.location.href = "index.php"});
   </script>
@@ -203,6 +199,12 @@ if (is_file($template_path)) {
 if (!$custom_html) {
   if ($include_footer) { require(DIR_FS_INCLUDES . 'footer.php'); }
 ?>
+
+  <script type="text/javascript" src="includes/javascript/ajax.js"></script>
+  <script type="text/javascript" src="includes/javascript/general.js"></script>
+  <script type="text/javascript" src="includes/javascript/jquery.js"></script>
+  <script type="text/javascript" src="includes/javascript/jquery.hotkeys.js"></script>
+  <script type="text/javascript" src="includes/javascript/extra_functions.js"></script>
 </body>
 </html>
 <?php } // end if (!custom_html)
