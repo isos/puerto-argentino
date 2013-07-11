@@ -102,7 +102,7 @@ if (!$custom_html) {
   <link rel="stylesheet" type="text/css" href="<?php echo DIR_WS_THEMES . 'css/stylesheet.css'; ?>" />
   <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
   <!-- cat = <?php echo $cat; ?> - module = <?php echo $module; ?> -->
-
+  <script type="text/javascript" src="includes/javascript/jquery.js"></script>
   <?php if ($include_header) { ?>
   <script type="text/javascript" src="includes/javascript/menu.js"></script>
   <?php } ?>
@@ -202,7 +202,7 @@ if (!$custom_html) {
 
   <script type="text/javascript" src="includes/javascript/ajax.js"></script>
   <script type="text/javascript" src="includes/javascript/general.js"></script>
-  <script type="text/javascript" src="includes/javascript/jquery.js"></script>
+
   <script type="text/javascript" src="includes/javascript/jquery.hotkeys.js"></script>
   <script type="text/javascript" src="includes/javascript/extra_functions.js"></script>
 </body>
