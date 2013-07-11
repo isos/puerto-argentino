@@ -102,14 +102,7 @@ if (!$custom_html) {
   <link rel="stylesheet" type="text/css" href="<?php echo DIR_WS_THEMES . 'css/stylesheet.css'; ?>" />
   <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
   <!-- cat = <?php echo $cat; ?> - module = <?php echo $module; ?> -->
-  <script type="text/javascript" src="includes/javascript/jquery.js"></script>
-  
-    <script type="text/javascript" src="includes/javascript/ajax.js"></script>
-  <script type="text/javascript" src="includes/javascript/general.js"></script>
 
-  <script type="text/javascript" src="includes/javascript/jquery.hotkeys.js"></script>
-  <script type="text/javascript" src="includes/javascript/extra_functions.js"></script>
-  
   <?php if ($include_header) { ?>
   <script type="text/javascript" src="includes/javascript/menu.js"></script>
   <?php } ?>
@@ -158,7 +151,11 @@ if (!$custom_html) {
   </script>
   <?php } ?>
 
-
+  <script type="text/javascript" src="includes/javascript/ajax.js"></script>
+  <script type="text/javascript" src="includes/javascript/general.js"></script>
+  <script type="text/javascript" src="includes/javascript/jquery.js"></script>
+  <script type="text/javascript" src="includes/javascript/jquery.hotkeys.js"></script>
+  <script type="text/javascript" src="includes/javascript/extra_functions.js"></script>
   <script type="text/javascript">
   	$(document).bind('keydown', '<?php echo GO_HOME_SHORTCUT; ?>', function() { window.location.href = "index.php"});
   </script>
@@ -206,7 +203,6 @@ if (is_file($template_path)) {
 if (!$custom_html) {
   if ($include_footer) { require(DIR_FS_INCLUDES . 'footer.php'); }
 ?>
-
 </body>
 </html>
 <?php } // end if (!custom_html)
